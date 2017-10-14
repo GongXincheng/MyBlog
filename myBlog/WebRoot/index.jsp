@@ -8,6 +8,7 @@
 <link rel="icon" href="images/blog.ico" type="image/x-icon" />
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script type="text/javascript">
+	
 	$(function(){
 		$("#content_msg div").slideDown(1800);
 	})

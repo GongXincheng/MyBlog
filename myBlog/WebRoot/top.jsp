@@ -6,6 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/top.css">
 <script type="text/javascript" src="js/top_load.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#top_logo div").click(function(){
+		//$(location).attr('href', '${pageContext.request.contextPath}/index.jsp');
+		location.href = '${pageContext.request.contextPath}/index.jsp';
+	})
+	})
+</script>
 </head>
 <body>
 	<div id="top">
@@ -19,13 +27,24 @@
 			</div>
 			<div id="top_menu">
 				<ul>
-					<li><a href="#">首 页</a></li>
+					<li><a href="index.jsp">首 页</a></li>
 					<li><a href="#">文 章</a></li>
 					<li><a href="#">社 区</a></li>
 					<li><a href="#">留 言</a></li>
 				</ul>
 			</div>
-			<div id="top_user"></div>
+			<div id="top_user">
+				<div id="user_content">
+					<ul id="ul_login">
+						<li id="li_first">
+							<a href="${pageContext.request.contextPath }/login.jsp">登 录</a>
+						</li>
+						<li>
+							<a href="${pageContext.request.contextPath }/login.jsp">注 册</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>

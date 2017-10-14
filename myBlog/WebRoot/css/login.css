@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+#content{
+	height:600px;
+	background: url("https://assets-cdn.github.com/images/modules/site/heroes/simple-codelines.svg") #2b3137 no-repeat;
+}
+#inner_content{
+	/* background: blue; */
+	width: 1100px;
+	margin: 0 auto;
+}
+#login_content{
+	height: 450px;
+    width: 320px;
+    background-color: white;
+    position: relative;
+    left: 730px;
+    top: 70px;
+    display: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px #018c8c;
+    padding-top: 20px;
+}
+#login_top{
+    height: 60px;
+    text-align: center;
+    /* border: 1px solid #ccc; */
+    line-height: 70px;
+}
+#login_msg{
+	height: 35px;
+    text-align: center;
+   /*  border: 1px solid #ccc; */
+    line-height: 35px;
+    margin-top: 30px;
+}
+#login_form{
+	font-weight: 600;
+	font-size: 14px;
+	width: 255px;
+	margin: 0 auto;
+}
+#username,#password{
+	height: 44px;
+    width: 200px;
+    padding-left: 50px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+}
+#username{
+	background: url("../images/user-password.png") no-repeat 0px 0px;
+}
+#password{
+	background: url("../images/user-password.png") no-repeat 0px -44px;
+}
+#validate{
+	height: 40px;
+    width: 100px;
+    padding-left:5px;
+}
+/* #valipic{
+	
+} */
+input[type="checkbox"]{
+	height: 16px;
+    width: 16px;
+}
+#btn_login{
+	width: 250px;
+    display: block;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    background-color: #32a5e7;
+    color: #fff;
+    border-radius: 2px;
+    border: none;
+}
+tr{
+	height:60px;
+}
+#tr_save{
+	height:30px;
+}
+#span_save{
+	color:#666;
+}
