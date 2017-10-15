@@ -13,14 +13,14 @@
 }
 #top_content{
 	/* background-color: blue; */
-	width: 90%;
+	width: 80%;
     height: inherit;
     margin: 0 auto;
 }
 #top_logo{
 	/* background-color: beige;  */
     height: inherit;
-    width: 12%;
+    width: 14%;
     float: left;
     color: white;
 }
@@ -28,7 +28,7 @@
 	cursor: pointer;
 }
 #top_logo div{
-    margin-left: 25px;
+    margin-left: 10px;
 }
 #top_logo div span{
     font-size: 32px;
@@ -40,34 +40,31 @@
 	width: 50%;
     height: inherit;
     float: left;
-    margin-left: 30px;
+    margin-left: 25px;
 }
 #top_menu ul{
     list-style-type: none;
     display: none;
-   
 }
 #top_menu ul li{
 	float:left;
     padding: 0 15px;   
 }
+/*---------------------------*/
 #top_user{
 	/* background-color: green; */
 	float: right;
-    height: inherit;
-    width: 15%;
-    margin-right: 20px;
+    width: 10%;
+    height:60px;
 }
 #user_content{
-	text-align: center;
-	/* background-color: white; */
-	float: left;
-	margin-left: 20px;
+	height:60px;
 }
 #ul_login{
 	line-height: 40px;
-	width:60px;
-	margin-top: 20px;
+	width:120px;
+	margin-top: 18px;
+	text-align: center;
 }
 #ul_login li{
 	float: none;

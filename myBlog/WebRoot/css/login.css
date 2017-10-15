@@ -1,20 +1,19 @@
 @CHARSET "UTF-8";
 #content{
-	width:100%;
 	height:600px;
 	background: url("https://assets-cdn.github.com/images/modules/site/heroes/simple-codelines.svg") #2b3137 no-repeat;
 }
 #inner_content{
 	/* background: blue; */
-	width: 90%;
+	width: 80%;
 	margin: 0 auto;
 }
 #login_content{
 	/*height: 400px;*/
-    width: 320px;
-    background-color: white;
+    width: 330px;
+    background-color: rgb(250,251,252);
     position: relative;
-    left: 55%;
+    left: 62%;
     top: 100px;
     display: none;
     border-radius: 5px;
@@ -76,6 +75,7 @@
     width: 70px;
     padding-left:20px;
     border: 1px solid #ccc;
+    background-color: rgb(250,251,252);
 }
 /* #valipic{
 	
@@ -118,11 +118,12 @@ tr{
 #login_foot a{
 	display: block;
 	color: #32a5e7;
+	text-align: center;
 }
 #a_regist{
 	float: left;
 }
-#a_regist{
+#a_forget{
 	float: right;
 }
 #login_foot a:HOVER{

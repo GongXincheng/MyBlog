@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="css/login.css">
 <script type="text/javascript">
 	$(function(){
-		$("#login_content").slideDown(500);
+		$("#login_content").fadeIn(1000);
 		
 		$("#btn_login").click(function(){
 			$("#msg_content").hide();
@@ -20,6 +20,14 @@
 				$("#span_msg").text("用户名或密码不能为空");
 			}
 		});
+		
+		$("input[type='text'],input[type='password']").focus(function(){
+			$(this)[0].style.boxShadow = "0px 0px 3px #06C";
+		})
+		$("input[type='text'],input[type='password']").blur(function(){
+			$(this)[0].style.boxShadow = "";
+		})
+		
 	});
 </script>
 <style type="text/css">
