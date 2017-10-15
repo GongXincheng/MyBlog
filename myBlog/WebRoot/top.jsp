@@ -31,12 +31,17 @@
 					<li><a href="#">文 章</a></li>
 					<li><a href="#">社 区</a></li>
 					<li><a href="#">留 言</a></li>
+					<li><a href="#">关于我</a></li>
 				</ul>
 			</div>
 			<div id="top_user">
+				
 				<div id="user_content">
 					<ul id="ul_login">
 						<li id="li_first">
+							<img id="img_user" alt="user" src="images/user.png">
+						</li>
+						<li>
 							<a href="${pageContext.request.contextPath }/login.jsp">登 录</a>
 						</li>
 						<li>

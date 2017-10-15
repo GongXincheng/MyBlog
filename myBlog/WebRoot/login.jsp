@@ -9,8 +9,18 @@
 <link rel="stylesheet" type="text/css" href="css/login.css">
 <script type="text/javascript">
 	$(function(){
-		$("#login_content").slideDown(400);
-	})
+		$("#login_content").slideDown(500);
+		
+		$("#btn_login").click(function(){
+			$("#msg_content").hide();
+			var username = $("#username").val();
+			var password = $("#password").val();
+			if(username.length==0 || password.length==0){
+			$("#msg_content").show(300);
+				$("#span_msg").text("用户名或密码不能为空");
+			}
+		});
+	});
 </script>
 <style type="text/css">
 
@@ -22,10 +32,13 @@
 		<div id="inner_content">
 			<div id="login_content">
 				<div id="login_top">
-					<h3>帐号登陆</h3>
+					<h2>账号登录</h2>
 				</div>
 				<div id="login_msg">
-					<h3></h3>
+					<div id="msg_content">
+						<img alt="error" src="images/error_16x16.png">
+						<span id="span_msg"></span>
+					</div>
 				</div>
 				<div id="login_form">
 					<form action="">
@@ -50,7 +63,12 @@
 						</table>
 					</form>
 				</div>
-				<div id="login_foot"></div>
+				<div id="login_foot">
+					<div id="foot_content">
+						<a href="${pageContext.request.contextPath }/login.jsp" id="a_regist">注册</a>
+						<a href="${pageContext.request.contextPath }/login.jsp" id="a_forget">忘记密码?</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
