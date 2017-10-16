@@ -1,24 +1,25 @@
 @CHARSET "UTF-8";
-#content{
-	height:600px;
-	background: url("https://assets-cdn.github.com/images/modules/site/heroes/simple-codelines.svg") #2b3137 no-repeat;
+#mask{
+	background-color: black;
+	opacity:0.90;
+	filter:alpha(opacity=90.0);
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:1000;
+	display: none;
 }
-#inner_content{
-	/* background: blue; */
-	width: 80%;
-	margin: 0 auto;
-}
+/*---------------------登录--------------------------*/
 #login_content{
-	/*height: 400px;*/
     width: 330px;
     background-color: rgb(250,251,252);
-    position: relative;
-    left: 62%;
-    top: 150px;
-    display: none;
+    position: absolute;
+    z-index:1001;
     border-radius: 5px;
     box-shadow: 0px 0px 15px #018c8c;
     padding-top: 20px;
+    display: none;
 }
 #login_top{
     height:30px;
@@ -42,7 +43,8 @@
 }
 #a_left{
 	font-size: 20px;
-	color: rgb(43, 49, 55);
+	color: #32a5e7;
+	/* color: rgb(43, 49, 55); */
 	font-weight: 900;
 }
 #login_msg{
@@ -159,5 +161,61 @@ tr{
 	height:30px;
 }
 #login_foot{
+	height:10px;
+}
+/*---------------------注册--------------------------*/
+#regist_content{
+	/*height: 400px;*/
+    width: 330px;
+    background-color: rgb(250,251,252);
+    position: absolute;
+    z-index:1001;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px #018c8c;
+    padding-top: 20px;
+    display: none;
+}
+#regist_top{
+    height:30px;
+    text-align: center;
+    padding-top: 10px;
+    
+}
+#regist_top #left{
+	width:50%;
+	float:left;
+	border-right: 1px solid #ccc;
+}
+#regist_top #right {
+	float:right;
+	width:49%;
+}
+#regist_msg{
+	height: 6%;
+    text-align: center;
+    /* border: 1px solid #ccc; */
+    margin-top: 20px;
+}
+#regist_form{
+	font-weight: 600;
+	font-size: 14px;
+	width: 255px;
+	margin: 0 auto;
+}
+#btn_regist{
+	width: 250px;
+    display: block;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    background-color: #32a5e7;
+    color: #fff;
+    border-radius: 2px;
+    border: none;
+}
+#regist_foot{
 	height:10px;
 }

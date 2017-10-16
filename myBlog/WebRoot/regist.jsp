@@ -4,59 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>注 册</title>
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
-<title>登 录</title>
-<link rel="stylesheet" type="text/css" href="css/login.css">
-<script type="text/javascript">
-	$(function(){
-		$("#login_content").fadeIn(1200);
-		
-		$("#btn_login").click(function(){
-			$("#msg_content").hide();
-			var username = $("#username").val();
-			var password = $("#password").val();
-			var validate = $("#validate").val();
-			if(username.length==0 || password.length==0){
-				$("#msg_content").show(550);
-				$("#span_msg").text("用户名或密码不能为空");
-				return;
-			}
-			if(validate.length==0){
-				$("#msg_content").show(550);
-				$("#span_msg").text("请输入验证码");
-				return;
-			}
-		});
-		
-		$("input[type='text'],input[type='password']").focus(function(){
-			$(this)[0].style.boxShadow = "0px 0px 8px #06C";
-		})
-		$("input[type='text'],input[type='password']").blur(function(){
-			$(this)[0].style.boxShadow = "";
-		})
-		
-	});
-</script>
-<style type="text/css">
-
-</style>
+<link rel="stylesheet" type="text/css" href="css/regist.css">
 </head>
 <body>
 	<jsp:include page="top.jsp"></jsp:include>
-	<div id="content">
-		<div id="inner_content">
-			<div id="login_content">
-				<div id="login_top">
-					<div id="left"><a href="#" id="a_left">登  录</a></div>
-					<div id="right"><a href="#" id="a_right">注  册</a></div>
+	<div id="regist_content">
+				<div id="regist_top">
+					<div id="left"><a href="javascript:void(0);" id="a_left">登  录</a></div>
+					<div id="right"><a href="javascript:void(0)" id="a_right">注  册</a></div>
 				</div>
-				<div id="login_msg">
+				<div id="regist_msg">
 					<div id="msg_content">
 						<img alt="error" src="images/error_16x16.png">
 						<span id="span_msg"></span>
 					</div>
 				</div>
-				<div id="login_form">
+				<div id="regist_form">
 					<form action="">
 						<table cellpadding="0" cellspacing="0">
 							<tr><td>
@@ -80,17 +45,16 @@
 							<tr id="tr_save"><td>
 								<input type="checkbox" name="save" value="yes"/>
 								<span id="span_save">记住登录状态</span>
-								<a href="${pageContext.request.contextPath }/login.jsp" id="a_forget">忘记密码?</a>
+								<a href="${pageContext.request.contextPath }/regist.jsp" id="a_forget">忘记密码?</a>
 							</td></tr>
 							<tr><td>
-								<button type="button" id="btn_login">登  录</button>
+								<button type="button" id="btn_regist">登  录</button>
 							</td></tr>
 						</table>
 					</form>
 				</div>
-				<div id="login_foot"></div>
+				<div id="regist_foot"></div>
 			</div>
-		</div>
-	</div>
+	
 </body>
 </html>

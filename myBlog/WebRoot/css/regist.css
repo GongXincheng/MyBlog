@@ -1,37 +1,27 @@
 @CHARSET "UTF-8";
-#content{
-	height:600px;
-	background: url("https://assets-cdn.github.com/images/modules/site/heroes/simple-codelines.svg") #2b3137 no-repeat;
-}
-#inner_content{
-	/* background: blue; */
-	width: 80%;
-	margin: 0 auto;
-}
-#login_content{
+#regist_content{
 	/*height: 400px;*/
     width: 330px;
     background-color: rgb(250,251,252);
     position: relative;
     left: 62%;
     top: 150px;
-    display: none;
     border-radius: 5px;
     box-shadow: 0px 0px 15px #018c8c;
     padding-top: 20px;
 }
-#login_top{
+#regist_top{
     height:30px;
     text-align: center;
     padding-top: 10px;
     
 }
-#login_top #left{
+#regist_top #left{
 	width:50%;
 	float:left;
 	border-right: 1px solid #ccc;
 }
-#login_top #right {
+#regist_top #right {
 	float:right;
 	width:49%;
 }
@@ -45,7 +35,7 @@
 	color: rgb(43, 49, 55);
 	font-weight: 900;
 }
-#login_msg{
+#regist_msg{
 	height: 6%;
     text-align: center;
     /* border: 1px solid #ccc; */
@@ -69,7 +59,7 @@
 	float: left;
 	color: #666;
 }
-#login_form{
+#regist_form{
 	font-weight: 600;
 	font-size: 14px;
 	width: 255px;
@@ -137,7 +127,7 @@ input[type="checkbox"]{
 #a_forget:HOVER{
 	color:rgb(52, 83, 145);
 }
-#btn_login{
+#btn_regist{
 	width: 250px;
     display: block;
     height: 40px;
@@ -158,6 +148,6 @@ tr{
 #tr_save{
 	height:30px;
 }
-#login_foot{
+#regist_foot{
 	height:10px;
 }

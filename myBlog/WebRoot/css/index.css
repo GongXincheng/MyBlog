@@ -1,4 +1,7 @@
 @CHARSET "UTF-8";
+body{
+	background:#2b3137;
+}
 #content_msg{
 	background-color: rgb(36, 41, 46);
     height: 120px;
@@ -13,6 +16,5 @@
 h2,h3{
 	color: rgb(0, 235, 249);
 }
-#aaa{
-	height:8080px;
-}
+
+/*-----------------------------*/

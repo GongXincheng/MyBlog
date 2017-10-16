@@ -62,7 +62,7 @@
 }
 #ul_login{
 	line-height: 40px;
-	width:100px;
+	width:80px;
 	margin-top: 18px;
 	text-align: center;
 }
@@ -70,6 +70,8 @@
 	float: none;
 }
 /*-----------------------------------*/
+
+/*--------------------------------------*/
 ul{
     list-style-type: none;
      background-color: rgb(36, 41, 46);
@@ -86,3 +88,4 @@ a{
 a:HOVER {
 	color: #ddd;
 }
+
