@@ -21,11 +21,29 @@
     padding-top: 20px;
 }
 #login_top{
-    height: 8%;
+    height:30px;
     text-align: center;
-    /* border: 1px solid #ccc; */
-    padding-top: 15px;
-    color: #32a5e7;
+    padding-top: 10px;
+    
+}
+#login_top #left{
+	width:50%;
+	float:left;
+	border-right: 1px solid #ccc;
+}
+#login_top #right {
+	float:right;
+	width:49%;
+}
+#a_right{
+	font-size: 20px;
+	color: #32a5e7;
+	font-weight: 900;
+}
+#a_left{
+	font-size: 20px;
+	color: rgb(43, 49, 55);
+	font-weight: 900;
 }
 #login_msg{
 	height: 6%;
@@ -57,6 +75,9 @@
 	width: 255px;
 	margin: 0 auto;
 }
+input{
+	font-size: 14px;
+}
 #username,#password{
 	height: 44px;
     width: 200px;
@@ -77,15 +98,29 @@
     border: 1px solid #ccc;
     background-color: rgb(250,251,252);
 }
-/* #valipic{
-	
-} */
-input{
-	font-size: 14px;
-}
 input[type="checkbox"]{
 	height: 16px;
     width: 16px;
+    display: block;
+    margin-top: 6px;
+    float: left;
+}
+#span_save{
+	color:#666;
+	display: block;
+	line-height:30px;
+	float: left;
+	margin-left: 5px;
+}
+#a_forget{
+	color: #32a5e7;
+	line-height:30px;
+	display: block;
+	float: right;
+	text-align: center;
+}
+#a_forget:HOVER{
+	color:rgb(52, 83, 145);
 }
 #btn_login{
 	width: 250px;
@@ -104,28 +139,25 @@ input[type="checkbox"]{
 tr{
 	height:60px;
 }
+#div_validate{
+	width: 250px;
+}
+#validate_left{
+	width:40%;
+	float: left;
+}
+#validate_right{
+	width:40%;
+	height: 35px;
+	line-height: 35px;
+	text-align:center;
+	margin-right:20px;
+	float:right;
+	border: 1px solid #ccc;
+}
 #tr_save{
 	height:30px;
 }
-#span_save{
-	color:#666;
-}
-#foot_content{
-	width: 250px;
-	height:25px;
-	margin: 13px auto;
-}
-#login_foot a{
-	display: block;
-	color: #32a5e7;
-	text-align: center;
-}
-#a_regist{
-	float: left;
-}
-#a_forget{
-	float: right;
-}
-#login_foot a:HOVER{
-	color:rgb(52, 83, 145);
+#login_foot{
+	height:10px;
 }

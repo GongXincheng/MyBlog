@@ -9,9 +9,8 @@
 <script type="text/javascript">
 	$(function(){
 		$("#top_logo div").click(function(){
-		//$(location).attr('href', '${pageContext.request.contextPath}/index.jsp');
-		location.href = '${pageContext.request.contextPath}/index.jsp';
-	})
+			location.href = "${pageContext.request.contextPath}/index.jsp";
+		})
 	})
 </script>
 </head>

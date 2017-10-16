@@ -7,11 +7,10 @@ $(function(){
 	
 	//top'login hide&show
 	$("#ul_login li:not('#li_first')").hide();
-	$("#ul_login").mouseenter(function(){
+	$("#ul_login").hover(function(){
 		$("#ul_login li:not('#li_first')").slideDown(300);
-	});
-	$("#ul_login").mouseleave(function(){
+	},function(){
 		$("#ul_login li:not('#li_first')").slideUp(300);
-	});
+	});	
 	
 });

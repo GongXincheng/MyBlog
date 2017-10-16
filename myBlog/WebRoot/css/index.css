@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+#content_msg{
+	background-color: rgb(36, 41, 46);
+    height: 120px;
+    width: 400px;
+    margin: 100px auto;
+	margin-top: 50px;
+	padding-top: 60px;
+}
+#content_msg div{
+	display: none;
+}
+h2,h3{
+	color: rgb(0, 235, 249);
+}
+#aaa{
+	height:8080px;
+}
