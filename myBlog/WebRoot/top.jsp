@@ -63,9 +63,9 @@
 		<!-- 登录 -->
 		<div id="login_content">
 			<div id="login_msg">
-				<div id="msg_content">
-					<img alt="error" src="images/error_16x16.png"> 
-					<span id="span_msg"></span>
+				<div id="msg_login">
+					<img id="login_error_img" alt="error" src="images/error_16x16.png"> 
+					<span id="login_span_msg"></span>
 				</div>
 			</div>
 			<div id="login_form">
@@ -97,7 +97,7 @@
 							<td>
 								<input type="checkbox" name="save" value="yes" /> 
 								<span id="span_save">记住登录状态</span> 
-								<a href="${pageContext.request.contextPath }/login.jsp" id="a_forget">忘记密码?</a>
+								<a href="#" id="a_forget">忘记密码?</a>
 							</td>
 						</tr>
 						<tr>
@@ -113,9 +113,9 @@
 		<!-- 注册 -->
 		<div id="regist_content">
 			<div id="regist_msg">
-				<div id="msg_content">
-					<img alt="error" src="images/error_16x16.png"> 
-					<span id="span_msg"></span>
+				<div id="msg_regist">
+					<img id="regist_error_img" alt="error" src="images/error_16x16.png"> 
+					<span id="regist_span_msg"></span>
 				</div>
 			</div>
 			<div id="regist_form">

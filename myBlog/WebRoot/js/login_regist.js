@@ -41,7 +41,11 @@ $(function(){
 	
 	
 	//--------------- click Login ---------------------------
-	$("#a_login,#a_left").click(function(){
+	$("#a_left").click(function(){
+		$("#form_regist")[0].reset();
+		if($("#msg_regist:visible")){
+			$("#msg_regist").hide();
+		}
 		$("#a_right").css("color","#32a5e7");
 		$regist.hide();
 		$login.fadeIn(350);
@@ -49,7 +53,14 @@ $(function(){
 	});
 	
 	//--------------- click Regist  ----------------
-	$("#a_regist,#a_right").click(function(){
+	$("#a_right").click(function(){
+		$("#form_login")[0].reset();
+		if($("#msg_login:visible")){
+			$("#msg_login").hide();
+		}
+		/*$("#form_login").each(function(){
+			$(this).val("");
+		});*/
 		$("#a_left").css("color","#32a5e7");
 		$login.hide();
 		$regist.fadeIn(350);
@@ -61,6 +72,8 @@ $(function(){
 	//点击遮罩层取消
 	$("#mask").click(function(){
 		$content.slideUp(250);
+		$("#form_login")[0].reset();
+		$("#form_regist")[0].reset();
 		$("#a_right").css("color","#32a5e7");
 		$("#a_left").css("color","#32a5e7");
 		$regist.hide();
@@ -74,18 +87,18 @@ $(function(){
 //登录的验证
 $(function(){
 	$("#btn_login").click(function(){
-		$("#msg_content").hide();
-		var username = $("#username").val();
-		var password = $("#password").val();
-		var validate = $("#validate").val();
+		$("#msg_login").hide();
+		var username = $("#form_login #username").val();
+		var password = $("#form_login #password").val();
+		var validate = $("#form_login #validate").val();
 		if(username.length==0 || password.length==0){
-			$("#msg_content").show(550);
-			$("#span_msg").text("用户名或密码不能为空");
+			$("#msg_login").show(550);
+			$("#login_span_msg").text("用户名或密码不能为空");
 			return;
 		}
 		if(validate.length==0){
-			$("#msg_content").show(550);
-			$("#span_msg").text("请输入验证码");
+			$("#msg_login").show(550);
+			$("#login_span_msg").text("请输入验证码");
 			return;
 		}
 	});
@@ -98,7 +111,12 @@ $(function(){
 	})
 	
 	$("#btn_regist").click(function(){
-		var username = $("#username").val();
-		alert(username);
+		$("#msg_regist").hide();
+		var username = $("#form_regist #username").val();
+		if(username.length==0){
+			$("#msg_regist").show(550);
+			$("#regist_span_msg").text("用户名或密码不能为空");
+			return;
+		}
 	});
 });
