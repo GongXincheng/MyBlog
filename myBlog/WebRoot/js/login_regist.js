@@ -1,74 +1,77 @@
 $(function(){
 	
+	var $content = $("#login_regist_content");
 	var $login = $("#login_content");
 	var $regist = $("#regist_content");
+	
 	//获取屏幕高度和宽度
 	var screenHeight = $(window).height();
 	var screenWidth = $(window).width();
 	
 	//获取文档高度
 	var docHeight = $(document).height();  //676
-	var docWidth = $(document).width();	//1438
+	/*var docWidth = $(document).width();	//1438*/
+
+	//获取$Content的高度宽度
+	/*var contentHeight = $content.height();*/
+	var contentWidth = $content.width();
 
 	//设置遮罩层的高度
 	$("#mask").css("height",docHeight);
 	
-	//--------------------点击登录事件---------------------------
-	$("#a_login,#a_left").click(function(){
-		//显示遮罩层
-		$("#mask").show();
-		//隐藏注册界面
-		$regist.hide();
-		
-		//获取login div 的宽度和高度 
-		var loginHeight = $login.height();
-		var loginWidth = $login.width();
+	$("#img_user").click(function(){
+		//显示遮罩层		
+		$("#mask").show();	
+		//显示content
+		$content.show(0);
 		
 		//设置位置
-		var loginTop = (screenHeight-loginHeight)/2+"px";
-		var loginLeft = (screenWidth-loginWidth)/2+"px";
-		//显示login's div 
-		$login.fadeIn(400).css({
-			'top':loginTop,
-			'left':loginLeft
+		var contentLeft = (screenWidth*0.6)+"px";
+		var contentTop = (screenHeight*0.15)+"px";
+		$content.css({
+			'top':contentTop,
+			'left':contentLeft
 		});
-		$("#a_left").css("color","black");
+		
+		//显示登录界面
+		$login.slideDown(350);
+		//将登录变色
+		$("#a_left").css("color","rgb(43, 49, 55)");
+	})
+	
+	
+	//--------------- click Login ---------------------------
+	$("#a_login,#a_left").click(function(){
 		$("#a_right").css("color","#32a5e7");
+		$regist.hide();
+		$login.fadeIn(350);
+		$("#a_left").css("color","rgb(43, 49, 55)");
 	});
 	
-	//----------------点击注册事件----------------
+	//--------------- click Regist  ----------------
 	$("#a_regist,#a_right").click(function(){
-		//显示遮罩层
-		$("#mask").show();
-		//隐藏登录界面
-		$login.hide();
-		
-		
-		var registHeight = $regist.height();
-		var registWidth = $regist.width();
-		
-		//设置位置
-		var registTop = (screenHeight-registHeight)/2+"px";
-		var registLeft = (screenWidth-registWidth)/2+"px";
-		
-		$regist.fadeIn(400).css({
-			'top':registTop,
-			'left':registLeft
-		});
 		$("#a_left").css("color","#32a5e7");
-		$("#a_right").css("color","black");
+		$login.hide();
+		$regist.fadeIn(350);
+		$("#a_right").css("color","rgb(43, 49, 55)");
 	});
+	
+	
 	
 	//点击遮罩层取消
 	$("#mask").click(function(){
-		$login.hide();
+		$content.slideUp(250);
+		$("#a_right").css("color","#32a5e7");
+		$("#a_left").css("color","#32a5e7");
 		$regist.hide();
+		$login.hide();
 		$(this).hide();
 	});
 	
 });
 
-//登录页面的验证
+
+//登录的验证
 $(function(){
 	$("#btn_login").click(function(){
 		$("#msg_content").hide();
@@ -93,4 +96,9 @@ $(function(){
 	$("input[type='text'],input[type='password']").blur(function(){
 		$(this)[0].style.boxShadow = "";
 	})
+	
+	$("#btn_regist").click(function(){
+		var username = $("#username").val();
+		alert(username);
+	});
 });

@@ -28,7 +28,9 @@
 	cursor: pointer;
 }
 #top_logo div{
-
+	height:60px;
+	/* background:pink; */
+	text-align:center;
 }
 #top_logo div span{
     font-size: 32px;
@@ -40,6 +42,7 @@
 	width: 70%;
     height: inherit;
     float: left;
+    margin-left: 30px;
 }
 #top_menu ul{
     list-style-type: none;
@@ -58,20 +61,18 @@
     height:60px;
 }
 #user_content{
-	height:60px;
+	0
+	width: 70px;
+	margin: 0 auto;
 }
-#ul_login{
-	line-height: 40px;
-	width:80px;
-	margin-top: 18px;
-	text-align: center;
-}
-#ul_login li{
-	float: none;
+
+#img_user{
+	display: block;
+	margin: 16px auto;
+	cursor: pointer;
 }
 /*-----------------------------------*/
 
-/*--------------------------------------*/
 ul{
     list-style-type: none;
      background-color: rgb(36, 41, 46);
@@ -79,13 +80,13 @@ ul{
 li{
 	float:left;
 }
-a{
+ul li a{
 	font-weight: 600;
 	font-size: 14px;
 	color: rgb(169, 169, 169);
 	text-decoration: none;
 }
-a:HOVER {
+ul li a:HOVER {
 	color: #ddd;
 }
 
