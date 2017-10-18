@@ -28,7 +28,6 @@ a{
     height:30px;
     text-align: center;
     padding-top: 10px;
-    
 }
 #login_regist_top #left{
 	width:50%;
@@ -39,16 +38,11 @@ a{
 	float:right;
 	width:49%;
 }
-#a_right{
+#a_right,#a_left{
 	font-size: 20px;
 	color: #32a5e7;
 	font-weight: 900;
 	
-}
-#a_left{
-	font-size: 20px;
-	color: #32a5e7;
-	font-weight: 900;
 }
 #login_msg,#regist_msg{
 	height: 6%;
@@ -67,26 +61,16 @@ a{
 	/* border: 1px solid #ccc; */
 }
 /*image*/
-#login_error_img{
-	margin:5px 15px;
-	float: left;
-}
-#regist_error_img{
+#login_error_img,#regist_error_img{
 	margin:5px 15px;
 	float: left;
 }
 /*span*/
-#regist_span_msg{
+#regist_span_msg,#login_span_msg{
 	float: left;
 	color: #666;
 }
-#login_span_msg{
-	float: left;
-	color: #666;
-}
-#login_regist_foot{
-	height:10px;
-}
+
 /*-----------Login&regist Form ----------*/
 #login_content,#regist_content{
 	display: none;
@@ -129,12 +113,16 @@ input{
 	float: left;
 }
 #validate_right{
-	width:48%;
+	width:120px;
 	height: 35px;
 	line-height: 35px;
 	text-align:center;
 	float:right;
 	border: 1px solid #ccc;
+}
+#login_captcha{
+	width:120px;
+	height: 35px;
 }
 
 #btn_login,#btn_regist{

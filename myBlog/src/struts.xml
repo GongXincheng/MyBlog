@@ -7,6 +7,7 @@
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.ui.theme" value="simple" />
     
+    
 	<package name="community" extends="struts-default">
 		<action name="CommunityAction_*" class="gxc.web.action.CommunityAction" method="{1}">
 			<result type="redirect">/community/list.jsp</result>
@@ -14,8 +15,13 @@
 	</package>
 	
 	<package name="User" extends="struts-default,json-default">
+		
+		<!-- 声明结果视图-->
+		<result-types>
+			<result-type name="captcha" class="gxc.web.action.CaptchaResult"></result-type>
+		</result-types>
+		
 		<action name="User_*" class="gxc.web.action.LoginAction" method="{1}">
-			
 			<!-- 用户登录 -->
 			<result type="json" name="loginSuccess">
 				<param name="root">result</param>
@@ -29,6 +35,19 @@
 			<!-- 注销 -->
 			<result type="json" name="userLeave">
 				<param name="root">result</param>
+			</result>
+			
+			<!-- 验证码 -->
+			<result type="json" name="loginCapthca">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<!-- 验证码 -->
+		<action name="captchaAction">
+			<result name="success" type="captcha">
+				<param name="width">120</param>
+				<param name="height">35</param>
 			</result>
 		</action>
 	</package>

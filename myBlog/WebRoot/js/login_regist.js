@@ -78,10 +78,17 @@ $(function(){
 		$("#form_regist")[0].reset();
 		$("#a_right").css("color","#32a5e7");
 		$("#a_left").css("color","#32a5e7");
+		$("#msg_login").hide();
 		$regist.hide();
 		$login.hide();
 		$(this).hide();
 	});
 	
+	//点击更换验证码
+	$("#login_captcha").click(function(){
+		$(this).attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+	});
+	$("#regist_captcha").click(function(){
+		$(this).attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+	});
 });
-

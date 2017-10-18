@@ -5,14 +5,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>社 区</title>
 <style type="text/css">
-*{
+h1,h2{
 	text-align: center;
 }
 </style>
 </head>
 <body>
-	 <jsp:include page="/top.jsp"></jsp:include>
+	 <jsp:include page="../top.jsp"></jsp:include>
 	 <h1>Welcome To GXC's Community</h1>
 	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 <h2>Thanks ~</h2>
+	 
 </body>
 </html>

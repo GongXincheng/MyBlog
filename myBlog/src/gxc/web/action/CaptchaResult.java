@@ -1,6 +1,7 @@
 package gxc.web.action;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.dispatcher.StrutsResultSupport;
@@ -25,6 +26,10 @@ public class CaptchaResult extends StrutsResultSupport {
 		
 		ValidateCode vc = new ValidateCode(width, height, 4, 20);
 		HttpServletResponse response = ServletActionContext.getResponse();
+		
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		session.setAttribute("login_captcha", vc.getCode().toLowerCase());
+		
 		vc.write(response.getOutputStream());
 	}
 

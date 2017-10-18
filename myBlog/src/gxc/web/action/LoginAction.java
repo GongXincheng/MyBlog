@@ -25,10 +25,15 @@ public class LoginAction extends ActionSupport{
 		System.out.println("密码：" + password);
 		System.out.println("验证码：" + validate);
 		
+		//从session中获取验证码
+		Map<String, Object> session = ActionContext.getContext().getSession();
+		String captcha = (String)session.get("login_captcha");
+		System.out.println("验证码是否正确："+captcha.equals(validate.toLowerCase()));
+		
 		//验证用户名密码是否正确
 		
+		
 		//将用户放在session中
-		Map<String, Object> session = ActionContext.getContext().getSession();
 		session.put("loginName", username);
 		
 		JSONObject json = new JSONObject();
@@ -55,6 +60,23 @@ public class LoginAction extends ActionSupport{
 		
 		result = json.toString();
 		return "hasLogined";
+	}
+	
+	/**
+	 * 判断验证码是否正确
+	 */
+	public String captcha(){
+		JSONObject json = new JSONObject();
+		Map<String, Object> session = ActionContext.getContext().getSession();
+		String captcha = (String)session.get("login_captcha");
+		if( captcha.equals(validate.toLowerCase()) ){
+			json.put("msg", true);
+		}
+		else{
+			json.put("msg", false);
+		}
+		result = json.toString();
+		return "loginCapthca";
 	}
 	
 	/**

@@ -5,14 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
+
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/top.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login_regist.css">
-
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/top_load.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist_validate.js"></script>
-
 <script type="text/javascript">
 	$(function(){
 		$("#top_logo div").click(function(){
@@ -33,16 +32,16 @@
 			</div>
 			<div id="top_menu">
 				<ul>
-					<li><a href="index.jsp">首 页</a></li>
+					<li><a href="${pageContext.request.contextPath}/index.jsp">首 页</a></li>
 					<li><a href="#">文 章</a></li>
-					<li><a href="#">社 区</a></li>
+					<li><a href="${pageContext.request.contextPath}/community/list.jsp">社 区</a></li>
 					<li><a href="#">留 言</a></li>
 					<li><a href="#">关于我</a></li>
 				</ul>
 			</div>
 			<div id="top_user">
 				<div id="user_content">
-					<img id="img_user" alt="user" src="images/user.png">
+					<img id="img_user" alt="user" src="${pageContext.request.contextPath}/images/user.png">
 					<ul id="ul_user">
 						<li id="ul_user_fistli">
 							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/head.png">
@@ -80,7 +79,7 @@
 		<div id="login_content">
 			<div id="login_msg">
 				<div id="msg_login">
-					<img id="login_error_img" alt="error" src="images/error_16x16.png"> 
+					<img id="login_error_img" alt="error" src="${pageContext.request.contextPath}/images/error_16x16.png"> 
 					<span id="login_span_msg"></span>
 				</div>
 			</div>
@@ -104,7 +103,8 @@
 										<s:textfield name="validate" id="validate" placeholder="验证码" theme="simple"></s:textfield>
 									</div>
 									<div id="validate_right">
-										<h1>5 4 3 2</h1>
+										<!-- <h1>5 4 3 2</h1> -->
+										<img id="login_captcha" alt="验证码" src="${pageContext.request.contextPath}/captchaAction">
 									</div>
 								</div>
 							</td>
@@ -123,7 +123,7 @@
 		<div id="regist_content">
 			<div id="regist_msg">
 				<div id="msg_regist">
-					<img id="regist_error_img" alt="error" src="images/error_16x16.png"> 
+					<img id="regist_error_img" alt="error" src="${pageContext.request.contextPath}/images/error_16x16.png"> 
 					<span id="regist_span_msg"></span>
 				</div>
 			</div>
@@ -152,7 +152,8 @@
 										<s:textfield name="validate" id="validate" placeholder="验证码" theme="simple"></s:textfield>
 									</div>
 									<div id="validate_right">
-										<h1>7 5 7 8</h1>
+										<!-- <h1>7 5 7 8</h1> -->
+										<img id="regist_captcha" alt="验证码" src="${pageContext.request.contextPath}/captchaAction">
 									</div>
 								</div>
 							</td>
@@ -170,4 +171,5 @@
 		<div id="login_regist_foot"></div>
 	</div>
 </body>
+
 </html>

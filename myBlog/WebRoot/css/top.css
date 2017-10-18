@@ -61,18 +61,18 @@ body{
 #top_user{
 	/* background-color: green; */
 	float: right;
-    width: 12%;
+    width: 130px;
     height:60px;
 }
 #user_content{
 	/* background-color: blue; */
-	width: 60%;
+	width: 120px;
 	margin: 0 auto;
 }
 /*未登录*/
 #img_user{
 	display: block;
-	margin: 16px 20px;
+	margin: 16px auto;
 	cursor: pointer;
 }
 /*登录后*/
@@ -84,6 +84,7 @@ body{
 	display: block;
 	float:left;
 	margin-top: 18px;
+	margin-left: 20px;
 }
 #top_user_a_user{
 	
@@ -103,7 +104,7 @@ body{
 	display: none;
 	width: 80px;
 	background: rgb(36, 41, 46);
-	font-size: 
+	margin-left: 38px;
 }
 #ul_user_twoli{
 	margin-top: 5px;	
