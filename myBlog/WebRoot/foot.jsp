@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div id="foot">
-		foot
+		foot 
 	</div>
 </body>
 </html>

@@ -99,8 +99,6 @@ a{
 }
 input{
 	font-size: 14px;
-}
-#username,#password,#rePassword{
 	height: 44px;
     width: 200px;
     padding-left: 50px;
@@ -138,30 +136,7 @@ input{
 	float:right;
 	border: 1px solid #ccc;
 }
-input[type="checkbox"]{
-	height: 16px;
-    width: 16px;
-    display: block;
-    margin-top: 6px;
-    float: left;
-}
-#span_save{
-	color:#666;
-	display: block;
-	line-height:30px;
-	float: left;
-	margin-left: 5px;
-}
-#a_forget{
-	color: #32a5e7;
-	line-height:30px;
-	display: block;
-	float: right;
-	text-align: center;
-}
-#a_forget:HOVER{
-	color:rgb(52, 83, 145);
-}
+
 #btn_login,#btn_regist{
 	width: 250px;
     display: block;
@@ -179,9 +154,3 @@ input[type="checkbox"]{
 tr{
 	height:60px;
 }
-
-#tr_save{
-	height:30px;
-}
-
-/*---------------------注册--------------------------*/

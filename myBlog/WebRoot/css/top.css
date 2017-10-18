@@ -39,7 +39,7 @@
 }
 #top_menu{
     /* background-color: #7e908a; */
-	width: 70%;
+	width: 55%;
     height: inherit;
     float: left;
     margin-left: 30px;
@@ -57,28 +57,65 @@
 #top_user{
 	/* background-color: green; */
 	float: right;
-    width: 10%;
+    width: 12%;
     height:60px;
 }
 #user_content{
-	0
-	width: 70px;
+	/* background-color: blue; */
+	width: 60%;
 	margin: 0 auto;
 }
-
+/*未登录*/
 #img_user{
 	display: block;
-	margin: 16px auto;
+	margin: 16px 20px;
 	cursor: pointer;
+}
+/*登录后*/
+#ul_user{
+	display: none;
+	text-align: center;
+}
+#top_user_img_user{
+	display: block;
+	float:left;
+	margin-top: 18px;
+}
+#top_user_a_user{
+	
+}
+#ul_user_fistli{
+	display:block;
+	line-height: 60px;
+	/* border: 1px solid #ccc;
+	background: pink; */
+	float:none;
+}
+.li{
+	float:none;
+	/* border: 1px solid #ccc;
+	background: pink; */
+	line-height: 30px;
+	display: none;
+	width: 80px;
+	background: rgb(36, 41, 46);
+	font-size: 
+}
+#ul_user_twoli{
+	margin-top: 5px;	
+}
+.li:HOVER{
+	background: #111;
 }
 /*-----------------------------------*/
 
 ul{
     list-style-type: none;
-     background-color: rgb(36, 41, 46);
+     
 }
 li{
 	float:left;
+	
 }
 ul li a{
 	font-weight: 600;

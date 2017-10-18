@@ -5,13 +5,9 @@ $(function(){
 	});
 	$("#C").show(1500);
 	
-	//top'login hide&show
-	$("#ul_login li:not('#li_first')").hide();
-	$("#ul_login").hover(function(){
-		$("#ul_login li:not('#li_first')").slideDown(300);
+	$("#ul_user").hover(function(){
+		$("#ul_user li:not('#ul_user_fistli')").slideDown(300);
 	},function(){
-		$("#ul_login li:not('#li_first')").slideUp(300);
-	});	
-	
-	
+		$("#ul_user li:not('#ul_user_fistli')").slideUp(300);
+	});
 });

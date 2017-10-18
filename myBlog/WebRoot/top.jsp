@@ -4,10 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="css/top.css">
-<script type="text/javascript" src="js/top_load.js"></script>
-<script type="text/javascript" src="js/login_regist.js"></script>
-<link rel="stylesheet" type="text/css" href="css/login_regist.css">
+
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/top.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login_regist.css">
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/top_load.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist_validate.js"></script>
+
 <script type="text/javascript">
 	$(function(){
 		$("#top_logo div").click(function(){
@@ -38,6 +43,17 @@
 			<div id="top_user">
 				<div id="user_content">
 					<img id="img_user" alt="user" src="images/user.png">
+					<ul id="ul_user">
+						<li id="ul_user_fistli">
+							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/head.png">
+							<a href="#" id="top_user_a_user">
+								<s:property value="#session.loginName"/>
+							</a>
+						</li>
+						<li class="li" id="ul_user_twoli"><a href="#">个人信息</a></li>
+						<li class="li"><a href="#">设置</a></li>
+						<li class="li"><a href="#">注销</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -60,7 +76,7 @@
 			</div>
 		</div>
 		
-		<!-- 登录 -->
+		<!------------ 登录 ------------>
 		<div id="login_content">
 			<div id="login_msg">
 				<div id="msg_login">
@@ -69,7 +85,7 @@
 				</div>
 			</div>
 			<div id="login_form">
-				<form action="" id="form_login">
+				<form action="${pageContext.request.contextPath}/User_login" method="post" id="form_login">
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 							<td>
@@ -91,13 +107,6 @@
 										<h1>5 4 3 2</h1>
 									</div>
 								</div>
-							</td>
-						</tr>
-						<tr id="tr_save">
-							<td>
-								<input type="checkbox" name="save" value="yes" /> 
-								<span id="span_save">记住登录状态</span> 
-								<a href="#" id="a_forget">忘记密码?</a>
 							</td>
 						</tr>
 						<tr>
