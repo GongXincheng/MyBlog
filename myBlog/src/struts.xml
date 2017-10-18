@@ -6,24 +6,6 @@
 <struts>
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.ui.theme" value="simple" />
-	
-	<package name="json-default" extends="struts-default">
-        <result-types>
-            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
-        </result-types>
-        <interceptors>
-            <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
-            <interceptor name="jsonValidation" class="org.apache.struts2.json.JSONValidationInterceptor"/>
-            <interceptor-stack name="jsonValidationWorkflowStack">
-                <interceptor-ref name="basicStack"/>
-                <interceptor-ref name="validation">
-                    <param name="excludeMethods">input,back,cancel</param>
-                </interceptor-ref>
-                <interceptor-ref name="jsonValidation"/>
-                <interceptor-ref name="workflow"/>
-            </interceptor-stack>
-        </interceptors>
-    </package>
     
 	<package name="community" extends="struts-default">
 		<action name="CommunityAction_*" class="gxc.web.action.CommunityAction" method="{1}">
@@ -33,7 +15,19 @@
 	
 	<package name="User" extends="struts-default,json-default">
 		<action name="User_*" class="gxc.web.action.LoginAction" method="{1}">
-			<result type="json">
+			
+			<!-- 用户登录 -->
+			<result type="json" name="loginSuccess">
+				<param name="root">result</param>
+			</result>
+			
+			<!-- 验证用户是否登录 -->
+			<result type="json" name="hasLogined" >
+				<param name="root">result</param>
+			</result>
+			
+			<!-- 注销 -->
+			<result type="json" name="userLeave">
 				<param name="root">result</param>
 			</result>
 		</action>

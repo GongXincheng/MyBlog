@@ -1,5 +1,24 @@
 $(function(){
+	
 	//登录之前判断session中是有user
+	$.ajax({
+		url : '${pageContext.request.contextPath}/User_hasLogin',
+		data : {},
+		type : 'POST',
+		dataType : 'json',
+		success: function(data){
+			var hasLogind = eval("("+data+")");
+			if(hasLogind.msg){
+				//如果已经登录
+				$("#img_user").hide();
+				$("#ul_user").show();
+			}
+		},
+		error : function(data){
+			alert(data);
+		}
+	});
+	
 	
 	//登录的验证
 	$("#btn_login").click(function(){
@@ -34,10 +53,10 @@ $(function(){
 				success: function(date){
 					var login = eval("("+date+")");
 					if(login.msg=="success"){
-						$("#img_user").hide();
 						$("#login_regist_content").hide();
 						$("#mask").hide();
-						$("#ul_user").show();
+						//刷新当前页面
+						window.location.reload()
 					}else{
 						alert("登录失败");
 					}
@@ -48,6 +67,28 @@ $(function(){
 			});
 		}
 	});
+	
+	
+	//用户注销
+	$("#userLeave").click(function(){
+		$.ajax({
+			url : '${pageContext.request.contextPath}/User_out',
+			data : {},
+			type : 'POST',
+			dataType : 'json',
+			success: function(data){
+				var userLearve = eval("("+data+")");
+				if(userLearve.msg){
+					window.location.reload();
+				}
+			},
+			error : function(data){
+				alert("服务器繁忙，请稍候重试..");
+			}
+		});
+	});
+	
+	
 	
 	$("input[type='text'],input[type='password']").focus(function(){
 		$(this)[0].style.boxShadow = "0px 0px 8px #06C";

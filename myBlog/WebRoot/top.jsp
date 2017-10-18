@@ -52,7 +52,7 @@
 						</li>
 						<li class="li" id="ul_user_twoli"><a href="#">个人信息</a></li>
 						<li class="li"><a href="#">设置</a></li>
-						<li class="li"><a href="#">注销</a></li>
+						<li class="li"><a id="userLeave" href="javascript:void(0);">注销</a></li>
 					</ul>
 				</div>
 			</div>
