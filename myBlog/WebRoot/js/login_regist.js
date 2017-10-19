@@ -94,4 +94,12 @@ $(function(){
 	$("#regist_captcha").click(function(){
 		$(this).attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
 	});
+	
+	//文本框边框颜色
+	$("input[type='text'],input[type='password']").focus(function(){
+		$(this)[0].style.boxShadow = "0px 0px 8px #06C";
+	})
+	$("input[type='text'],input[type='password']").blur(function(){
+		$(this)[0].style.boxShadow = "";
+	})
 });

@@ -103,7 +103,6 @@
 										<s:textfield name="validate" id="validate" placeholder="验证码" theme="simple"></s:textfield>
 									</div>
 									<div id="validate_right">
-										<!-- <h1>5 4 3 2</h1> -->
 										<img id="login_captcha" alt="验证码" src="${pageContext.request.contextPath}/captchaAction">
 									</div>
 								</div>
@@ -152,7 +151,6 @@
 										<s:textfield name="validate" id="validate" placeholder="验证码" theme="simple"></s:textfield>
 									</div>
 									<div id="validate_right">
-										<!-- <h1>7 5 7 8</h1> -->
 										<img id="regist_captcha" alt="验证码" src="${pageContext.request.contextPath}/captchaAction">
 									</div>
 								</div>

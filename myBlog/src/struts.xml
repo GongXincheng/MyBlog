@@ -37,10 +37,6 @@
 				<param name="root">result</param>
 			</result>
 			
-			<!-- 验证码 -->
-			<result type="json" name="loginCapthca">
-				<param name="root">result</param>
-			</result>
 		</action>
 		
 		<!-- 验证码 -->

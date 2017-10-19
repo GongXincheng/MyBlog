@@ -1,4 +1,9 @@
 $(function(){
+	
+	/*window.moveTo(0, 0);//移动窗口   
+	window.onresize=new Function("window.resizeTo(1500,1300);");
+	window.resizeTo(2000, 600);//改变大小   */	
+	
 	$("#G").show(1500);
 	$("#X").show(200,function(){
 		$("#top_menu ul").show(400);

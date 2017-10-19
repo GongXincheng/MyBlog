@@ -22,7 +22,10 @@ $(function(){
 		}
 	});
 	
-	var flag = false;
+	
+	
+	
+	
 	/*登录的验证*/	
 	//用户名
 	$("#username").blur(function(){
@@ -33,7 +36,6 @@ $(function(){
 			$("#login_span_msg").text("用户名不能为空");
 			return;
 		}
-		flag = true;
 	});
 	
 	//密码
@@ -43,53 +45,10 @@ $(function(){
 		if(password.length==0){
 			$("#msg_login").show(550);
 			$("#login_span_msg").text("请输入密码");
-			return;
+			return false;
 		}
-		flag = true;
 	});
-	
-	//验证码
-	$("#validate").change(function(){
-		$("#msg_login").hide();
-		
-		var validate = $("#validate").val();
-		if(validate.length==0){
-			$("#msg_login").show(550);
-			$("#login_span_msg").text("请输入验证码");
-			return;
-		}
-		flag = true;
-		$.ajax({
-			url : '${pageContext.request.contextPath}/User_captcha',
-			data: {
-				validate : validate
-			},
-			type: 'POST',
-			dataType: 'json',
-			
-			success: function(date){
-				var vali = eval("("+date+")");
-				if(vali.msg){
-					//如果验证码正确
-					falg = true;
-					$("#login_span_msg").text("验证码正确");
-				}
-				else{
-					flag = false;
-					//验证码错误
-					$("#msg_login").show(550);
-					$("#login_span_msg").text("验证码错误");
-					//更新验证码
-					$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
-				}
-			},
-			
-			error: function(){
-				alert("服务器繁忙，请稍候...");
-			}
-		});
-	});
-	
+
 	//点击登录
 	$("#btn_login").click(function(){
 		
@@ -97,41 +56,73 @@ $(function(){
 		var password = $("#password").val();
 		var validate = $("#validate").val();
 		
-		//跳转到LoginAction
-		if(falg){
-			$.ajax({
-				url : '${pageContext.request.contextPath}/User_login',
-				data: {
-					username : username,
-					password : password,
-					validate : validate
-				},
-				type: 'POST',
-				dataType: 'json',
-				
-				success: function(date){
-					var login = eval("("+date+")");
-					
-					if(login.msg=="success"){
-						$("#login_regist_content").hide();
-						$("#mask").hide();
-						//刷新当前页面
-						window.location.reload();
-					}
-					else{
-						
-						alert("登录失败");
-					}
-				},
-				
-				error: function(date){
-					alert("服务器繁忙，请稍候...");
-				}
-			});
+		if(username.length==0){
+			$("#msg_login").show(550);
+			$("#login_span_msg").text("用户名不能为空");
+			return;
 		}
+		
+		if(username.length>10 || username.length<5){
+			$("#msg_login").show(550);
+			$("#login_span_msg").text("用户名长度为5~10");
+			return;
+		}
+		
+		if(password.length==0){
+			$("#msg_login").show(550);
+			$("#login_span_msg").text("请输入密码");
+			return false;
+		}
+		
+		if(validate.length==0){
+			$("#msg_login").show(550);
+			$("#login_span_msg").text("请输入验证码");
+			return false;
+		}
+		
+		//跳转到LoginAction
+		$.ajax({
+			url : '${pageContext.request.contextPath}/User_login',
+			data: {
+				username : username,
+				password : password,
+				validate : validate
+			},
+			type: 'POST',
+			dataType: 'json',
+			
+			success: function(date){
+				var login = eval("("+date+")");
+				
+				if(login.msg=="success"){
+					$("#login_regist_content").hide();
+					$("#mask").hide();
+					//刷新当前页面
+					window.location.reload();
+				}
+				else{
+					$("#msg_login").hide();
+					if(login.msg=="error_validate"){
+						//验证码错误
+						$("#msg_login").show(550);
+						$("#login_span_msg").text("验证码错误");
+						$("#validate").val("");
+						//更新验证码
+						$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+						return false;
+					}
+				}
+			},
+			
+			error: function(date){
+				alert("服务器繁忙，请稍候...");
+			}
+		});
+		
 	});
 	
-
+	
+	
 	//用户注销
 	$("#userLeave").click(function(){
 		$.ajax({
