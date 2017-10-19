@@ -48,6 +48,9 @@ $(function(){
 		if($("#msg_regist:visible")){
 			$("#msg_regist").hide();
 		}
+		//重新刷新验证码
+		$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+
 		$("#a_right").css("color","#32a5e7");
 		$regist.hide();
 		$login.fadeIn(350);
@@ -60,9 +63,9 @@ $(function(){
 		if($("#msg_login:visible")){
 			$("#msg_login").hide();
 		}
-		/*$("#form_login").each(function(){
-			$(this).val("");
-		});*/
+		//重新刷新验证码
+		$("#regist_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+
 		$("#a_left").css("color","#32a5e7");
 		$login.hide();
 		$regist.fadeIn(350);

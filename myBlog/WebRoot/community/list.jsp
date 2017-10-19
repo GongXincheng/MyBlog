@@ -12,25 +12,9 @@ h1,h2{
 </head>
 <body>
 	 <jsp:include page="../top.jsp"></jsp:include>
+	 <br/><br/><br/><br/><br/><br/>
 	 <h1>Welcome To GXC's Community</h1>
+	 <br/>
 	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 <h2>Thanks ~</h2>
-	 
 </body>
 </html>

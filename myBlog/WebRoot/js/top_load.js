@@ -10,4 +10,6 @@ $(function(){
 	},function(){
 		$("#ul_user li:not('#ul_user_fistli')").slideUp(300);
 	});
+	
+	
 });
