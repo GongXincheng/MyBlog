@@ -19,7 +19,7 @@
 		<result-types>
 			<result-type name="captcha" class="gxc.web.action.CaptchaResult"></result-type>
 		</result-types>
-		
+		 
 <!-- ———————————— 验证码 —————————————————— -->
 		<action name="captchaAction">
 			<result name="success" type="captcha">
