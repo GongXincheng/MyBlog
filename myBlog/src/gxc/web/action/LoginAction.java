@@ -19,12 +19,12 @@ public class LoginAction extends ActionSupport{
 	private String password;
 	private String validate;
 	
-	
+	/**
+	 * 登录验证
+	 * @return
+	 */
 	public String login(){
 		JSONObject json = new JSONObject();
-		System.out.println("用户名：" + username);
-		System.out.println("密码：" + password);
-		System.out.println("验证码：" + validate);
 		
 		//从session中获取验证码,判断验证码是否正确
 		Map<String, Object> session = ActionContext.getContext().getSession();
@@ -33,15 +33,12 @@ public class LoginAction extends ActionSupport{
 		
 		//验证用户名密码是否正确
 		
-		
-		
-		
 		//如果 用户名密码,验证码都正确：
 			//将用户放在session中
 			/*session.put("loginName", username);*/
 			/*json.put("msg", "success");*/
 		
-		//如果验证码错
+		//如果验证码正确
 		if(isValidate){
 			session.put("loginName", username);
 			json.put("msg", "success");
@@ -49,10 +46,10 @@ public class LoginAction extends ActionSupport{
 		else
 			json.put("msg", "error_validate");
 		
-		
 		result = json.toString();
 		return "loginSuccess";
 	}
+	
 	
 	/**
 	 * 判断用户是否已经登录
@@ -79,18 +76,21 @@ public class LoginAction extends ActionSupport{
 	 * @return
 	 */
 	public String out(){
-		
 		JSONObject json = new JSONObject();
+		
 		//获取
 		HttpSession session = ServletActionContext.getRequest().getSession();
+		//销毁session
 		session.invalidate();
-		
 		json.put("msg", true);
-		result = json.toString();
 		
+		result = json.toString();
 		return "userLeave";
 	}
 	
+	
+	
+	//Get & Set
 	public String getUsername() {
 		return username;
 	}

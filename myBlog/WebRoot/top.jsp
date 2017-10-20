@@ -33,15 +33,17 @@
 			<div id="top_menu">
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/index.jsp">首 页</a></li>
-					<li><a href="#">文 章</a></li>
+					<li><a href="javascript:void(0);">文 章</a></li>
 					<li><a href="${pageContext.request.contextPath}/community/list.jsp">社 区</a></li>
-					<li><a href="#">留 言</a></li>
-					<li><a href="#">关于我</a></li>
+					<li><a href="javascript:void(0);">留 言</a></li>
+					<li><a href="javascript:void(0);">关于我</a></li>
 				</ul>
 			</div>
 			<div id="top_user">
 				<div id="user_content">
+					<%-- 登陆前 --%>
 					<img id="img_user" alt="user" src="${pageContext.request.contextPath}/images/user.png">
+					<%-- 登陆后 --%>
 					<ul id="ul_user">
 						<li id="ul_user_fistli">
 							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/head.png">

@@ -6,7 +6,7 @@
 <struts>
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.ui.theme" value="simple" />
-    
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
     
 	<package name="community" extends="struts-default">
 		<action name="CommunityAction_*" class="gxc.web.action.CommunityAction" method="{1}">
@@ -14,15 +14,23 @@
 		</action>
 	</package>
 	
-	<package name="User" extends="struts-default,json-default">
-		
+	<package name="user" extends="struts-default,json-default">
 		<!-- 声明结果视图-->
 		<result-types>
 			<result-type name="captcha" class="gxc.web.action.CaptchaResult"></result-type>
 		</result-types>
 		
-		<action name="User_*" class="gxc.web.action.LoginAction" method="{1}">
-			<!-- 用户登录 -->
+<!-- ———————————— 验证码 —————————————————— -->
+		<action name="captchaAction">
+			<result name="success" type="captcha">
+				<param name="width">120</param>
+				<param name="height">35</param>
+			</result>
+		</action>
+		
+<!-- ———————————— 登录 —————————————————— -->
+		<action name="User_login_*" class="gxc.web.action.LoginAction" method="{1}">
+			<!-- 登录 -->
 			<result type="json" name="loginSuccess">
 				<param name="root">result</param>
 			</result>
@@ -36,17 +44,15 @@
 			<result type="json" name="userLeave">
 				<param name="root">result</param>
 			</result>
-			
 		</action>
 		
-		<!-- 验证码 -->
-		<action name="captchaAction">
-			<result name="success" type="captcha">
-				<param name="width">120</param>
-				<param name="height">35</param>
+<!--  ———————————— 注册———————————— -->
+		<action name="User_regist" class="gxc.web.action.RegistAction" method="regist">
+			<result type="json">
+				<param name="root">result</param>
 			</result>
 		</action>
+		
 	</package>
-	
 	
 </struts>

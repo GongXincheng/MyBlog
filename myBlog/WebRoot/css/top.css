@@ -7,6 +7,15 @@
 body{
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+#bodyContent{
+	background-color: rgb(243,243,243);
+}
+#content{
+	width: 80%;
+	height: 800px;
+	margin: 15px auto;
+	background-color: white;
+}
 #clear{
 	clear: both;
 }
@@ -72,7 +81,8 @@ body{
 /*未登录*/
 #img_user{
 	display: none;
-	margin: 16px auto;
+	margin: 16px 25px;
+	float:right;
 	cursor: pointer;
 }
 /*登录后*/
@@ -97,13 +107,15 @@ body{
 	display: none;
 	width: 80px;
 	background: #eee;
+	box-shadow: 0px 0px 7px #ccc;
 	margin-left: 38px;
-	border-left: 1px solid #999;
-	border-right: 1px solid #999;
 	color: black;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
 }
 .li a{
 	color: black;
+	font-size: 12px;
 }
 #ul_user_fistli{
 	display:block;
@@ -113,16 +125,17 @@ body{
 	float:none;
 }
 #ul_user_lastli{
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #ccc;
 }
 #ul_user_twoli{
 	margin-top: 5px;	
 }
-.li:HOVER{
+/* .li:HOVER{
 	background: rgb(11,162,253);
-}
+} */
 .li a:HOVER{
-	
+	color:black;
+	text-decoration: underline;
 }
 /*-----------------------------------*/
 

@@ -16,13 +16,13 @@
 </head>
 <body>
 	<jsp:include page="top.jsp"></jsp:include>
-	<div id="content">
+	
 		<div id="content_msg">
 			<div>
 				<h2 align="center">欢迎，正在努力建设中...</h2><br/>
 				<h3 align="center">敬请期待</h3>
 			</div>
 		</div>
-	</div>
+	
 </body>
 </html>

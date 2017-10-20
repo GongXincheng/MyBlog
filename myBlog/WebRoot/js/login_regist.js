@@ -37,24 +37,44 @@ $(function(){
 		
 		//显示登录界面
 		$login.slideDown(350);
-		//将登录变色
-		$("#a_left").css("color","rgb(43, 49, 55)");
+		$("#a_left").css({
+			"color":"#32a5e7",
+			"font-size":"20px"
+		});
+		//将右边的变为黑色
+		$("#a_right").css({
+			"color":"rgb(37,42,48)",
+			"font-size":"12px"
+		});
+		
 	})
 	
 	
 	//--------------- Click Login ---------------------------
 	$("#a_left").click(function(){
 		$("#form_regist")[0].reset();
+		
 		if($("#msg_regist:visible")){
 			$("#msg_regist").hide();
 		}
+		
 		//重新刷新验证码
 		$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
-
-		$("#a_right").css("color","#32a5e7");
+		
+		//将被点击放大变色
+		$("#a_left").css({
+			"color":"#32a5e7",
+			"font-size":"20px"
+		});
+		
 		$regist.hide();
-		$login.fadeIn(350);
-		$("#a_left").css("color","rgb(43, 49, 55)");
+		$login.fadeIn(500);
+		
+		//另一边变色缩小
+		$("#a_right").css({
+			"color":"rgb(37,42,48)",
+			"font-size":"12px"
+		});
 	});
 	
 	//--------------- Click Regist  ----------------
@@ -66,10 +86,26 @@ $(function(){
 		//重新刷新验证码
 		$("#regist_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
 
-		$("#a_left").css("color","#32a5e7");
+		//将被点击放大变色
+		$("#a_right").css({
+			"color":"#32a5e7",
+			"font-size":"20px"
+		});
+		//初始化错误显示
+		$("#msg_regist").css({
+			"background-color":"#ffd1ca",
+			"border" : "1px solid pink"
+		});
+		$("#regist_error_img").attr("src","/myBlog/images/error_16x16.png");
+		
 		$login.hide();
-		$regist.fadeIn(350);
-		$("#a_right").css("color","rgb(43, 49, 55)");
+		$regist.fadeIn(500);
+		
+		//另一边变色缩小
+		$("#a_left").css({
+			"color":"rgb(37,42,48)",
+			"font-size":"12px"
+		});
 	});
 	
 	

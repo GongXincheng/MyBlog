@@ -20,7 +20,7 @@ a{
     position: absolute;
     z-index:1001;
     border-radius: 5px;
-    box-shadow: 0px 0px 15px #018c8c;
+    box-shadow: 0px 0px 10px #018c8c;
     padding-top: 20px;
     display: none;
 }
@@ -28,21 +28,25 @@ a{
     height:30px;
     text-align: center;
     padding-top: 10px;
+    /* background: green; */
 }
 #login_regist_top #left{
 	width:50%;
+	height:25px;
 	float:left;
 	border-right: 1px solid #ccc;
+	/* background: pink; */
 }
 #login_regist_top #right {
 	float:right;
 	width:49%;
+	/* background: blue; */
 }
 #a_right,#a_left{
 	font-size: 20px;
 	color: #32a5e7;
 	font-weight: 900;
-	
+	line-height: 25px;
 }
 #login_msg,#regist_msg{
 	height: 6%;
@@ -50,11 +54,12 @@ a{
     /* border: 1px solid #ccc; */
     margin-top: 20px;
 }
-#msg_login,#msg_regist{
+#msg_login,#msg_regist{  
 	width: 250px;
 	height: 25px;
 	line-height:25px;
 	background-color: #ffd1ca;
+	border: 1px solid pink;
 	margin: 0 auto;
 	font-size:12px;
 	display: none;
