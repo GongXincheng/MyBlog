@@ -13,8 +13,9 @@ body{
 #content{
 	width: 80%;
 	height: 800px;
-	margin: 15px auto;
-	background-color: white;
+	margin: 10px auto;
+	background-color: rgb(243,243,243);
+	
 }
 #clear{
 	clear: both;
@@ -112,6 +113,8 @@ body{
 	color: black;
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
+	position: relative;
+	z-index: 2000;
 }
 .li a{
 	color: black;

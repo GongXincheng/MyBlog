@@ -16,13 +16,17 @@ public class RegistAction extends ActionSupport {
 	
 	public String regist(){
 		JSONObject json = new JSONObject();
-		
+		username = username.trim();
 		//获取验证码
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		String captchaStr = (String)session.getAttribute("login_captcha");
 
+		//用户名格式
+		if(username.length()>10 || username.length()<5){
+			json.put("msg", "用户名格式不正确");
+		}
 		//判断验证码是否正确
-		if(captchaStr.equals(validate)){
+		else if(captchaStr.equals(validate)){
 			//保存操作
 			json.put("msg", "success");
 		}
@@ -32,18 +36,6 @@ public class RegistAction extends ActionSupport {
 		result = json.toString();
 		return SUCCESS;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
