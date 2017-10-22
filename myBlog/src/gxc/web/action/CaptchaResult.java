@@ -24,7 +24,7 @@ public class CaptchaResult extends StrutsResultSupport {
 	protected void doExecute(String arg0, ActionInvocation arg1)
 			throws Exception {
 		
-		ValidateCode vc = new ValidateCode(width, height, 4, 20);
+		ValidateCode vc = new ValidateCode(width, height, 4, 50);
 		HttpServletResponse response = ServletActionContext.getResponse();
 		
 		HttpSession session = ServletActionContext.getRequest().getSession();

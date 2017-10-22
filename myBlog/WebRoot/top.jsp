@@ -36,7 +36,7 @@
 					<li><a href="javascript:void(0);">文 章</a></li>
 					<li><a href="${pageContext.request.contextPath}/community/list.jsp">社 区</a></li>
 					<li><a href="javascript:void(0);">留 言</a></li>
-					<li><a href="javascript:void(0);">关于我</a></li>
+					<li><a href="${pageContext.request.contextPath}/user/userhome.jsp">关于我</a></li>
 				</ul>
 			</div>
 			<div id="top_user">
