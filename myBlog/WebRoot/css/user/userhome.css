@@ -66,7 +66,7 @@
 	width: 115px;
     height: 34px;
     float: right;
-    margin-top:98px;
+    margin-top:55px;
     margin-right:40px;
     
 	color: #0f88eb;
@@ -75,6 +75,7 @@
     line-height: 34px;
     font-weight: 600;
     background: white;
+    cursor: pointer;
 }
 
 
@@ -84,7 +85,6 @@
 	width:73%;
 	background: white;
 	float: left;
-	height: 800px;
 }
 
 /* Menu */
@@ -129,7 +129,7 @@
 .userhome_content_list{
 	font-size: 18px;
     font-weight: 700;
-    margin-top: 15px;
+    margin-top: 12px;
     display: none;
     border-bottom: 1px solid #ccc;
 }
@@ -158,20 +158,90 @@
 	font-size: 15px;
 	color: #999;
 	margin-top: 10px;
+	margin-bottom: 12px;
 }
 #list_topic a{
-	display: block;
-	margin-top: 10px;
 	color: black;
 }
 #list_topic a:HOVER{
 	color: #175199;
 }
 
+/* 分页  */
+#list_page_content{
+	width:100%;
+	height: 46px;
+	margin:20px 0;
+	display: none;
+}
+#page_code{
+	width:60%;
+	height:46px;
+	margin: 0 auto;
+}
+#page_code{
+	text-align: center;
+}
+#page_code a{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #aaa;
+	color: black;
+	margin: 7px 3px;
+}
+#page_code a:HOVER{
+	border: 1px solid #32a5e7; 
+	color: #32a5e7;
+}
+#page_code #nextPage{
+	width: 60px;
+}
+
+
+/* right */
 #userhome_content_right{
 	float: right;
 	width: 25%;
-	height:300px;
 	background: white;
 	margin-top:5px;
+}
+#gender{
+	margin-top: 20px;
+}
+#gender img{
+	width: 30px;
+	height:30px;
+	display: block;
+	margin: 0 auto;
+}
+
+/* 公告 */
+#right_notice_content{
+	width: 70%;
+	margin: 30px auto;
+}
+#right_notice_content span{
+	display: block;
+	margin: 10px 15px;
+	font-weight: 700;
+	font-size: 18px;
+}
+#right_notice_content hr{
+	color: #ccc;
+}
+#right_notice_content ul{
+	list-style: disc;
+	margin-left: 15px;
+}
+#right_notice_content ul li{
+	float: none;
+	margin: 15px auto;
+}
+#right_notice_content ul li a{
+	color: black;
+}
+#right_notice_content ul li a:HOVER{
+	color: #175199;
 }

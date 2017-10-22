@@ -1,12 +1,12 @@
 $(function(){
 	$("#userhome_top_pic").show(450, function(){
-		
 		//div数组
 		var $list = $(".userhome_content_list");
-		
 		$("#userhome_main_head").show(400, function(){
 			$list.each(function(i){
-				$(this).slideDown(100);
+				$(this).slideDown(300,function(){
+					$("#list_page_content").show(100);
+				});
 			});
 			$("#main_info").slideDown(300);
 		});

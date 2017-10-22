@@ -4,9 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
-
+<link rel="icon" href="${pageContext.request.contextPath}/images/blog.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/top.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login_regist.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/top_load.js"></script>
@@ -35,7 +34,7 @@
 					<li><a href="${pageContext.request.contextPath}/index.jsp">首 页</a></li>
 					<li><a href="javascript:void(0);">文 章</a></li>
 					<li><a href="${pageContext.request.contextPath}/community/list.jsp">社 区</a></li>
-					<li><a href="javascript:void(0);">留 言</a></li>
+					<li><a href="${pageContext.request.contextPath}/board.jsp">留 言</a></li>
 					<li><a href="${pageContext.request.contextPath}/user/userhome.jsp">关于我</a></li>
 				</ul>
 			</div>

@@ -31,6 +31,10 @@
 				</div>
 			</div>
 			<div id="userhome_main_button">
+				<div id="gender">
+					<img alt="male" src="${pageContext.request.contextPath}/images/male.png">
+					<!-- <img alt="female" src="${pageContext.request.contextPath}/images/female.png"> -->
+				</div>
 				<button id="btn_detail" type="button">编辑个人资料</button>
 			</div>
 		</div>
@@ -146,10 +150,32 @@
 				<div id="clear"></div>
 			</div>
 			
-			
+			<!-- 分页 -->
+			<div id="list_page_content">
+				<div id="page_code">
+					<a href="javascript:void(0);">1</a>
+					<a href="javascript:void(0);">2</a>
+					<a href="javascript:void(0);">3</a>
+					<a href="javascript:void(0);">4</a>
+					<a href="javascript:void(0);" id="nextPage">下一页</a>
+				</div>
+			</div>
 		</div>
 		
-		<div id="userhome_content_right"></div>
+		<div id="userhome_content_right">
+			
+			<div id="right_notice_content">
+				<span>公告</span><hr/>
+				<ul>
+					<li><a href="javascript:void(0);">如果有任何建议</a></li>
+					<li><a href="javascript:void(0);">请联系 GXC </a></li>
+					<li><a href="javascript:void(0);">QQ：757853223</a></li>
+					<li><a href="javascript:void(0);">Tel：13563274342</a></li>
+					<li><a href="javascript:void(0);">万分感谢 !</a></li>
+				</ul>
+			</div>
+			
+		</div>
 	</div>
 </body>
 </html>

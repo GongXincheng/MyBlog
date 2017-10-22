@@ -132,10 +132,10 @@ $(function(){
 	});
 	
 	//文本框边框颜色
-	$("input[type='text'],input[type='password']").focus(function(){
+	$("input[type='text'],input[type='password'],textarea").focus(function(){
 		$(this)[0].style.boxShadow = "0px 0px 8px #06C";
 	})
-	$("input[type='text'],input[type='password']").blur(function(){
+	$("input[type='text'],input[type='password'],textarea").blur(function(){
 		$(this)[0].style.boxShadow = "";
 	})
 });
