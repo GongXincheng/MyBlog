@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>我的主页</title>
+<link rel="icon" href="${pageContext.request.contextPath}/images/blog.ico" type="image/x-icon" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/user/userhome.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/user/userhome.js"></script>

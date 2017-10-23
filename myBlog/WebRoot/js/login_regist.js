@@ -39,12 +39,12 @@ $(function(){
 		$login.slideDown(600);
 		$("#a_left").css({
 			"color":"#32a5e7",
-			"font-size":"20px"
+			"font-size":"21px"
 		});
 		//将右边的变为黑色
 		$("#a_right").css({
 			"color":"rgb(37,42,48)",
-			"font-size":"12px"
+			"font-size":"14px"
 		});
 		
 	})
@@ -64,7 +64,7 @@ $(function(){
 		//将被点击放大变色
 		$("#a_left").css({
 			"color":"#32a5e7",
-			"font-size":"20px"
+			"font-size":"21px"
 		});
 		
 		$regist.hide();
@@ -73,7 +73,7 @@ $(function(){
 		//另一边变色缩小
 		$("#a_right").css({
 			"color":"rgb(37,42,48)",
-			"font-size":"12px"
+			"font-size":"14px"
 		});
 	});
 	
@@ -89,7 +89,7 @@ $(function(){
 		//将被点击放大变色
 		$("#a_right").css({
 			"color":"#32a5e7",
-			"font-size":"20px"
+			"font-size":"21px"
 		});
 		//初始化错误显示
 		$("#msg_regist").css({
@@ -104,7 +104,7 @@ $(function(){
 		//另一边变色缩小
 		$("#a_left").css({
 			"color":"rgb(37,42,48)",
-			"font-size":"12px"
+			"font-size":"14px"
 		});
 	});
 	
