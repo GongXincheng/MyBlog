@@ -86,7 +86,7 @@ a{
 	width: 255px;
 	margin: 0 auto;
 }
-input{
+#login_form input, #regist_form input{
 	font-size: 14px;
 	height: 44px;
     width: 200px;
@@ -103,12 +103,13 @@ input{
 #rePassword{
 	background: url("../images/user-password.png") no-repeat 0px -44px;
 }
-#validate{
+#validate_left #validate{
 	height: 35px;
     width: 90px;
     padding-left:20px;
     border: 1px solid #ccc;
     background-color: rgb(250,251,252);
+    line-height: 35px;
 }
 #div_validate{
 	width: 250px;

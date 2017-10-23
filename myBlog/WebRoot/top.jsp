@@ -8,6 +8,7 @@
 <link rel="icon" href="${pageContext.request.contextPath}/images/blog.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/top.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login_regist.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/board.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/top_load.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist_validate.js"></script>
@@ -166,8 +167,31 @@
 				</form>
 			</div>
 		</div>
-
 		<div id="login_regist_foot"></div>
+	</div>
+	
+	<!-- 留言板 -->
+	<div id="board_content">
+		<div id="board-title">
+			<span>留言板</span>
+		</div>
+		<div id="board-content">
+			<div id="board-content-username">
+				<s:textfield name="boardUsername" value="" id="boardUsername" placeholder="用户名" ></s:textfield>
+			</div>
+			<div id="board-content-email">
+				<s:textfield name="boardEmail" value="" id="boardEmail" placeholder="邮 箱"></s:textfield>
+			</div>
+			<div id="board-content-title">
+				<s:textfield name="boardTitle" id="boardTitle" placeholder="标 题"></s:textfield>
+			</div>
+			<div id="board-content-message">
+				<s:textarea name="boardMessage" id="boardMessage" placeholder="留言内容"></s:textarea>
+			</div>
+			<div id="board-content-submit">
+				<button type="button" id="board-submit" >提交</button>
+			</div>
+		</div>
 	</div>
 </body>
 

@@ -1,0 +1,85 @@
+@CHARSET "UTF-8";
+#board_content{
+	width:385px;
+	height:457px;
+	margin: 0 auto;
+	border-radius:7px; 
+	padding-top: 7px;
+	background: rgb(241,241,241);
+	padding-bottom: 10px;
+}
+#board-title{
+	height:50px;
+	background: rgb(241,241,241);
+	border-bottom: 2px solid #aaa;
+	line-height: 44px;
+	text-align: center;
+}
+#board-title span{
+	font-size: 18px;
+	letter-spacing: 3px;
+	font-weight: 800;
+	color: rgb(55,56,68);
+}
+#board-content{
+	height:390px;
+	width:340px;
+	margin: 25px auto 0px;
+}
+#board-content div{
+	width:340px;
+	margin-top: 17px;
+}
+#board-content input{
+	margin:0;
+	padding:0;
+	font-size:14px;
+	width:284px;
+	height:35px;
+	line-height: 35px;
+	padding-left: 56px;
+	border: 1px solid #999;
+	background-color: white;
+	box-shadow: 0px -1px 2px #999;
+}
+#boardUsername{
+	background: url("../images/board/user_22x22.png") no-repeat 12px 6px;
+}
+#boardUsername:FOCUS{
+	background: url("../images/board/user_red_22.png") no-repeat 12px 6px;
+	background-color: white;
+}
+#boardEmail{
+	background: url("../images/board/email_22x22.png") no-repeat 12px 6px;
+}
+#boardEmail:FOCUS{
+	background: url("../images/board/email_red_22.png") no-repeat 12px 6px;
+	background-color: white;
+}
+#boardTitle{
+	background: url("../images/board/tilte_22x22.png") no-repeat 12px 6px;
+}
+#boardTitle:FOCUS{
+	background: url("../images/board/title_red_22.png") no-repeat 12px 6px;
+	background-color: white;
+}
+#boardMessage{
+	width:310px;
+	height:120px;
+	border: 1px solid #ccc;
+	padding: 15px;
+	font-size: 15px;
+	box-shadow: 0px -1px 2px #999;
+}
+#board-submit{
+	text-align:center;
+	letter-spacing: 10px;
+	width: 342px;
+	height:32px;
+	line-height: 32px;
+	font-size: 15px;
+	border: 1px solid #ccc;
+	color: #fff;
+    background-color: #28a745;
+    background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+}
