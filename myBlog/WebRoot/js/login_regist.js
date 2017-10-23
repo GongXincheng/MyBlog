@@ -24,7 +24,7 @@ $(function(){
 		//显示遮罩层		
 		$("#mask").show();	
 		//显示content
-		$content.show(0);
+		$content.show(250);
 		
 		//设置位置
 		/*var top = $("");*/
@@ -36,7 +36,7 @@ $(function(){
 		});
 		
 		//显示登录界面
-		$login.slideDown(350);
+		$login.slideDown(600);
 		$("#a_left").css({
 			"color":"#32a5e7",
 			"font-size":"20px"
@@ -112,9 +112,15 @@ $(function(){
 	
 	//点击遮罩层取消
 	$("#mask").click(function(){
+		//登陆注册div 
 		$content.slideUp(250);
+		//留言板div
+		$("#board_content").slideUp(250);
+		//清空登录，注册，留言内容
 		$("#form_login")[0].reset();
 		$("#form_regist")[0].reset();
+		$("#form_board")[0].reset();
+		
 		$("#a_right").css("color","#32a5e7");
 		$("#a_left").css("color","#32a5e7");
 		$("#msg_login").hide();

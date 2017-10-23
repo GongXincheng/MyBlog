@@ -7,6 +7,10 @@
 	padding-top: 7px;
 	background: rgb(241,241,241);
 	padding-bottom: 10px;
+	position:absolute;
+	top:13%;
+	display: none;
+	z-index: 1001;
 }
 #board-title{
 	height:50px;

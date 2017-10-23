@@ -9,9 +9,14 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/top.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login_regist.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/board.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/backTop.css">
+
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/top_load.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist_validate.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/board.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/backTop.js"></script>
+
 <script type="text/javascript">
 	$(function(){
 		$("#top_logo div").click(function(){
@@ -35,7 +40,7 @@
 					<li><a href="${pageContext.request.contextPath}/index.jsp">首 页</a></li>
 					<li><a href="javascript:void(0);">文 章</a></li>
 					<li><a href="${pageContext.request.contextPath}/community/list.jsp">社 区</a></li>
-					<li><a href="${pageContext.request.contextPath}/board.jsp">留 言</a></li>
+					<li><a href="javascript:void(0);" id="top_menu_board">留 言</a></li>
 					<li><a href="${pageContext.request.contextPath}/user/userhome.jsp">关于我</a></li>
 				</ul>
 			</div>
@@ -176,23 +181,29 @@
 			<span>留言板</span>
 		</div>
 		<div id="board-content">
-			<div id="board-content-username">
-				<s:textfield name="boardUsername" value="" id="boardUsername" placeholder="用户名" ></s:textfield>
-			</div>
-			<div id="board-content-email">
-				<s:textfield name="boardEmail" value="" id="boardEmail" placeholder="邮 箱"></s:textfield>
-			</div>
-			<div id="board-content-title">
-				<s:textfield name="boardTitle" id="boardTitle" placeholder="标 题"></s:textfield>
-			</div>
-			<div id="board-content-message">
-				<s:textarea name="boardMessage" id="boardMessage" placeholder="留言内容"></s:textarea>
-			</div>
-			<div id="board-content-submit">
-				<button type="button" id="board-submit" >提交</button>
-			</div>
+			<form action="" id="form_board">
+				<div id="board-content-username">
+					<s:textfield name="boardUsername" value="" id="boardUsername" placeholder="用户名" ></s:textfield>
+				</div>
+				<div id="board-content-email">
+					<s:textfield name="boardEmail" value="" id="boardEmail" placeholder="邮 箱"></s:textfield>
+				</div>
+				<div id="board-content-title">
+					<s:textfield name="boardTitle" id="boardTitle" placeholder="标 题"></s:textfield>
+				</div>
+				<div id="board-content-message">
+					<s:textarea name="boardMessage" id="boardMessage" placeholder="留言内容"></s:textarea>
+				</div>
+				<div id="board-content-submit">
+					<button type="button" id="board-submit" >提交</button>
+				</div>
+			</form>
 		</div>
 	</div>
+	
+	<!-- 返回顶部 -->
+	<a href="javascript:void(0);" id="back_top" title="回到顶部"></a>
+	
 </body>
 
 </html>

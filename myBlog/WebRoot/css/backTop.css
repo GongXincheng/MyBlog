@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+#back_top{
+	width:30px;
+	height:30px;
+	position:fixed;
+	left:50%;
+	bottom:30px;
+	margin-left:600px;
+	display:none;
+	background:url(../images/return_top.png) no-repeat left top;
+}
+#back_top:hover{
+	background:url(../images/return_top.png) no-repeat left -30px;
+}
