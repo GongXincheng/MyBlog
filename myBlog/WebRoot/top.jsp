@@ -17,13 +17,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/board.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/backTop.js"></script>
 
-<script type="text/javascript">
-	$(function(){
-		$("#top_logo div").click(function(){
-			location.href = "${pageContext.request.contextPath}/index.jsp";
-		})
-	})
-</script>
 </head>
 <body>
 	<div id="top">
@@ -42,6 +35,9 @@
 					<li><a href="${pageContext.request.contextPath}/community/list.jsp">社 区</a></li>
 					<li><a href="javascript:void(0);" id="top_menu_board">留 言</a></li>
 					<li><a href="${pageContext.request.contextPath}/user/userhome.jsp">关于我</a></li>
+					<s:if test="#session.loginName=='admin'">
+						<li><a href="${pageContext.request.contextPath}/admin/main.jsp">后台管理</a></li>
+					</s:if>
 				</ul>
 			</div>
 			<div id="top_user">

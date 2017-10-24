@@ -17,4 +17,11 @@ $(function(){
 	});
 	
 	
+	
+	//跳回首页
+	$(function(){
+		$("#top_logo div").click(function(){
+			location.href = "${pageContext.request.contextPath}/index.jsp";
+		})
+	});
 });

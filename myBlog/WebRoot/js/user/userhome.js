@@ -1,11 +1,12 @@
 $(function(){
 	$("#userhome_top_pic").show(450, function(){
 		$("#userhome_main_head").show(400, function(){
-			$(".userhome_content_list").each(function(){
+			$(".userhome_content_list").each(function(i){
 				$(this).slideDown(400,function(){
 					$("#list_page_content").show();
 				});
-			})
+			});
+			
 			$("#main_info").slideDown(300);
 		});
 	});

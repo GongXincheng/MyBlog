@@ -1,23 +1,10 @@
 @CHARSET "UTF-8";
 *{
-	margin: 0px;
-	padding: 0px;
+	padding: 0;
+	margin: 0;
 }
 body{
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-#bodyContent{
-	background-color: rgb(243,243,243);
-}
-#content{
-	width: 80%;
-	height: 800px;
-	margin: 10px auto;
-	background-color: rgb(243,243,243);
-	
-}
-#clear{
-	clear: both;
 }
 #top{
 	background-color: rgb(36, 41, 46);
@@ -25,15 +12,13 @@ body{
     line-height: 60px;
 }
 #top_content{
-	/* background-color: blue; */
 	width: 80%;
     height: inherit;
     margin: 0 auto;
 }
 #top_logo{
-	/* background-color: beige;  */
     height: inherit;
-    width: 15%;
+    width: 18%;
     float: left;
     color: white;
 }
@@ -42,11 +27,10 @@ body{
 }
 #top_logo div{
 	height:60px;
-	/* background:pink; */
 	text-align:center;
 }
 #top_logo div span{
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 800;
     display: none;
 }
@@ -60,6 +44,7 @@ body{
 #top_menu ul{
     list-style-type: none;
     display: none;
+
 }
 #top_menu ul li{
 	float:left;
@@ -68,26 +53,17 @@ body{
 }
 /*---------------------------*/
 #top_user{
-	/* background-color: green; */
 	float: right;
     width: 130px;
     height:60px;
 }
 #user_content{
-	/* background-color: blue; */
 	width: 120px;
 	margin: 0 auto;
 }
-/*未登录*/
-#img_user{
-	display: none;
-	margin: 16px 25px;
-	float:right;
-	cursor: pointer;
-}
+
 /*登录后*/
 #ul_user{
-	display: none;
 	text-align: center;
 }
 #top_user_img_user{
@@ -95,9 +71,6 @@ body{
 	float:left;
 	margin-top: 18px;
 	margin-left: 20px;
-}
-#top_user_a_user{
-	
 }
 .li{
 	float:none;
@@ -140,22 +113,18 @@ body{
 	text-decoration: underline;
 }
 /*-----------------------------------*/
-
 ul{
     list-style-type: none;
-     
 }
 li{
 	float:left;
-	
 }
 ul li a{
 	font-weight: 600;
-	font-size: 14px;
+	 font-size: 14px;
 	color: rgb(169, 169, 169);
 	text-decoration: none;
 }
 ul li a:HOVER {
 	color: #ddd;
 }
-

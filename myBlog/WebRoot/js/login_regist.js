@@ -24,7 +24,7 @@ $(function(){
 		//显示遮罩层		
 		$("#mask").show();	
 		//显示content
-		$content.show(250);
+		$content.slideDown(100);
 		
 		//设置位置
 		/*var top = $("");*/
@@ -36,7 +36,7 @@ $(function(){
 		});
 		
 		//显示登录界面
-		$login.slideDown(600);
+		$login.slideDown(430);
 		$("#a_left").css({
 			"color":"#32a5e7",
 			"font-size":"21px"
