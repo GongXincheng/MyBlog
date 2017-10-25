@@ -122,4 +122,6 @@ $(function(){
 	$("#login_form input").blur(function(){
 		$(this)[0].style.boxShadow = "";
 	})
+	
+	$("#content_main").show(400);
 });

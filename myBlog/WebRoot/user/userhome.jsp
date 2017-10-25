@@ -9,6 +9,18 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/user/userhome.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/user/userhome.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#main_detail_a a").click(function(){
+		location.href = "${pageContext.request.contextPath}/user/userdetail.jsp";
+	});
+	
+	$("#btn_detail").click(function(){
+		location.href = "${pageContext.request.contextPath}/user/userdetail.jsp";
+	});
+	
+})
+</script>
 </head>
 <body id="bodyContent">
 	<jsp:include page="../top.jsp"></jsp:include>

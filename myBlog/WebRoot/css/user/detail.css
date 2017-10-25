@@ -11,7 +11,7 @@
 
 #userhome_main{
 	background: white;
-	height:800px;
+	height:900px;
 }
 #userhome_main_head{
 	float: left;
@@ -31,7 +31,6 @@
 }
 
 #user-detail{
-	height:9000px;
 	margin-left: 215px;
 }
 #detail-top{

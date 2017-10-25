@@ -9,9 +9,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/admin/login.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/admin/login.js"></script>
-<style type="text/css">
-</style>
-
 </head>
 <body>
 	<div id="content">

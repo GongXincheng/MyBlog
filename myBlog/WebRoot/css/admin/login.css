@@ -19,7 +19,9 @@ body{
 	font-size: 40px;
 	color: white;
 }
-
+#content_main{
+	display: none;
+}
 #login_regist_content{
     width: 330px;
     background-color: rgb(250,251,252);

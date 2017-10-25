@@ -4,4 +4,5 @@ $(function(){
 			$("#detail-top").show(600);
 		});
 	});
+	
 })

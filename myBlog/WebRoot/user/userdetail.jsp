@@ -7,6 +7,14 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/user/detail.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/user/detail.js"></script>
+<script type="text/javascript">
+$(function(){
+	//返回主页
+	$("#btn_back").click(function(){
+		location.href = "${pageContext.request.contextPath}/user/userhome.jsp";
+	});
+});
+</script>
 </head>
 <body id="bodyContent">
 	<jsp:include page="../top.jsp"></jsp:include>
@@ -48,7 +56,7 @@
 				
 				<!-- sign -->
 				<div id="div-sign" class="div-column">
-					<span class="span-left">签名</span>
+					<span class="span-left">个性签名</span>
 					<span class="span-right">一切只为更好的自己</span>
 				</div>
 				
@@ -68,6 +76,18 @@
 				<div id="div-telephone" class="div-column">
 					<span class="span-left">电话</span>
 					<span class="span-right">17863655266</span>
+				</div>
+				
+				<!-- registDate -->
+				<div id="div-registDate" class="div-column">
+					<span class="span-left">注册时间</span>
+					<span class="span-right">2012-12-24 12:00:00</span>
+				</div>
+				
+				<!-- note -->
+				<div id="div-note" class="div-column">
+					<span class="span-left">简介</span>
+					<span class="span-right">一只在奋发图强的程序猿</span>
 				</div>
 				
 			</div>
