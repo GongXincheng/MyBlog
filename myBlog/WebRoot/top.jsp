@@ -53,7 +53,7 @@
 							</a>
 						</li>
 						<li class="li" id="ul_user_twoli"><a href="${pageContext.request.contextPath }/user/userhome.jsp">我的主页</a></li>
-						<li class="li"><a href="#">个人资料</a></li>
+						<li class="li"><a href="${pageContext.request.contextPath }/user/userdetail.jsp">个人资料</a></li>
 						<li class="li" id="ul_user_lastli"><a id="userLeave" href="javascript:void(0);">退出</a></li>
 					</ul>
 				</div>
