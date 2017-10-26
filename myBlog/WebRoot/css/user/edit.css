@@ -53,7 +53,8 @@
 	width:180px;
 	height:25px;
 	padding-left: 10px;
-	 line-height: 25px;
+	line-height: 25px;
+	border: 1px solid #ccc;
 }
 #province,#city{
 	width: 75px;
@@ -67,6 +68,7 @@
 	height:30px;
 	width:170px;
 	padding: 10px;
+	border: 1px solid #ccc;
 }
 #edit_btn{
 	width: 230px;

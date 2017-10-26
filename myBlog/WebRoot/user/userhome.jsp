@@ -91,8 +91,6 @@ $(function(){
 			</div>
 			
 			
-			
-			
 			<!-- 可删除! -->
 			<!-- List2 -->
 			<div class="userhome_content_list">
@@ -152,6 +150,102 @@ $(function(){
 					<div id="list_topic">
 						<span>发布了主题</span>
 						<a href="javascript:void(0);">如果外挂遇上外挂，结果会怎样？</a>
+					</div>
+				</div>
+				<!-- right -->
+				<div id="list_right">
+					<div id="list_detail">
+						<span>20</span> |<span>180</span>
+					</div>
+				</div>
+				<div id="clear"></div>
+			</div>
+			<div class="userhome_content_list">
+				<!-- left -->
+				<div id="list_left">
+					<div id="list_topic">
+						<span>发布了主题</span>
+						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
+					</div>
+				</div>
+				<!-- right -->
+				<div id="list_right">
+					<div id="list_detail">
+						<span>20</span> |<span>180</span>
+					</div>
+				</div>
+				<div id="clear"></div>
+			</div>
+			<div class="userhome_content_list">
+				<!-- left -->
+				<div id="list_left">
+					<div id="list_topic">
+						<span>发布了主题</span>
+						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
+					</div>
+				</div>
+				<!-- right -->
+				<div id="list_right">
+					<div id="list_detail">
+						<span>20</span> |<span>180</span>
+					</div>
+				</div>
+				<div id="clear"></div>
+			</div>
+			<div class="userhome_content_list">
+				<!-- left -->
+				<div id="list_left">
+					<div id="list_topic">
+						<span>发布了主题</span>
+						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
+					</div>
+				</div>
+				<!-- right -->
+				<div id="list_right">
+					<div id="list_detail">
+						<span>20</span> |<span>180</span>
+					</div>
+				</div>
+				<div id="clear"></div>
+			</div>
+			<div class="userhome_content_list">
+				<!-- left -->
+				<div id="list_left">
+					<div id="list_topic">
+						<span>发布了主题</span>
+						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
+					</div>
+				</div>
+				<!-- right -->
+				<div id="list_right">
+					<div id="list_detail">
+						<span>20</span> |<span>180</span>
+					</div>
+				</div>
+				<div id="clear"></div>
+			</div>
+			<div class="userhome_content_list">
+				<!-- left -->
+				<div id="list_left">
+					<div id="list_topic">
+						<span>发布了主题</span>
+						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
+					</div>
+				</div>
+				<!-- right -->
+				<div id="list_right">
+					<div id="list_detail">
+						<span>20</span> |<span>180</span>
+					</div>
+				</div>
+				<div id="clear"></div>
+			</div>
+			<div class="userhome_content_list">
+				<!-- left -->
+				<div id="list_left">
+					<div id="list_topic">
+						<span>发布了主题</span>
+						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
 					</div>
 				</div>
 				<!-- right -->
