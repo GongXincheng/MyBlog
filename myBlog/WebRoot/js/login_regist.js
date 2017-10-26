@@ -116,6 +116,8 @@ $(function(){
 		$content.slideUp(250);
 		//留言板div
 		$("#board_content").slideUp(250);
+		//修改
+		$(".edit-content").slideUp(250);
 		//清空登录，注册，留言内容
 		$("#form_login")[0].reset();
 		$("#form_regist")[0].reset();

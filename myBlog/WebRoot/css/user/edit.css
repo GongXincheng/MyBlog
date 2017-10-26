@@ -1,0 +1,86 @@
+@CHARSET "UTF-8";
+.edit-content{
+	height:510px;
+	width: 400px;
+	background: pink;
+	position: absolute;
+	top: 13%;
+	left: 40%;
+	border-radius:7px;  
+	background: rgb(241,241,241);
+	border: 1px solid #ccc;
+	z-index: 1002;
+	display: none;
+}
+#edit-content-top{
+	height:50px;
+	border-bottom: 2px solid #ccc;	
+	line-height: 50px;
+}
+#edit-content-top span{
+	display: block;
+	float: left;
+	font-size: 18px;
+	font-weight: 700;
+	margin-left: 25px;
+}
+#edit-content-top img{
+	display: block;
+	float: right;
+	margin-top: 18px;
+	margin-right: 25px;
+	cursor: pointer;
+}
+#edit-content{
+	margin: 20px 0px 20px 48px;
+}
+#edit-content tr{
+	height:50px;
+}
+.td-column{
+	font-weight: 600;
+	width: 100px;
+	font-size: 15px;
+	text-align: left;
+}
+#edit-content td{
+	text-align: center;
+}
+#edit-content #tr-note{
+	height:70px;
+}
+#edit-content input[type="text"]{
+	width:180px;
+	height:25px;
+	padding-left: 10px;
+	 line-height: 25px;
+}
+#province,#city{
+	width: 75px;
+	border: 1px solid #ccc;
+	background: white;
+}
+.td-city{
+	font-size: 13px;
+}
+#note{
+	height:30px;
+	width:170px;
+	padding: 10px;
+}
+#edit_btn{
+	width: 230px;
+	margin: 20px auto;
+}
+.edit_btn{
+    text-align:center;
+	width: 60px;
+	height:25px;
+	line-height: 25px;
+	font-size: 12px;
+	border: none;
+	color: #fff;
+    background-color: #28a745;
+    background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+	margin-left: 25px;
+}

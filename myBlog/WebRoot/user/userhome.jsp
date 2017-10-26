@@ -48,7 +48,7 @@ $(function(){
 					<img alt="male" src="${pageContext.request.contextPath}/images/male.png">
 					<!-- <img alt="female" src="${pageContext.request.contextPath}/images/female.png"> -->
 				</div>
-				<button id="btn_detail" type="button">编辑个人资料</button>
+				<button id="btn_detail" type="button">个人资料</button>
 			</div>
 		</div>
 		
