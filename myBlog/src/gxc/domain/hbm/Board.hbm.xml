@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping package="gxc.domain">
+	<class name="Board" table="board">
+		<id name="bid" column="id">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="title"></property>
+		<property name="message"></property>
+		<property name="createDate" type="timestamp"></property>
+		
+	</class>
+</hibernate-mapping>

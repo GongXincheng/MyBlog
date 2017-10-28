@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="gxc.domain">
+	<class name="User" table="user">
+		<id name="uid" column="id">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="username" not-null="true"></property>
+		<property name="password" not-null="true"></property>
+		<property name="realname"></property>
+		<property name="gender"></property>
+		<property name="sign"></property>
+		<property name="telephone"></property>
+		<property name="email"></property>
+		<property name="province"></property>
+		<property name="city"></property>
+		<property name="note"></property>
+		<property name="face"></property>
+		<property name="registDate" type="timestamp"></property>
+		<property name="lastLoginDate" type="timestamp"></property>
+		<property name="loginNum"></property>
+		<property name="role" not-null="true"></property>
+		
+	</class>
+</hibernate-mapping>    

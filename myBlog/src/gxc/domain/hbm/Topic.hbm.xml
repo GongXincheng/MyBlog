@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping package="gxc.domain">
+	<class name="Topic" table="topic">
+		<id name="tid" column="id">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="title"></property>
+		<property name="topicContent"></property>
+		<property name="createDate" type="timestamp"></property>
+		<property name="lastReplyDate" type="timestamp"></property>
+		<property name="visitNum"></property>
+		<property name="zanNum"></property>
+	</class>
+</hibernate-mapping>
