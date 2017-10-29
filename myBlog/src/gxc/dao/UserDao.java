@@ -26,6 +26,13 @@ public interface UserDao {
 	public User findUserById(Integer id);
 	
 	/**
+	 * 根据用户名查询用户(判断用户名是否存在)
+	 * @param username
+	 * @return
+	 */
+	public User findUserByUsername(String username);
+	
+	/**
 	 * 查询全部用户
 	 * @return
 	 */
@@ -43,5 +50,17 @@ public interface UserDao {
 	 * @param user
 	 * @return
 	 */
-	public int deleteUser(User user);
+	public int deleteUser(int uid);
+	
+	/**
+	 * 修改登录次数
+	 * @param uid
+	 */
+	public void updateLoginNum(String username);
+	
+	/**
+	 * 修改上次登录时间
+	 * @param uid
+	 */
+	public void updateLastLoginDate(String username);
 }

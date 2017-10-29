@@ -53,11 +53,6 @@ $(function(){
 			$("#login_span_msg").text("用户名不能为空");
 			return;
 		}
-		if(username.length>10 || username.length<5){
-			$("#msg_login").show(550);
-			$("#login_span_msg").text("用户名长度为5~10");
-			return;
-		}
 	});
 	
 	//密码
@@ -84,11 +79,6 @@ $(function(){
 			$("#login_span_msg").text("用户名不能为空");
 			return;
 		}
-		if(username.length>10 || username.length<5){
-			$("#msg_login").show(550);
-			$("#login_span_msg").text("用户名长度为5~10");
-			return;
-		}
 		
 		//密码
 		if(password.length==0){
@@ -105,10 +95,11 @@ $(function(){
 		}
 		
 		//跳转到LoginAction验证
+		
 		$.ajax({
 			url : '${pageContext.request.contextPath}/User_login_login',
 			data: {
-				username : username,
+				username : encodeURI(username),
 				password : password,
 				validate : validate
 			},
@@ -118,7 +109,7 @@ $(function(){
 			success: function(data){
 				var login = eval("("+data+")");
 				
-				if(login.msg=="success"){
+				if(login.login_msg=="success"){
 					//修改成功后的图片和颜色
 					$("#msg_login").css({
 						"background-color":"rgb(238,255,245)",
@@ -137,15 +128,15 @@ $(function(){
 				}
 				else{
 					$("#msg_login").hide();
-					if(login.msg=="error_validate"){
-						//验证码错误
-						$("#msg_login").show(550);
-						$("#login_span_msg").text("验证码错误");
-						$("#validate").val("");
-						//更新验证码
-						$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
-						return false;
-					}
+					
+					//错误信息
+					$("#msg_login").show(550);
+					$("#login_span_msg").text(login.login_msg);
+					$("#validate").val("");
+					//更新验证码
+					$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+					return false;
+					
 				}
 			},
 			error: function(){
@@ -155,22 +146,46 @@ $(function(){
 		
 	});
 		
+	
 	//------------- 注册验证 ------------------------------------
 	
 	/*用户名*/
 	$("#form_regist #username").change(function(){
 		$("#msg_regist").hide();
-		var username = $(this).val();
+		
+		var username = $(this).val().trim();
+		
 		if(username.length==0){
 			$("#msg_regist").show(550);
 			$("#regist_span_msg").text("用户名不能为空");
 			return;
 		}
-		if(username.length>10 || username.length<5){
+		if(username.length>10 || username.length<3){
 			$("#msg_regist").show(550);
-			$("#regist_span_msg").text("用户名长度为5~10");
+			$("#regist_span_msg").text("用户名长度为3~10");
 			return;
 		}
+		
+		$.ajax({
+			url : "${pageContext.request.contextPath}/User_regist_hasUser",
+			data : {
+					username : encodeURI(username)
+			   	},
+			type : "POST",
+			dataType : "json",
+			success : function(data){
+				var info = eval("("+data+")");
+				
+				if(info.msg=="success"){ }
+				else{
+					$("#msg_regist").show(550);
+					$("#regist_span_msg").text(info.msg);
+				}
+			},
+			error:function(){
+				
+			}
+		});
 	});
 	
 	//密码
@@ -205,10 +220,10 @@ $(function(){
 	//注册被点击
 	$("#btn_regist").click(function(){
 		$("#msg_regist").hide();
-		var username = $("#form_regist #username").val();
+		var username = $("#form_regist #username").val().trim();
 		var password = $("#form_regist #password").val();
 		var rePassword = $("#form_regist #rePassword").val();
-		var validate = $("#form_regist #validate").val();
+		var validate = $("#form_regist #validate").val().trim();
 		
 		//用户名
 		if(username.length==0){
@@ -216,9 +231,9 @@ $(function(){
 			$("#regist_span_msg").text("用户名不能为空");
 			return;
 		}
-		if(username.length>10 || username.length<5){
+		if(username.length>10 || username.length<3){
 			$("#msg_regist").show(550);
-			$("#regist_span_msg").text("用户名长度为5~10");
+			$("#regist_span_msg").text("用户名长度为3~10");
 			return;
 		}
 		
@@ -247,9 +262,9 @@ $(function(){
 		}
 		
 		$.ajax({
-			url : "${pageContext.request.contextPath}/User_regist" ,
+			url : "${pageContext.request.contextPath}/User_regist_regist" ,
 			data : {
-				username : username,
+				username : encodeURI(username),
 				password : password,
 				rePassword : rePassword,
 				validate : validate
@@ -266,8 +281,8 @@ $(function(){
 						"background-color":"rgb(238,255,245)",
 						"border" : "1px solid #26C267"
 					}).show(550);
-					$("#regist_error_img").attr("src","/myBlog/images/yes-green.png");
 					
+					$("#regist_error_img").attr("src","/myBlog/images/yes-green.png");
 					$("#regist_span_msg").text("注册成功,3秒后跳转登录...");
 					
 					//计时器

@@ -12,13 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 
 public class EncodingFilter implements Filter {
 	
-    public EncodingFilter() {
-    }
-
 	public void destroy() {
 	}
 
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, 
+			FilterChain chain) throws IOException, ServletException {
 		
 		response.setContentType("text/html;charset=utf-8");
 		
@@ -32,5 +30,4 @@ public class EncodingFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 		
 	}
-
 }

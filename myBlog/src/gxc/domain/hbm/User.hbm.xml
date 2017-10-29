@@ -20,8 +20,14 @@
 		<property name="city"></property>
 		<property name="note"></property>
 		<property name="face"></property>
-		<property name="registDate" type="timestamp"></property>
-		<property name="lastLoginDate" type="timestamp"></property>
+		
+		<property name="registDate">
+			<column name="registDate" sql-type="datetime"></column>
+		</property>
+		<property name="lastLoginDate">
+			<column name="lastLoginDate" sql-type="datetime"></column>
+		</property>
+		
 		<property name="loginNum"></property>
 		<property name="role" not-null="true"></property>
 		

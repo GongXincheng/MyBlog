@@ -35,7 +35,7 @@
 						<li id="ul_user_fistli">
 							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/head.png">
 							<a href="#" id="top_user_a_user">
-								<s:property value="#session.loginName"></s:property>
+								<s:property value="#session.user.username"></s:property>
 							</a>
 						</li>
 						<li class="li" id="ul_user_twoli"><a href="${pageContext.request.contextPath }/user/userhome.jsp">我的主页</a></li>

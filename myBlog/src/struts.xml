@@ -47,7 +47,7 @@
 		</action>
 		
 <!--  ———————————— 注册———————————— -->
-		<action name="User_regist" class="gxc.web.action.RegistAction" method="regist">
+		<action name="User_regist_*" class="gxc.web.action.RegistAction" method="{1}">
 			<result type="json">
 				<param name="root">result</param>
 			</result>

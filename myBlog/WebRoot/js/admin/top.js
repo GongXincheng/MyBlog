@@ -57,6 +57,7 @@ $(function(){
 		$("#ul_user li:not('#ul_user_fistli')").slideUp(300);
 	});
 	
+	
 	//点击GXC图标,返回 main
 	$(function(){
 		$("#top_logo div").click(function(){

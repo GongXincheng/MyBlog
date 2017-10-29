@@ -107,12 +107,6 @@ public class User implements Serializable{
 	public void setRegistDate(Date registDate) {
 		this.registDate = registDate;
 	}
-	public Date getLastLoginDate() {
-		return lastLoginDate;
-	}
-	public void setLastLoginDate(Date lastLoginDate) {
-		this.lastLoginDate = lastLoginDate;
-	}
 	public Integer getLoginNum() {
 		return loginNum;
 	}
@@ -125,4 +119,24 @@ public class User implements Serializable{
 	public void setRole(Integer role) {
 		this.role = role;
 	}
+	public Date getLastLoginDate() {
+		return lastLoginDate;
+	}
+	public void setLastLoginDate(Date lastLoginDate) {
+		this.lastLoginDate = lastLoginDate;
+	}
+	
+	@Override
+	public String toString() {
+		return "User [uid=" + uid + ", username=" + username + ", password="
+				+ password + ", realname=" + realname + ", gender=" + gender
+				+ ", sign=" + sign + ", telephone=" + telephone + ", email="
+				+ email + ", province=" + province + ", city=" + city
+				+ ", note=" + note + ", face=" + face + ", registDate="
+				+ registDate + ", lastLoginDate=" + lastLoginDate
+				+ ", loginNum=" + loginNum + ", role=" + role + "]";
+	}
+	
+	
+	
 }

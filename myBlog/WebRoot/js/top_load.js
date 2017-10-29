@@ -16,12 +16,4 @@ $(function(){
 		$("#ul_user li:not('#ul_user_fistli')").slideUp(300);
 	});
 	
-	
-	
-	//跳回首页
-	$(function(){
-		$("#top_logo div").click(function(){
-			location.href = "index.jsp";
-		})
-	});
 });

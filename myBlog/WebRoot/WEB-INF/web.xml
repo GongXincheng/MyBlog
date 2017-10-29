@@ -12,7 +12,7 @@
   </filter>
    <filter>
 	<filter-name>EncodingFilter</filter-name>
-	<filter-class>gxc.web.filter.EncodingFilterr</filter-class>
+	<filter-class>gxc.web.filter.EncodingFilter</filter-class>
   </filter>
   
   <!-- 全局编码 -->

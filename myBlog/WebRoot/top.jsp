@@ -16,7 +16,14 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist_validate.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/board.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/backTop.js"></script>
-
+<script type="text/javascript">
+//跳回首页
+	$(function(){
+		$("#top_logo div").click(function(){
+			location.href = "${pageContext.request.contextPath}/index.jsp";
+		})
+	});
+</script>
 </head>
 <body>
 	<div id="top">
@@ -35,7 +42,7 @@
 					<li><a href="${pageContext.request.contextPath}/community/list.jsp">社 区</a></li>
 					<li><a href="javascript:void(0);" id="top_menu_board">留 言</a></li>
 					<li><a href="${pageContext.request.contextPath}/user/userhome.jsp">关于我</a></li>
-					<s:if test="#session.loginName=='admin'">
+					<s:if test="#session.user.role==1">
 						<li><a href="${pageContext.request.contextPath}/admin/main.jsp">后台管理</a></li>
 					</s:if>
 				</ul>
@@ -49,7 +56,7 @@
 						<li id="ul_user_fistli">
 							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/head.png">
 							<a href="#" id="top_user_a_user">
-								<s:property value="#session.loginName"/>
+								${session.user.username.length()>5 ? session.user.username.substring(0,5) : session.user.username }
 							</a>
 						</li>
 						<li class="li" id="ul_user_twoli"><a href="${pageContext.request.contextPath }/user/userhome.jsp">我的主页</a></li>

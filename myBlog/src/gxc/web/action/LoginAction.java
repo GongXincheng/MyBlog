@@ -1,50 +1,57 @@
 package gxc.web.action;
 
-import java.util.Map;
-
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import gxc.domain.User;
+import gxc.service.UserService;
+import gxc.service.impl.UserServiceImpl;
 import javax.servlet.http.HttpSession;
-
 import org.apache.struts2.ServletActionContext;
-
 import net.sf.json.JSONObject;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 
-public class LoginAction extends ActionSupport{
+public class LoginAction extends ActionSupport implements ModelDriven<User>{
 	private static final long serialVersionUID = 1L;
 	
+	private User user = new User();
 	private String result;
-	private String username;
-	private String password;
 	private String validate;
+	private UserService userService = new UserServiceImpl();
 	
 	/**
 	 * 登录验证
 	 * @return
+	 * @throws UnsupportedEncodingException 
 	 */
-	public String login(){
+	public String login() throws UnsupportedEncodingException{
 		JSONObject json = new JSONObject();
+		user.setUsername(URLDecoder.decode(user.getUsername(),"UTF-8"));
 		
 		//从session中获取验证码,判断验证码是否正确
-		Map<String, Object> session = ActionContext.getContext().getSession();
-		String captchaStr = (String)session.get("login_captcha");
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		String captchaStr = (String)session.getAttribute("login_captcha");
 		boolean isValidate = captchaStr.equals(validate.toLowerCase());
 		
 		//验证用户名密码是否正确
+		User dbUser = userService.findUserByUsernameAndPassword(user);
 		
-		//如果 用户名密码,验证码都正确：
-			//将用户放在session中
-			/*session.put("loginName", username);*/
-			/*json.put("msg", "success");*/
-		
-		//如果验证码正确
-		if(isValidate){
-			session.put("loginName", username);
-			json.put("msg", "success");
+		if(!isValidate){
+			json.put("login_msg", "验证码错误");
 		}
-		else
-			json.put("msg", "error_validate");
+		else if(dbUser==null){
+			json.put("login_msg", "用户名或密码错误");
+		}
+		else{
+			//登陆成功,登录次数+1,和登录时间
+			userService.updateLoginNum(user.getUsername());
+			userService.updateLastLoginDate(user.getUsername());
+			
+			//将user放入session中
+			session.setAttribute("user", dbUser);
+			json.put("login_msg", "success");
+		}
 		
 		result = json.toString();
 		return "loginSuccess";
@@ -59,9 +66,9 @@ public class LoginAction extends ActionSupport{
 		JSONObject json = new JSONObject();
 		
 		//获取session中的loginUser
-		Object loginUser = ActionContext.getContext().getSession().get("loginName");
+		User dnUser = (User) ActionContext.getContext().getSession().get("user");
 		
-		if(loginUser!=null)
+		if(dnUser!=null)
 			json.put("msg", true);
 		else
 			json.put("msg", false);
@@ -77,9 +84,8 @@ public class LoginAction extends ActionSupport{
 	 */
 	public String out(){
 		JSONObject json = new JSONObject();
-		
-		//获取
 		HttpSession session = ServletActionContext.getRequest().getSession();
+		
 		//销毁session
 		session.invalidate();
 		json.put("msg", true);
@@ -91,18 +97,6 @@ public class LoginAction extends ActionSupport{
 	
 	
 	//Get & Set
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
 	public String getValidate() {
 		return validate;
 	}
@@ -114,6 +108,23 @@ public class LoginAction extends ActionSupport{
 	}
 	public void setResult(String result) {
 		this.result = result;
+	}
+	public UserService getUserService() {
+		return userService;
+	}
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	@Override
+	public User getModel() {
+		return user;
 	}
 	
 }
