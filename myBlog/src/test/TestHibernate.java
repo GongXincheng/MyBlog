@@ -1,8 +1,8 @@
 package test;
 
+import gxc.utils.HibernateUtil;
+
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.junit.Test;
 
 public class TestHibernate {
@@ -10,9 +10,7 @@ public class TestHibernate {
 	@Test
 	public void createUserTable(){
 		
-		Configuration configuration = new Configuration().configure();
-		SessionFactory sessionFactory = configuration.buildSessionFactory();
-		Session session = sessionFactory.openSession();
+		Session session = HibernateUtil.openSession();
 		session.beginTransaction();
 		
 	/*	
@@ -27,8 +25,6 @@ public class TestHibernate {
 		
 		session.getTransaction().commit();
 		session.close();
-		sessionFactory.close();
-		
 	}
 	
 }
