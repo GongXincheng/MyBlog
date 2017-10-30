@@ -152,7 +152,7 @@ public class UserDaoImpl implements UserDao {
 		
 		String hql = "update User u set u.lastLoginDate=:date where username=:username";
 		Query query = session.createQuery(hql);
-		query.setDate("date", new Date());
+		query.setTimestamp("date", new Date());
 		query.setString("username", username);
 		
 		query.executeUpdate();

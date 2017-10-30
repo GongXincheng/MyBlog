@@ -41,7 +41,6 @@
 					<li><a href="javascript:void(0);">文 章</a></li>
 					<li><a href="${pageContext.request.contextPath}/community/list.jsp">社 区</a></li>
 					<li><a href="javascript:void(0);" id="top_menu_board">留 言</a></li>
-					<li><a href="${pageContext.request.contextPath}/user/userhome.jsp">关于我</a></li>
 					<s:if test="#session.user.role==1">
 						<li><a href="${pageContext.request.contextPath}/admin/main.jsp">后台管理</a></li>
 					</s:if>
@@ -55,19 +54,28 @@
 					<ul id="ul_user">
 						<li id="ul_user_fistli">
 							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/head.png">
-							<a href="#" id="top_user_a_user">
+							<a href="javascript:void(0);" id="top_user_a_user">
 								${session.user.username.length()>5 ? session.user.username.substring(0,5) : session.user.username }
 							</a>
 						</li>
-						<li class="li" id="ul_user_twoli"><a href="${pageContext.request.contextPath }/user/userhome.jsp">我的主页</a></li>
-						<li class="li"><a href="${pageContext.request.contextPath }/user/userdetail.jsp">个人资料</a></li>
+						<li class="li" id="ul_user_twoli">
+							<s:a action="User_goUserHome">
+								<s:param name="uid" value="#session.user.uid"></s:param>我的主页
+							</s:a>
+							<%-- <a href="${pageContext.request.contextPath }/user/userhome.jsp">我的主页</a> --%>
+						</li>
+						<li class="li">
+							<s:a action="User_goUserDetail">
+								<s:param name="uid" value="#session.user.uid"></s:param>个人资料
+							</s:a>
+							<%-- <a href="${pageContext.request.contextPath }/user/userdetail.jsp">个人资料</a> --%>
+						</li>
 						<li class="li" id="ul_user_lastli"><a id="userLeave" href="javascript:void(0);">退出</a></li>
 					</ul>
 				</div>
 			</div> 
 		</div>
 	</div>
-	
 	<!-- 遮罩层 -->
 	<div id="mask">
 		<div id="login"></div>
@@ -186,10 +194,10 @@
 		<div id="board-content">
 			<form action="" id="form_board">
 				<div id="board-content-username">
-					<s:textfield name="boardUsername" value="" id="boardUsername" placeholder="用户名" ></s:textfield>
+					<s:textfield name="boardUsername" value="%{#session.user.username}" id="boardUsername" placeholder="用户名" ></s:textfield>
 				</div>
 				<div id="board-content-email">
-					<s:textfield name="boardEmail" value="" id="boardEmail" placeholder="邮 箱"></s:textfield>
+					<s:textfield name="boardEmail" value="%{#session.user.email}" id="boardEmail" placeholder="邮 箱"></s:textfield>
 				</div>
 				<div id="board-content-title">
 					<s:textfield name="boardTitle" id="boardTitle" placeholder="标 题"></s:textfield>

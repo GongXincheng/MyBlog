@@ -33,7 +33,7 @@ $(function(){
 			success: function(data){
 				var userLearve = eval("("+data+")");
 				if(userLearve.msg){
-					window.location.reload();
+					window.location.href = "/myBlog/index.jsp";
 				}
 			},
 			error : function(){

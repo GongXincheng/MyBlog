@@ -52,6 +52,14 @@
 				<param name="root">result</param>
 			</result>
 		</action>
+
+<!--  ———————————— 个人信息 ———————————— -->	
+		<action name="User_*" class="gxc.web.action.UserAction" method="{1}">
+			<result name="userhome">/user/userhome.jsp</result>
+			<result name="userdetail">/user/userdetail.jsp</result>
+			<result name="useredit" type="chain">User_goUserDetail</result>
+			<result name="input">/index.jsp</result>
+		</action>
 		
 	</package>
 	

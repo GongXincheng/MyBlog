@@ -16,6 +16,7 @@ public class UserServiceImpl implements UserService {
 	public void addUser(User user) {
 		//设置注册时间,权限,登录次数
 		user.setRegistDate(new Date());
+		user.setGender(1);
 		user.setRole(0);
 		user.setLoginNum(0);
 		userDao.saveUser(user);

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,11 +11,11 @@
 <script type="text/javascript">
 $(function(){
 	$("#main_detail_a a").click(function(){
-		location.href = "${pageContext.request.contextPath}/user/userdetail.jsp";
+		location.href = "${pageContext.request.contextPath}/User_goUserDetail?uid=${user.uid}";
 	});
 	
 	$("#btn_detail").click(function(){
-		location.href = "${pageContext.request.contextPath}/user/userdetail.jsp";
+		location.href = "${pageContext.request.contextPath}/User_goUserDetail?uid=${user.uid}";
 	});
 	
 })
@@ -36,8 +35,8 @@ $(function(){
 			</div>
 			<div id="userhome_main_middle">
 				<div id="main_info">
-					<span id="mian_span_username"><B>宫新程</B></span>
-					<span id="mian_span_sign"><B>一切为了更好的自己</B></span><br/>				
+					<span id="mian_span_username"><B>${empty user.username?'null':user.username }</B></span>
+					<span id="mian_span_sign"><B>${empty user.sign?'这个人比较懒,还没有签名':user.sign}</B></span><br/>				
 				</div>
 				<div id="main_detail_a">
 					<a href="javascript:void(0);" >查看详细信息</a>
@@ -45,7 +44,7 @@ $(function(){
 			</div>
 			<div id="userhome_main_button">
 				<div id="gender">
-					<img alt="male" src="${pageContext.request.contextPath}/images/male.png">
+					<img alt="male" src="${pageContext.request.contextPath}/images/${user.gender==1?'male.png':'female.png'}">
 					<!-- <img alt="female" src="${pageContext.request.contextPath}/images/female.png"> -->
 				</div>
 				<button id="btn_detail" type="button">个人资料</button>
