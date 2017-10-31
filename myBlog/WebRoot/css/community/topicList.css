@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+h1{
+	text-align: center;
+	display: none;
+}
+#cmt_top{
+	margin-top: 8px;
+	background: white;
+	height:60px;
+	line-height: 60px;
+	text-align: center;	
+}
+#cmt_left{
+	width:69%;
+	height:500px;
+	float: left;
+	/* background: red; */
+	margin-top: 10px;
+	padding: 5px 10px;
+	background: white;
+	display: none;
+}
+#cmt_right{
+	width:26%;
+	height:200px;
+	background: yellow;
+	float: right;
+	margin-top: 10px;
+}
+
+#topic-list{
+	padding:12px 0px;	
+	background: white;
+	border-bottom: 1px solid #ddd;
+}
+#topic-list:HOVER{
+	background: #eee;
+}
+#topic-headpic{
+	width:50px;
+	height:50px;
+	border: 1px solid #999;
+	float: left;
+	margin: 0px 15px;
+	/* background: blue; */
+}
+#topic-content{
+	float: left;
+	width: 75%;
+}
+#topic-title{
+	padding-top: 5px;
+}
+#topic-title-a{
+	font-size: 17px;
+	font-weight: 600;
+	line-height: 24px;
+	color: #000;
+	/* word-spacing:2px; 
+	letter-spacing: 1px; */
+}
+#topic-title-a:HOVER{
+	color: #175199;
+}
+
+#topic-detail{
+	margin-top: 8px;
+	height:18px;
+	line-height: 19px;
+}
+#topic-detail a{
+	color: #aaa;
+	margin-left: 10px;
+	font-size: 12px;
+	float: left;
+	display: block;
+}
+#topic-detail #topic-a-user{
+	margin-left: 0px;
+	margin-right: 8px;
+	font-size: 15px;
+	color: #888;
+	line-height: 17px;
+}
+#a-read{
+	padding-left:20px;
+	background: url("/myBlog/images/community/visit_17x17.png") no-repeat 0 -1px;
+}
+#a-reply{
+	padding-left:20px;
+	background: url("/myBlog/images/community/reply_16x16.png") no-repeat;
+}
+#a-zan{
+	padding-left:20px;
+	background: url("/myBlog/images/community/zan_17x17.png") no-repeat;
+}
+#topic-detail #a-date{
+	margin-left: 35px;
+}
