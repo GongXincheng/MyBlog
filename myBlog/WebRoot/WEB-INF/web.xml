@@ -15,11 +15,11 @@
 	<filter-class>gxc.web.filter.EncodingFilter</filter-class>
   </filter>
   
-  <!-- 全局编码 -->
+  <!--  全局编码 
   <filter-mapping>
   	<filter-name>EncodingFilter</filter-name>
   	<url-pattern>/*</url-pattern>
-  </filter-mapping>
+  </filter-mapping> -->
   
   <!-- Transaction's filter, 必须配置在struts2的过滤器之前 -->
   <filter-mapping>

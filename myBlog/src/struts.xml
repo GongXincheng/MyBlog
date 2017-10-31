@@ -31,17 +31,7 @@
 <!-- ———————————— 登录 —————————————————— -->
 		<action name="User_login_*" class="gxc.web.action.LoginAction" method="{1}">
 			<!-- 登录 -->
-			<result type="json" name="loginSuccess">
-				<param name="root">result</param>
-			</result>
-			
-			<!-- 验证用户是否登录 -->
-			<result type="json" name="hasLogined" >
-				<param name="root">result</param>
-			</result>
-			
-			<!-- 注销 -->
-			<result type="json" name="userLeave">
+			<result type="json">
 				<param name="root">result</param>
 			</result>
 		</action>
@@ -59,6 +49,12 @@
 			<result name="userdetail">/user/userdetail.jsp</result>
 			<result name="useredit" type="chain">User_goUserDetail</result>
 			<result name="input">/index.jsp</result>
+			
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			
+			
 		</action>
 		
 	</package>

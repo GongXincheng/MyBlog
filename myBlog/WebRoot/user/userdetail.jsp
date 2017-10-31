@@ -116,7 +116,7 @@ $(function(){
 		</div>
 		
 		<div id="edit-content">
-			<form action="User_edit" id="form_edit">
+			<form action="User_edit" id="form_edit" method="post">
 				<input type="hidden" name="user.uid" value="${user.uid }">
 				<table border="0" cellpadding="0" cellspacing="0">
 					<tr>
@@ -141,8 +141,10 @@ $(function(){
 					<tr>
 						<td class="td-column">居住地</td>
 						<td class="td-city">
-							<s:select name="province" id="province" list="#{'370000':'山东','SH':'上海','ZH':'珠海','qqhl':'齐齐哈尔'}" value="%{user.province}"></s:select>省&nbsp;&nbsp;
-							<s:select name="city" id="city" list="#{'370400':'枣庄','SH':'上海','ZH':'珠海','qqhl':'齐齐哈尔'}" value="%{user.city}"></s:select>市
+							<select name="province" id="province" class="${user.province }"></select>&nbsp;&nbsp;
+							<select name="city" id="city" class="${user.city }">
+								<option value="${user.city }">${cit.city }</option>
+							</select>
 						</td>
 					</tr>
 					<tr>

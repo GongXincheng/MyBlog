@@ -1,7 +1,5 @@
 package gxc.web.action;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import gxc.domain.User;
 import gxc.service.UserService;
 import gxc.service.impl.UserServiceImpl;
@@ -25,9 +23,9 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>{
 	 * @return
 	 * @throws UnsupportedEncodingException 
 	 */
-	public String login() throws UnsupportedEncodingException{
+	public String login(){
 		JSONObject json = new JSONObject();
-		user.setUsername(URLDecoder.decode(user.getUsername(),"UTF-8"));
+		/*user.setUsername(URLDecoder.decode(user.getUsername(),"UTF-8"));*/
 		
 		//从session中获取验证码,判断验证码是否正确
 		HttpSession session = ServletActionContext.getRequest().getSession();
@@ -54,7 +52,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>{
 		}
 		
 		result = json.toString();
-		return "loginSuccess";
+		return SUCCESS;
 	}
 	
 	
@@ -74,7 +72,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>{
 			json.put("msg", false);
 		
 		result = json.toString();
-		return "hasLogined";
+		return SUCCESS;
 	}
 	
 	
@@ -91,7 +89,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>{
 		json.put("msg", true);
 		
 		result = json.toString();
-		return "userLeave";
+		return SUCCESS;
 	}
 	
 	

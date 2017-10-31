@@ -1,6 +1,5 @@
 package gxc.web.action;
 
-import java.net.URLDecoder;
 import gxc.domain.User;
 import gxc.service.UserService;
 import gxc.service.impl.UserServiceImpl;
@@ -20,8 +19,8 @@ public class RegistAction extends ActionSupport implements ModelDriven<User> {
 	
 	private UserService userService;
 	
-	public String regist() throws Exception{
-		user.setUsername(URLDecoder.decode(user.getUsername(),"UTF-8"));
+	public String regist(){
+		/*user.setUsername(URLDecoder.decode(user.getUsername(),"UTF-8"));*/
 		
 		JSONObject json = new JSONObject();
 		userService = new UserServiceImpl();
@@ -58,7 +57,7 @@ public class RegistAction extends ActionSupport implements ModelDriven<User> {
 	
 	public String hasUser() throws Exception{
 		//解码
-		user.setUsername(URLDecoder.decode(user.getUsername(),"UTF-8"));
+		/*user.setUsername(URLDecoder.decode(user.getUsername(),"UTF-8"));*/
 		
 		JSONObject json = new JSONObject();
 		userService = new UserServiceImpl();

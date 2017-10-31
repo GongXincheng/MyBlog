@@ -1,9 +1,9 @@
 package gxc.web.action;
 
+import java.util.List;
 import javax.servlet.http.HttpSession;
-
+import net.sf.json.JSONArray;
 import org.apache.struts2.ServletActionContext;
-
 import gxc.domain.City;
 import gxc.domain.Province;
 import gxc.domain.User;
@@ -13,7 +13,6 @@ import gxc.service.UserService;
 import gxc.service.impl.CityServiceImpl;
 import gxc.service.impl.ProvinceServiceImpl;
 import gxc.service.impl.UserServiceImpl;
-
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -23,7 +22,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	private User user = new User();
 	private Province pro;
 	private City cit;
+	private String result;
+	private String proCode;
+	
 	private UserService userService = new UserServiceImpl();
+	private ProvinceService provinceService = new ProvinceServiceImpl();
+	private CityService cityService = new CityServiceImpl();
 	
 	//返回主页
 	public String goUserHome(){
@@ -33,13 +37,9 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	
 	//返回详细信息
 	public String goUserDetail(){
-		
 		user = userService.findUserById(user.getUid());
 		
 		//获取省市
-		ProvinceService provinceService = new ProvinceServiceImpl();
-		CityService cityService = new CityServiceImpl();
-		
 		pro = provinceService.getProvinceById(user.getProvince());
 		cit = cityService.getCityByCityid(user.getCity());
 		
@@ -61,6 +61,25 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 			return "input";
 	}
 	
+	//查询全部省份
+	public String getAllProvince(){
+		List<Province> provinces = provinceService.getAllProvince();
+		JSONArray json = JSONArray.fromObject(provinces);
+		
+		result = json.toString();
+		return "success";
+	}
+	
+	//根据省份查询对应的城市
+	public String getCity(){
+		System.out.println(proCode);
+		List<City> list = cityService.getCitysByProvinceid(proCode);
+		
+		JSONArray json = JSONArray.fromObject(list);
+		System.out.println(json.toString());
+		result = json.toString();
+		return SUCCESS;
+	}
 	
 	@Override
 	public User getModel() {
@@ -95,4 +114,37 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	public void setCit(City cit) {
 		this.cit = cit;
 	}
+
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+	public ProvinceService getProvinceService() {
+		return provinceService;
+	}
+
+	public void setProvinceService(ProvinceService provinceService) {
+		this.provinceService = provinceService;
+	}
+
+	public CityService getCityService() {
+		return cityService;
+	}
+
+	public void setCityService(CityService cityService) {
+		this.cityService = cityService;
+	}
+
+	public String getProCode() {
+		return proCode;
+	}
+
+	public void setProCode(String proCode) {
+		this.proCode = proCode;
+	}
+	
 }

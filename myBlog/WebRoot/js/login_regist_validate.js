@@ -99,7 +99,8 @@ $(function(){
 		$.ajax({
 			url : '${pageContext.request.contextPath}/User_login_login',
 			data: {
-				username : encodeURI(username),
+				/*username : encodeURI(username),*/
+				username : username,
 				password : password,
 				validate : validate
 			},
@@ -264,7 +265,7 @@ $(function(){
 		$.ajax({
 			url : "${pageContext.request.contextPath}/User_regist_regist" ,
 			data : {
-				username : encodeURI(username),
+				username : username,
 				password : password,
 				rePassword : rePassword,
 				validate : validate
