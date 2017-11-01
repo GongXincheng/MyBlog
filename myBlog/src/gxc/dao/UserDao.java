@@ -63,4 +63,10 @@ public interface UserDao {
 	 * @param uid
 	 */
 	public void updateLastLoginDate(String username);
+
+	/**
+	 * 修改头像
+	 * @param user
+	 */
+	public void updateFace(User user);
 }

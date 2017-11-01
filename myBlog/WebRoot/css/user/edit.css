@@ -57,7 +57,8 @@
 	border: 1px solid #ccc;
 }
 #province,#city{
-	width: 75px;
+	width: 88px;
+	height:25px;
 	border: 1px solid #ccc;
 	background: white;
 }

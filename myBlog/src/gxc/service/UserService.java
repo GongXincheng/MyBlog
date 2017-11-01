@@ -64,4 +64,10 @@ public interface UserService {
 	 * @param uid
 	 */
 	public void updateLastLoginDate(String username);
+
+	/**
+	 * 修改头像
+	 * @param user
+	 */
+	public void editHead(User user);
 }

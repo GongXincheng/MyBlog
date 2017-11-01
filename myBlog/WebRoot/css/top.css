@@ -46,9 +46,12 @@ body{
 	text-align:center;
 }
 #top_logo div span{
+	position:relative;
+	left:150px;
     font-size: 32px;
     font-weight: 800;
-    display: none;
+    opacity:0;
+   /*  display: none; */
 }
 #top_menu{
     /* background-color: #7e908a; */
@@ -59,7 +62,6 @@ body{
 }
 #top_menu ul{
     list-style-type: none;
-    display: none;
 }
 #top_menu ul li{
 	float:left;
@@ -93,8 +95,11 @@ body{
 #top_user_img_user{
 	display: block;
 	float:left;
-	margin-top: 18px;
-	margin-left: 20px;
+	width:30px;
+	height:30px;
+	margin-top: 15px;
+	margin-left: 15px;
+	border-radius:50%;  
 }
 #top_user_a_user{
 	

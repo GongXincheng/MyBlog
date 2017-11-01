@@ -19,6 +19,7 @@ public class UserServiceImpl implements UserService {
 		user.setGender(1);
 		user.setRole(0);
 		user.setLoginNum(0);
+		user.setFace("head_00.jpg");
 		userDao.saveUser(user);
 	}
 
@@ -66,6 +67,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void updateLastLoginDate(String username) {
 		userDao.updateLastLoginDate(username);
+	}
+
+	@Override
+	public void editHead(User user) {
+		userDao.updateFace(user);
 	}
 
 }

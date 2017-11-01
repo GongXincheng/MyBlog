@@ -1,7 +1,18 @@
 @CHARSET "UTF-8";
-h1{
+#div-h{
+	margin: 0 auto;
 	text-align: center;
-	display: none;
+}
+h1{
+	position: relative;
+	display: inline;
+	opacity:0;
+}
+#h1-1{
+	left: -250px;
+}
+#h1-2{
+	left: 250px;
 }
 #cmt_top{
 	margin-top: 8px;
@@ -23,9 +34,14 @@ h1{
 #cmt_right{
 	width:26%;
 	height:200px;
-	background: yellow;
+	background: white;
 	float: right;
 	margin-top: 10px;
+	position: relative;
+	top: -100px;
+	opacity:0;
+	line-height: 200px;
+	text-align: center;
 }
 
 #topic-list{
@@ -39,10 +55,14 @@ h1{
 #topic-headpic{
 	width:50px;
 	height:50px;
-	border: 1px solid #999;
+	/* border: 1px solid #999; */
 	float: left;
 	margin: 0px 15px;
 	/* background: blue; */
+}
+#topic-headpic img{
+	width:50px;
+	height:50px;
 }
 #topic-content{
 	float: left;
@@ -70,7 +90,7 @@ h1{
 }
 #topic-detail a{
 	color: #aaa;
-	margin-left: 10px;
+	margin-left: 15px;
 	font-size: 12px;
 	float: left;
 	display: block;

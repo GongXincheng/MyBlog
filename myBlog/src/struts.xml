@@ -47,13 +47,11 @@
 		<action name="User_*" class="gxc.web.action.UserAction" method="{1}">
 			<result name="userhome">/user/userhome.jsp</result>
 			<result name="userdetail">/user/userdetail.jsp</result>
-			<result name="useredit" type="chain">User_goUserDetail</result>
 			<result name="input">/index.jsp</result>
 			
 			<result type="json" name="success">
 				<param name="root">result</param>
 			</result>
-			
 			
 		</action>
 		

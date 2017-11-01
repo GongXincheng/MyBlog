@@ -53,9 +53,9 @@
 					<%-- 登陆后 --%>
 					<ul id="ul_user">
 						<li id="ul_user_fistli">
-							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/head.png">
+							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/user/${session.user.face}">
 							<a href="javascript:void(0);" id="top_user_a_user">
-								${session.user.username.length()>5 ? session.user.username.substring(0,5).concat(" ... ") : session.user.username }
+								${session.user.username.length()>5 ? session.user.username.substring(0,4).concat("...") : session.user.username }
 							</a>
 						</li>
 						<li class="li" id="ul_user_twoli">

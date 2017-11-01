@@ -24,10 +24,12 @@
     top: -25px;
     left: 25px; 
     display: none;  
+   
 }
 #userhome_main_head img{
 	width: inherit;
 	height: inherit;
+	cursor: pointer;
 }
 
 #user-detail{
@@ -87,4 +89,24 @@
 	margin-left: 60px;
 	width: 60%;
 	font-size: 17px;
+}
+
+
+/*------- 修改头像 --------*/
+#edit-head-content{
+	position: absolute;
+	top: 15%;
+	z-index: 1002;
+	width: 595px;
+	display: none;
+}
+#edit-head-list img{
+	margin:0;
+	padding:0;
+	width: 130px;
+	height: 130px;
+	margin: 30px 30px;
+	border-radius:5px;
+	cursor: pointer;
+	border: 1px solid #999;
 }

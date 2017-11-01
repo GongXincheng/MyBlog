@@ -1,5 +1,6 @@
 package gxc.web.action;
 
+import java.io.IOException;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import net.sf.json.JSONArray;
@@ -47,7 +48,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	}
 	
 	//修改
-	public String edit(){
+	public void edit(){
 		int info = userService.editUser(user);
 		if(info>0){
 			//修改完之后，把session的user内容改掉
@@ -55,10 +56,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 			HttpSession session = ServletActionContext.getRequest().getSession();
 			session.removeAttribute("user");
 			session.setAttribute("user", sessioUser);
-			return "useredit";
+			try {
+				ServletActionContext.getResponse().sendRedirect("User_goUserDetail?uid="+user.getUid());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-		else
-			return "input";
 	}
 	
 	//查询全部省份
@@ -72,14 +75,41 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	
 	//根据省份查询对应的城市
 	public String getCity(){
-		System.out.println(proCode);
 		List<City> list = cityService.getCitysByProvinceid(proCode);
 		
 		JSONArray json = JSONArray.fromObject(list);
-		System.out.println(json.toString());
 		result = json.toString();
 		return SUCCESS;
 	}
+	
+	//修改头像
+	public String editHead(){
+		
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		User sessioUser = (User)session.getAttribute("user");
+		int sessionId = sessioUser.getUid();
+		int userId =  user.getUid();
+		
+		System.out.println(sessionId + "-----" + user.getUid()+ "->" + (sessionId == userId));
+		
+		if(sessionId == userId){
+			//数据库修改
+			userService.editHead(user);
+			refreshSession(user.getUid());
+		}
+		
+		return SUCCESS;
+	}
+	
+	
+	//更新session
+	public void refreshSession(Integer uid){
+		User sessioUser = userService.findUserById(uid);
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		session.removeAttribute("user");
+		session.setAttribute("user", sessioUser);
+	}
+	
 	
 	@Override
 	public User getModel() {

@@ -159,4 +159,19 @@ public class UserDaoImpl implements UserDao {
 		
 	}
 
+	/**
+	 * 修改头像
+	 */
+	@Override
+	public void updateFace(User user) {
+		Session session = HibernateUtil.getCurrentSession();
+		
+		String hql = "update User u set u.face=:face where u.uid=:id";
+		Query query = session.createQuery(hql);
+		query.setString("face", user.getFace());
+		query.setInteger("id", user.getUid());
+		
+		query.executeUpdate();
+	}
+
 }

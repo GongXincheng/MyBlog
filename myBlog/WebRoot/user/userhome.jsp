@@ -31,7 +31,7 @@ $(function(){
 		
 		<div id="userhome_main">
 			<div id="userhome_main_head">
-				<img alt="head" src="${pageContext.request.contextPath}/images/user/head_1.png">
+				<img alt="head" src="${pageContext.request.contextPath}/images/user/${user.face}">
 			</div>
 			<div id="userhome_main_middle">
 				<div id="main_info">

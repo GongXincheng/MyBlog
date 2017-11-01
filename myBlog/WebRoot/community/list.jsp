@@ -7,9 +7,56 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/community/topicList.css">
 <script type="text/javascript">
 	$(function(){
-		$("h1").show(500,function(){
-			$("#cmt_left").slideDown(420);
+		$("#cmt_left").slideDown(700);
+		
+		$("#h1-1").animate({
+			left:"150px",
+			opacity:0.5
+		},400,function(){
+			$("#h1-1").animate({
+				left:"-50px",
+				opacity:0.8
+			},function(){
+				$("#h1-1").animate({
+					left:"0px",
+					opacity:1
+				},200);
+			});
 		});
+		
+		$("#h1-2").animate({
+			left:"-150px",
+			opacity:0.5
+		},400,function(){
+			$("#h1-2").animate({
+				left:"50px",
+				opacity:0.8
+			},function(){
+				$("#h1-2").animate({
+					left:"0px",
+					opacity:1
+				},200);
+			});
+		});
+		
+		$("#cmt_right").animate({
+			top: "50px",
+			opacity:0.4
+		},
+		400,function(){
+			$("#cmt_right").animate({
+				top: "-30px",
+				opacity:0.9
+			},
+			400,function(){
+				$("#cmt_right").animate({
+					top: 0,
+					opacity:1
+				},
+				400);
+			});
+		});
+		
 	});
 </script>
 <title>社 区</title>
@@ -18,9 +65,12 @@
 	 <jsp:include page="../top.jsp"></jsp:include>
 	 
 	 <div id="content">
-	 	 <br/>
-		 <h1>Welcome To GXC's Community</h1>
-		 <br/>
+		 <div id="div-h">
+		 	<br/><br/>
+		 	<h1 id="h1-1">Welcome To</h1>
+			<h1 id="h1-2">&nbsp;GXC's Community</h1>
+			<br/><br/><br/>
+		 </div>
 		 
 		 <div id="cmt_top">cmt_top</div>
 		 
@@ -29,7 +79,9 @@
 		 
 		 	<!-- 帖子1 -->
 			<div id="topic-list">
-				<div id="topic-headpic"></div>
+				<div id="topic-headpic">
+					<img alt="head_1.png" src="${pageContext.request.contextPath}/images/user/head_1.png">
+				</div>
 				<div id="topic-content">
 					<div id="topic-title">
 						<a id="topic-title-a" href="#">WPS Office 是不是金山公司抄袭微软 Office 的？</a>
@@ -48,14 +100,16 @@
 			
 			<!-- 帖子2 -->
 			<div id="topic-list">
-				<div id="topic-headpic"></div>
+				<div id="topic-headpic">
+					<img alt="head_04.jpg" src="${pageContext.request.contextPath}/images/user/head_04.jpg">
+				</div>
 				<div id="topic-content">
 					<div id="topic-title">
 						<a id="topic-title-a" href="#">为什么很多程序员喜欢linux系统？</a>
 					</div>
 					<div id="clear"></div>
 					<div id="topic-detail">
-						<a href="#" id="topic-a-user">宫新程</a>
+						<a href="#" id="topic-a-user">薛令令</a>
 						<a id="a-read">125</a>
 						<a id="a-reply">8</a>
 						<a id="a-zan">54</a>
@@ -67,14 +121,16 @@
 			
 			<!-- 帖子3 -->
 			<div id="topic-list">
-				<div id="topic-headpic"></div>
+				<div id="topic-headpic">
+					<img alt="head_03.jpg" src="${pageContext.request.contextPath}/images/user/head_03.jpg">
+				</div>
 				<div id="topic-content">
 					<div id="topic-title">
 						<a id="topic-title-a" href="#">有哪些明明是 bug，却被说成是 feature 的例子？</a>
 					</div>
 					<div id="clear"></div>
 					<div id="topic-detail">
-						<a href="#" id="topic-a-user">宫新程</a>
+						<a href="#" id="topic-a-user">王昱烜</a>
 						<a id="a-read">1555</a>
 						<a id="a-reply">855</a>
 						<a id="a-zan">855</a>
@@ -86,14 +142,16 @@
 			
 			<!-- 帖子4 -->
 			<div id="topic-list">
-				<div id="topic-headpic"></div>
+				<div id="topic-headpic">
+					<img alt="head_09jpg" src="${pageContext.request.contextPath}/images/user/head_09.jpg">
+				</div>
 				<div id="topic-content">
 					<div id="topic-title">
 						<a id="topic-title-a" href="#">Flow耳机官网有没有货，是不是放几条意思意思就把这个项目烂尾了？</a>
 					</div>
 					<div id="clear"></div>
 					<div id="topic-detail">
-						<a href="#" id="topic-a-user">宫新程</a>
+						<a href="#" id="topic-a-user">杨昆</a>
 						<a id="a-read">1555</a>
 						<a id="a-reply">855</a>
 						<a id="a-zan">855</a>
