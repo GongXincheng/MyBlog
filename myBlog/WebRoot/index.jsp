@@ -7,7 +7,6 @@
 <link rel="icon" href="${pageContext.request.contextPath}/images/blog.ico" type="image/x-icon" />
 <title>GXC's blog</title>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
-
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css">
 <script type="text/javascript">
 	$(function(){

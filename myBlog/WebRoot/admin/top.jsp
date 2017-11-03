@@ -25,7 +25,7 @@
 					<li><a href="javascript:void(0);">最近登陆</a></li>
 					<li><a href="javascript:void(0);">用户信息</a></li>
 					<li><a href="javascript:void(0);">发帖</a></li>
-					<li><a href="javascript:void(0);">留言</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/Board_allBoardByDesc">留言板</a></li>
 				</ul>
 			</div>
 			<div id="top_user">

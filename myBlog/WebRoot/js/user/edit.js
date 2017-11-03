@@ -16,6 +16,7 @@ $(function(){
 				dataType : "json",
 				success : function(info){
 					var data = eval("("+info+")");
+					//获取用户原本的province
 					var proCode = $("#province").attr("class");
 					//清空省市
 					$("#province").empty();

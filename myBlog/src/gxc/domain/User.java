@@ -26,7 +26,6 @@ public class User implements Serializable{
 	/*
 	 *  User 和 Topic 一对多关系
 	 *  User 和 Reply 一对多关系
-	 *  User 和 Board 多对一关系
 	 */
 	
 	public Integer getUid() {

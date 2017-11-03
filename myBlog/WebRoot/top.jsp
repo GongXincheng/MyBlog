@@ -187,29 +187,34 @@
 	</div>
 	
 	<!-- 留言板 -->
-	<div id="board_content">
+	<div id="board_wrap">
+	<div id="clear"></div>
 		<div id="board-title">
 			<span>留言板</span>
 		</div>
+		
 		<div id="board-content">
-			<form action="" id="form_board">
+			<form action="#" id="form_board">
+				<input type="hidden" value="${session.user.uid }" />
 				<div id="board-content-username">
-					<s:textfield name="boardUsername" value="%{#session.user.username}" id="boardUsername" placeholder="用户名" ></s:textfield>
+					<s:textfield name="username" value="%{#session.user.username}" id="boardUsername" placeholder="用户名  (可不填写)" ></s:textfield>
 				</div>
 				<div id="board-content-email">
-					<s:textfield name="boardEmail" value="%{#session.user.email}" id="boardEmail" placeholder="邮 箱"></s:textfield>
+					<s:textfield name="email" value="%{#session.user.email}" id="boardEmail" placeholder="邮 箱  (可不填写)"></s:textfield>
 				</div>
 				<div id="board-content-title">
-					<s:textfield name="boardTitle" id="boardTitle" placeholder="标 题"></s:textfield>
+					<s:textfield name="title" id="boardTitle" placeholder="标 题   (必填)"></s:textfield>
 				</div>
 				<div id="board-content-message">
-					<s:textarea name="boardMessage" id="boardMessage" placeholder="留言内容"></s:textarea>
+					<s:textarea name="message" id="boardMessage" placeholder="留言内容(必填)"></s:textarea>
 				</div>
 				<div id="board-content-submit">
 					<button type="button" id="board-submit" >提交</button>
 				</div>
 			</form>
+			
 		</div>
+		
 	</div>
 	
 	<!-- 返回顶部 -->

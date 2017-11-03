@@ -52,9 +52,25 @@
 			<result type="json" name="success">
 				<param name="root">result</param>
 			</result>
-			
 		</action>
-		
 	</package>
+	
+	<!-- 留言板 -->
+	<package name="board" extends="struts-default,json-default">
+		<action name="Board_*" class="gxc.web.action.BoardAction" method="{1}">
+			<result type="json" name="saveBoard">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	
+	
+	<!-- 后台 -->
+	<package name="admin" extends="struts-default,json-default" namespace="/admin">
+		<action name="Board_*" class="gxc.web.action.BoardAction" method="{1}">
+			<result name="allBoard">/admin/board/list.jsp</result>
+		</action>
+	</package>
+	
 	
 </struts>

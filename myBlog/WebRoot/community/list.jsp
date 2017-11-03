@@ -4,61 +4,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/community/topicList.css">
-<script type="text/javascript">
-	$(function(){
-		$("#cmt_left").slideDown(700);
-		
-		$("#h1-1").animate({
-			left:"150px",
-			opacity:0.5
-		},400,function(){
-			$("#h1-1").animate({
-				left:"-50px",
-				opacity:0.8
-			},function(){
-				$("#h1-1").animate({
-					left:"0px",
-					opacity:1
-				},200);
-			});
-		});
-		
-		$("#h1-2").animate({
-			left:"-150px",
-			opacity:0.5
-		},400,function(){
-			$("#h1-2").animate({
-				left:"50px",
-				opacity:0.8
-			},function(){
-				$("#h1-2").animate({
-					left:"0px",
-					opacity:1
-				},200);
-			});
-		});
-		
-		$("#cmt_right").animate({
-			top: "50px",
-			opacity:0.4
-		},
-		400,function(){
-			$("#cmt_right").animate({
-				top: "-30px",
-				opacity:0.9
-			},
-			400,function(){
-				$("#cmt_right").animate({
-					top: 0,
-					opacity:1
-				},
-				400);
-			});
-		});
-		
-	});
-</script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/community/topicList.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/community/list.js"></script>
 <title>社 区</title>
 </head>
 <body id="bodyContent">
@@ -169,6 +116,5 @@
 		 
 	 </div>
 	 
-	
 </body>
 </html>

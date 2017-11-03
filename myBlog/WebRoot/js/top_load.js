@@ -1,14 +1,4 @@
 $(function(){
-	
-	/*window.moveTo(0, 0);//移动窗口   
-	window.onresize=new Function("window.resizeTo(1500,1300);");
-	window.resizeTo(2000, 600);//改变大小   */	
-	
-	/*$("#G").show(1500);
-	$("#X").show(200,function(){
-		$("#top_menu ul").show(400);
-	});
-	$("#C").show(1500);*/
 	$("#G").animate({
 		left:'0px',
 		opacity : 1
@@ -27,6 +17,31 @@ $(function(){
 			});	
 		});	
 	});	
+	
+	//点击遮罩层取消
+	$("#mask").click(function(){
+		//登陆注册div 
+		$("#login_regist_content").slideUp(250);
+		//留言板div
+		$("#board_wrap").slideUp(250);
+		//修改信息
+		$(".edit-content").slideUp(250);
+		//修改头像
+		$("#edit-head-content").hide();
+		
+		//清空登录，注册，留言内容
+		$("#form_login")[0].reset();
+		$("#form_regist")[0].reset();
+		$("#form_board")[0].reset();
+		
+		$("#a_right").css("color","#32a5e7");
+		$("#a_left").css("color","#32a5e7");
+		$("#msg_login").hide();
+		$("#regist_content");
+		$("#login_content").hide();
+		$(this).hide();
+	});
+	
 	
 	$("#ul_user").hover(function(){
 		$("#ul_user li:not('#ul_user_fistli')").slideDown(300);

@@ -7,13 +7,12 @@ public class Board implements Serializable{
 	private static final long serialVersionUID = 7960485363539460207L;
 
 	private Integer bid;
+	private String uid;
+	private String username;
+	private String email;
 	private String title;	//标题
 	private String message;	//内容
 	private Date createDate;//时间
-	
-	/*
-	 *  Board 和 User 多对一关系
-	 */
 	
 	public Integer getBid() {
 		return bid;
@@ -39,4 +38,30 @@ public class Board implements Serializable{
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+	@Override
+	public String toString() {
+		return "Board [bid=" + bid + ", uid=" + uid + ", username=" + username
+				+ ", email=" + email + ", title=" + title + ", message="
+				+ message + ", createDate=" + createDate + "]";
+	}
+	
+	
 }

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>个人信息</title>
+<title>个人资料</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/user/detail.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/user/edit.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
@@ -12,93 +12,16 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/user/edit.js"></script>
 <script type="text/javascript">
 $(function(){
-	
-	var hcWidth = $("#edit-head-content").width();
-	var windWidth = $(document).width();
-	var leftWidth = (windWidth - hcWidth)/2;
-	
 	//返回主页
 	$("#btn_back").click(function(){
 		location.href = "${pageContext.request.contextPath}/User_goUserHome?uid=${user.uid}";
 	});
-	
+	//修改信息
 	$("#edit_submit").click(function(){
 		$("#form_edit")[0].submit();
 	});
-	
-	//编辑头像，显示隐藏
-	$("#userhome_main_head").hover(function(){
-		var uid = $("#user-id").val();
-		var sessionId = $("#session-id").val();
-		if(sessionId!=uid){
-			return false;
-		}
-		else{
-			$("#head-mask").show(0,function(){
-				$("#edit-head-content").css("left",leftWidth);
-			});
-		}
-	},
-	function(){
-		$("#head-mask").hide();
-	});
-	
-	//点击头像
-	$("#head-mask").click(function(){
-		$("#mask").show(0,function(){
-			$("#edit-head-content").slideDown(300);
-		});
-	});
-	
-	//头像被选中
-	$("#edit-head-list img").click(function(){
-		var picName = $(this).attr("alt");
-		var uid = $("#user-id").val();
-		$.ajax({
-			url : "${pageContext.request.contextPath}/User_editHead",
-			data : {
-				face : picName,
-				uid : uid
-			},
-			type : "POST",
-			dataType : "json",
-			success : function(data){
-				var id = $("#user-id").val();
-				location.href = "${pageContext.request.contextPath}/User_goUserDetail?uid="+id;
-			},
-			error:function(){}
-		});
-	});
 });
 </script>
-<style type="text/css">
-#head-mask{
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity:0.7;
-	width: inherit;
-	height: inherit;
-	background: black;
-	
-	text-align:center;
-	cursor:pointer;
-	display: none;
-}
-#head-mask img{
-	width: 35px;
-	height: 35px;
-	margin-top: 45px;
-}
-#head-mask span{
-	display: block;
-	padding: 10px 0;
-	color: white;
-	font-size:14px;
-	font-weight:600;
-	letter-spacing: 2px;
-}
-</style>
 </head>
 <body id="bodyContent">
 	<jsp:include page="../top.jsp"></jsp:include>

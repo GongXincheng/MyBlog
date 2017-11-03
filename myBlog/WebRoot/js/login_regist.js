@@ -109,29 +109,6 @@ $(function(){
 	});
 	
 	
-	
-	//点击遮罩层取消
-	$("#mask").click(function(){
-		//登陆注册div 
-		$content.slideUp(250);
-		//留言板div
-		$("#board_content").slideUp(250);
-		//修改
-		$(".edit-content").slideUp(250);
-		$("#edit-head-content").hide();
-		//清空登录，注册，留言内容
-		$("#form_login")[0].reset();
-		$("#form_regist")[0].reset();
-		$("#form_board")[0].reset();
-		
-		$("#a_right").css("color","#32a5e7");
-		$("#a_left").css("color","#32a5e7");
-		$("#msg_login").hide();
-		$regist.hide();
-		$login.hide();
-		$(this).hide();
-	});
-	
 	//点击更换验证码
 	$("#login_captcha").click(function(){
 		$(this).attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
