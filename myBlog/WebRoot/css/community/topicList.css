@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 #div-h{
-	margin: 0 auto;
+	margin: 30px auto;
 	text-align: center;
 }
 h1{
@@ -16,13 +16,41 @@ h1{
 }
 #cmt_top{
 	margin-top: 8px;
-	background: white;
-	height:60px;
-	line-height: 60px;
+	height:50px;
+	line-height: 50px;
 	text-align: center;	
+	background: white;
 }
+#cmt_top_left{
+	width:72%;
+	float: left;
+	height: inherit;
+	padding: 0 10px;
+}
+#cmt_top_left ul li{
+	padding: 0 20px;
+	letter-spacing: 2px;
+}
+#cmt_top_left ul li a{
+	font-size: 15px;
+	color: black;
+}
+#cmt_top_left ul li a:HOVER{
+	color: #999;
+}
+
+
+#cmt_top_right{
+	width:24%;
+	float: right;
+	height: inherit;
+}
+
+/*
+----- left ----
+*/
 #cmt_left{
-	width:69%;
+	width:72%;
 	height:500px;
 	float: left;
 	/* background: red; */
@@ -31,7 +59,7 @@ h1{
 	background: white;
 	display: none;
 }
-#cmt_right{
+/* #cmt_right{
 	width:26%;
 	height:200px;
 	background: white;
@@ -42,7 +70,7 @@ h1{
 	opacity:0;
 	line-height: 200px;
 	text-align: center;
-}
+} */
 
 #topic-list{
 	padding:12px 0px;	
@@ -116,4 +144,158 @@ h1{
 }
 #topic-detail #a-date{
 	margin-left: 35px;
+}
+
+
+
+/*
+	right
+*/
+#cmt_right{
+	width:24%;
+	float: right;
+	margin-top: 25px;
+	position: relative;
+	top: -100px;
+	opacity:0;
+	
+}
+
+#div-btn-sendTopic{
+	display: none;
+}
+#div-btn-signIn{
+	display: none;
+}
+
+/*
+	发帖按钮
+*/
+#btn-sendTopic{
+	width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #00a7ea;
+    margin-bottom: 10px;	
+    border: none;
+    border-radius:3px;
+    font-size: 15px;
+    letter-spacing: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+#btn-sendTopic:HOVER{
+	 background-color: rgb(2,152,211);
+}
+
+/*
+	签到按钮
+*/
+#signIn_left{
+	width: 50%;
+	float: left;
+}
+#signIn_right{
+	width: 50%;
+	float: right;
+}
+
+#btn-signIn{
+	width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #fe8535;
+    margin-bottom: 10px;	
+    border: none;
+    font-size: 15px;
+    letter-spacing: 5px;
+    color: white;
+    font-weight: 600;
+    background-image: url("/myBlog/images/signIn_20x20.png");
+    background-repeat: no-repeat;
+    background-position: 20% 48%;
+    text-align: center;
+}
+
+#sign_num{
+	width: 100%;
+    height: 45px;
+    background: rgb(255,166,79);
+    margin-bottom: 10px;	
+    border: none;
+    color: white;
+}
+#sign_num span{
+	display: block;
+	height: 40%;
+	line-height:20px;
+	text-align: center;
+	font-weight: 600;
+	font-size: 12px;
+}
+#span1{
+	padding-top: 5px
+}
+#btn-signIn:HOVER{
+	background-color: rgb(243,123,43);
+}
+#sign_num:HOVER{
+	background-color: rgb(249,157,47);
+}
+#div-btn-signIn{
+	cursor: pointer;
+}
+
+/*
+	搜索
+*/
+#topic-search-content #topicSearch{
+	line-height:normal;
+	height: 28px;
+	line-height:28px;
+	width:75%;
+    padding-left: 45px;
+    border: 1px solid #ccc;
+    background-image: url("/myBlog/images/search_35x35.png");
+    background-repeat:no-repeat;
+    background-position : 0-3px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-top: 3px;
+	background-color: white;
+}
+
+/*
+	公告
+*/
+#right_notice_content{
+	margin-top:5px;
+	background: white;
+	padding: 20px 20px;
+}
+#right_notice_content span{
+	display: block;
+	margin: 10px 15px;
+	font-weight: 700;
+	font-size: 18px;
+	letter-spacing: 5px;
+}
+#right_notice_content hr{
+	color: #ccc;
+}
+#right_notice_content ul{
+	list-style: disc;
+	margin-left: 15px;
+}
+#right_notice_content ul li{
+	float: none;
+	margin: 15px auto;
+}
+#right_notice_content ul li a{
+	color: black;
+}
+#right_notice_content ul li a:HOVER{
+	color: #175199;
 }

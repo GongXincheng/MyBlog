@@ -12,6 +12,7 @@
 		<property name="uid"></property>
 		<property name="username"></property>
 		<property name="email"></property>
+		
 		<property name="title"></property>
 		<property name="message"></property>
 		<property name="createDate" type="timestamp"></property>

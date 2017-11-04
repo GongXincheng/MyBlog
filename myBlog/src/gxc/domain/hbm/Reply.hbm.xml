@@ -10,6 +10,9 @@
 		</id>
 		
 		<property name="replyContent"></property>
-		<property name="replyDate" type="timestamp"></property>
+		<property name="replyDate">
+			<column name="replyDate" sql-type="datetime"></column>
+		</property>
+		
 	</class>
 </hibernate-mapping>

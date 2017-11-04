@@ -270,7 +270,6 @@ $(function(){
 		</div>
 		
 		<div id="userhome_content_right">
-			
 			<div id="right_notice_content">
 				<span>公告</span><hr/>
 				<ul>
@@ -281,7 +280,6 @@ $(function(){
 					<li><a href="javascript:void(0);">万分感谢 !</a></li>
 				</ul>
 			</div>
-			
 		</div>
 	</div>
 </body>

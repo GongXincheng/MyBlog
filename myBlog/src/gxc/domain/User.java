@@ -12,7 +12,7 @@ public class User implements Serializable{
 	private String realname;
 	private Integer gender;	
 	private String sign;	//签名
-	private String telephone;
+	private String telephone; 
 	private String email;
 	private String province;
 	private String city;
@@ -27,6 +27,7 @@ public class User implements Serializable{
 	 *  User 和 Topic 一对多关系
 	 *  User 和 Reply 一对多关系
 	 */
+	
 	
 	public Integer getUid() {
 		return uid;

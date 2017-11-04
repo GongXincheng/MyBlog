@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,13 +14,22 @@
 	 
 	 <div id="content">
 		 <div id="div-h">
-		 	<br/><br/>
 		 	<h1 id="h1-1">Welcome To</h1>
 			<h1 id="h1-2">&nbsp;GXC's Community</h1>
-			<br/><br/><br/>
 		 </div>
 		 
-		 <div id="cmt_top">cmt_top</div>
+		 <div id="cmt_top">
+		 	<div id="cmt_top_left">
+		 		<ul>
+		 			<li><a href="#">最新主题</a></li>
+		 			<li><a href="#">时间顺序</a></li>
+		 			<li><a href="#">热门查看</a></li>
+		 		</ul>
+		 	</div>
+		 	<div id="cmt_top_right">
+		 		
+		 	</div>
+		 </div>
 		 
 		 <%-- left --%>
 		 <div id="cmt_left">
@@ -112,7 +122,48 @@
 	     </div>
 		 
 		  <%-- right --%>
-		 <div id="cmt_right">cmt_right</div>
+		 <div id="cmt_right">
+		 
+		 	<%--发帖--%>
+		 	<div id="div-btn-sendTopic">
+		 		<button type="button" id="btn-sendTopic">发帖</button>
+		 	</div>
+		 
+		 	<%--签到 --%>
+		 	<div id="div-btn-signIn">
+		 		<div id="signIn_left">
+		 			<div id="btn-signIn">&nbsp;&nbsp;&nbsp;&nbsp;签到</div>
+		 		</div>
+		 		
+		 		<div id="signIn_right">
+		 			<div id="sign_num">
+		 				<span id="span1">今日签到</span>
+		 				<span id="span2">1152人</span>
+		 			</div>
+		 		</div>
+		 	</div>
+		 	<div id="clear"></div>
+		 
+		 
+		 	<!-- 搜索 -->
+		 	<div id="topic-search-content">
+		 		<s:textfield id="topicSearch" placeholder="请输入搜索内容"></s:textfield>
+		 	</div>
+		 
+		 	<%-- 公告 --%>
+			<div id="right_notice_content">
+				<span>公告</span><hr/>
+				<ul>
+					<li><a href="javascript:void(0);">如果有任何建议</a></li>
+					<li><a href="javascript:void(0);">请写在留言,或 </a></li>
+					<li><a href="javascript:void(0);">QQ：757853223</a></li>
+					<li><a href="javascript:void(0);">Tel：13563274342</a></li>
+					<li><a href="javascript:void(0);">万分感谢 !</a></li>
+				</ul>
+			</div>
+			
+		 
+		 </div>
 		 
 	 </div>
 	 

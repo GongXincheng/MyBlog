@@ -46,10 +46,32 @@ $(function(){
 				top: 0,
 				opacity:1
 			},
-			400);
+			500,function(){
+				$("#div-btn-sendTopic").show(320,function(){
+					$("#div-btn-signIn").show(320);
+				});
+			});
 		});
 	});
 //---------------------------------------------	
+	//点击发帖
+	$("#btn-sendTopic").click(function(){
+		alert("发帖");
+	});
 	
+	//点击签到
+	$("#div-btn-signIn").click(function(){
+		alert("签到");
+	});
+	
+	
+	//回车搜索
+	/*$("").focus(function(){*/
+	$('#topicSearch').keypress(function(event){  
+	    var keycode = (event.keyCode ? event.keyCode : event.which);  
+	    if(keycode == '13'){  
+	        alert('按下了回车');    
+	    }  
+	}); 
 	
 });
