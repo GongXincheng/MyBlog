@@ -39,7 +39,7 @@
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/index.jsp">首 页</a></li>
 					<li><a href="javascript:void(0);">文 章</a></li>
-					<li><a href="${pageContext.request.contextPath}/community/list.jsp">社 区</a></li>
+					<li><a href="${pageContext.request.contextPath}/TopicAction_findAll">社 区</a></li>
 					<li><a href="javascript:void(0);" id="top_menu_board">留 言</a></li>
 					<s:if test="#session.user.role==1">
 						<li><a href="${pageContext.request.contextPath}/admin/main.jsp">后台管理</a></li>

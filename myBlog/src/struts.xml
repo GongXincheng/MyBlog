@@ -67,6 +67,16 @@
 	</package>
 	
 	
+	<!-- 发帖 -->
+	<package name="topic" extends="struts-default,json-default" >
+		<action name="TopicAction_*" class="gxc.web.action.TopicAction" method="{1}">
+			<result name="hasSend" type="redirectAction">TopicAction_findAll</result>
+			<result name="all">/community/list.jsp</result>
+			<result name="input">/community/list.jsp</result>
+		</action>
+	</package>
+	
+	
 	<!-- 后台 -->
 	<package name="admin" extends="struts-default,json-default" namespace="/admin">
 		<action name="Board_*" class="gxc.web.action.BoardAction" method="{1}">

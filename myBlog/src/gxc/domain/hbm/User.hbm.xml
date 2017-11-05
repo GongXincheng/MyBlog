@@ -31,5 +31,14 @@
 		<property name="loginNum"></property>
 		<property name="role" not-null="true"></property>
 		
+		<set name="topicSet">
+			<key column="uid"></key>
+			<one-to-many class="gxc.domain.Topic"/>
+		</set>
+		
+		<set name="replySet">
+			<key column="uid"></key>
+			<one-to-many class="gxc.domain.Reply"/>
+		</set>
 	</class>
 </hibernate-mapping>    

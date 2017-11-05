@@ -11,9 +11,19 @@
 		
 		<property name="title"></property>
 		<property name="topicContent"></property>
-		<property name="createDate" type="timestamp"></property>
-		<property name="lastReplyDate" type="timestamp"></property>
+		<property name="createDate" insert="false" update="false">
+			<column name="createDate" sql-type="datetime"></column>
+		</property>
+		<property name="lastReplyDate" >
+			<column name="createDate" sql-type="datetime"></column>
+		</property>
 		<property name="visitNum"></property>
 		<property name="zanNum"></property>
+		
+		<many-to-one name="user" class="gxc.domain.User" column="uid"></many-to-one>
+		<set name="replySet">
+			<key column="tid"></key>
+			<one-to-many class="gxc.domain.Reply"/>
+		</set>
 	</class>
 </hibernate-mapping>

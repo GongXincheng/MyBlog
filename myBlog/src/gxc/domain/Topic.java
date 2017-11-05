@@ -2,6 +2,8 @@ package gxc.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Topic implements Serializable{
 	private static final long serialVersionUID = 566892783351806711L;
@@ -16,10 +18,23 @@ public class Topic implements Serializable{
 	
 	/*
 	 * 	Topic 和 Reply 一对多关系
-	 *  Topic 和 User  一对多关系
-	 * 
+	 *  Topic 和 User  多对一关系
 	 */
+	private Set<Reply> replySet = new HashSet<Reply>();
+	private User user;
 	
+	public Set<Reply> getReplySet() {
+		return replySet;
+	}
+	public void setReplySet(Set<Reply> replySet) {
+		this.replySet = replySet;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public Integer getTid() {
 		return tid;
 	}

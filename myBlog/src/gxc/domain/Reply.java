@@ -15,7 +15,21 @@ public class Reply implements Serializable{
 	 * 	Reply 和 User  多对一关系
 	 */
 	
+	private User user;
+	private Topic topic;
 	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public Topic getTopic() {
+		return topic;
+	}
+	public void setTopic(Topic topic) {
+		this.topic = topic;
+	}
 	public Integer getRid() {
 		return rid;
 	}

@@ -74,6 +74,14 @@ $(function(){
 		}
 	});
 	
+	//点击发表主题
+	$("#btn-send").click(function(){
+		
+		$("#form_sendTopic")[0].submit();
+		
+	});
+	
+	
 	//点击签到
 	$("#div-btn-signIn").click(function(){
 		alert("签到");

@@ -15,7 +15,9 @@
 		
 		<property name="title"></property>
 		<property name="message"></property>
-		<property name="createDate" type="timestamp"></property>
+		<property name="createDate">
+			<column name="createDate" sql-type="datetime"></column>
+		</property>
 		
 	</class>
 </hibernate-mapping>

@@ -14,5 +14,8 @@
 			<column name="replyDate" sql-type="datetime"></column>
 		</property>
 		
+		<many-to-one name="topic" class="gxc.domain.Topic" column="tid"></many-to-one>
+		<many-to-one name="user" class="gxc.domain.User" column="uid"></many-to-one>
+		
 	</class>
 </hibernate-mapping>

@@ -12,13 +12,7 @@ public class HibernateUtil {
 		
 		Configuration configuration = new Configuration().configure();
 		sessionFactory = configuration.buildSessionFactory();
-		
-		/*Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-			@Override
-			public void run() {
-				sessionFactory.close();
-			}
-		}));*/
+
 	}
 	
 	public static Session openSession(){

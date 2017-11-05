@@ -21,8 +21,8 @@
 		 <div id="cmt_top">
 		 	<div id="cmt_top_left">
 		 		<ul>
-		 			<li><a href="#">最新主题</a></li>
-		 			<li><a href="#">最早发布</a></li>
+		 			<li><a href="${pageContext.request.contextPath}/TopicAction_findAll">最新主题</a></li>
+		 			<li><a href="${pageContext.request.contextPath}/TopicAction_findAllAsc"">最早发布</a></li>
 		 			<li><a href="#">热门查看</a></li>
 		 		</ul>
 		 	</div>
@@ -34,6 +34,36 @@
 		 <%-- left --%>
 		 <div id="cmt_left">
 		 
+			<s:iterator value="%{topicList}" var="t" status="s">
+				<div id="topic-list">
+					<div id="topic-headpic">
+						<img alt="${t.user.face}" src="${pageContext.request.contextPath}/images/user/${t.user.face}">
+					</div>
+					<div id="topic-content">
+						<div id="topic-title">
+							<a id="topic-title-a" href="#">${t.title }</a>
+						</div>
+						<div id="clear"></div>
+						<div id="topic-detail">
+							<s:a action="User_goUserHome" id="topic-a-user">
+								<s:param name="uid" value="%{#t.user.uid}"></s:param>${t.user.username.length()>6 ? t.user.username.substring(0,6).concat("..."):t.user.username}
+							</s:a>
+							<a id="a-read">${t.visitNum }</a>
+							<a id="a-reply">${t.replySet.size() }</a>
+							<a id="a-zan">${t.zanNum }</a>
+							<a id="a-date"><s:date name="#t.createDate" format="yyyy-MM-dd HH:mm"/></a>
+						</div>
+					</div>
+					<div id="clear"></div>
+				</div>
+			</s:iterator>
+			
+			
+			
+			
+			
+			
+			
 		 	<!-- 帖子1 -->
 			<div id="topic-list">
 				<div id="topic-headpic">
@@ -117,6 +147,15 @@
 				</div>
 				<div id="clear"></div>
 			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			
 	     </div>
