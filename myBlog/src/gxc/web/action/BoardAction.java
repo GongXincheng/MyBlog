@@ -46,7 +46,7 @@ public class BoardAction extends ActionSupport implements ModelDriven<Board>{
 			json.put("msg", "未知错误，请联系开发人员");
 		}
 		result = json.toString();
-		return "saveBoard";
+		return SUCCESS;
 	}
 	
 	
@@ -57,6 +57,7 @@ public class BoardAction extends ActionSupport implements ModelDriven<Board>{
 		boardList = boardService.getAllByDesc();
 		return "allBoard";
 	}
+	
 	/**
 	 * 根据最早留言(最早)
 	 */

@@ -54,9 +54,24 @@ $(function(){
 		});
 	});
 //---------------------------------------------	
-	//点击发帖
+	//点击发帖按钮
 	$("#btn-sendTopic").click(function(){
-		alert("发帖");
+		//未登录?
+		var flag = $("#img_user").is(":visible");
+		if(flag){
+			$("#img_user").click();
+		}
+		//已登录
+		else{
+			
+			var windowWidth = $(window).width();
+			var sendTWidth = $("#sendTopic-wrap").width();
+			var leftSend = (windowWidth-sendTWidth)/2;
+			
+			$("#mask").show(0,function(){
+				$("#sendTopic-wrap").css("left",leftSend).slideDown(365);
+			});
+		}
 	});
 	
 	//点击签到

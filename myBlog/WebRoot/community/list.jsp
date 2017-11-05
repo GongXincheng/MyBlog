@@ -22,7 +22,7 @@
 		 	<div id="cmt_top_left">
 		 		<ul>
 		 			<li><a href="#">最新主题</a></li>
-		 			<li><a href="#">时间顺序</a></li>
+		 			<li><a href="#">最早发布</a></li>
 		 			<li><a href="#">热门查看</a></li>
 		 		</ul>
 		 	</div>
@@ -166,6 +166,8 @@
 		 </div>
 		 
 	 </div>
+	 
+	 <jsp:include page="sendTopic.jsp"></jsp:include>
 	 
 </body>
 </html>

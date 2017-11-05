@@ -27,6 +27,7 @@ public class CaptchaResult extends StrutsResultSupport {
 		ValidateCode vc = new ValidateCode(width, height, 4, 50);
 		HttpServletResponse response = ServletActionContext.getResponse();
 		
+		//将验证码保存到session中,转成小写
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		session.setAttribute("login_captcha", vc.getCode().toLowerCase());
 		

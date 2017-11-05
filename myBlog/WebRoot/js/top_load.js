@@ -28,6 +28,8 @@ $(function(){
 		$(".edit-content").slideUp(250);
 		//修改头像
 		$("#edit-head-content").hide();
+		//发帖
+		$("#sendTopic-wrap").slideUp(250);
 		
 		//清空登录，注册，留言内容
 		$("#form_login")[0].reset();
