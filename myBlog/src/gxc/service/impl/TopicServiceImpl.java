@@ -26,11 +26,22 @@ public class TopicServiceImpl implements TopicService{
 		List<Topic> topicList = topicDao.findAllTopic("desc");
 		return topicList;
 	}
-
+	
 	@Override
 	public List<Topic> findAllTopicByAsc() {
 		List<Topic> topicList = topicDao.findAllTopic("asc");
 		return topicList;
+	}
+
+	@Override
+	public List<Topic> findAllByVisiteNum() {
+		List<Topic> topicList = topicDao.findAllByVisiteNum();
+		return topicList;
+	}
+
+	@Override
+	public Topic findTopicById(Integer tid) {
+		return topicDao.findTopicById(tid);
 	}
 
 }

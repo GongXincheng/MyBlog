@@ -1,0 +1,114 @@
+#topicDetail-content{
+	background: white;
+}
+/* left */
+#topicDetail-left{	
+	width:160px;
+	height:260px;
+	text-align:center;
+	/* background-color:pink; */
+	border-bottom:1px dashed #999;
+	float:left;
+}
+#left_userDetail{
+	margin: 20px auto;
+	/* background:green; */
+	height:85%;
+}
+#left_userDetail a{
+	font-size:16px;
+	font-weight:600;
+	text-decoration:none;
+	color:#39F;
+	margin-top:5px;
+	font-family: 黑体;
+	letter-spacing: 1px;
+}
+#userDetail-head{
+	height:110px;
+	width:110px;
+	margin:15px auto;
+	border:1px solid #ccc;
+}
+#left_userDetail img{
+	height:100%;
+	width:100%;
+}
+#top-rep-num{
+	/*background:pink;*/
+}
+#top-rep-num span{
+	font-size:13px;
+	display:block;
+	line-height:26px;
+	font-weight:500;
+	color:#666;
+}
+#top-rep-num span a{
+	display:inline;
+	font-size:14px;
+	color:#F60;
+}
+
+
+#topicDetail-right{
+	min-height:260px;
+	/* background-color:yellow; */
+	border-left:1px solid #ccc;
+	margin-left: 160px;
+}
+#topic-right-content{
+	/* background: pink; */
+	margin-left: 45px;
+	margin-right: 45px;
+	padding: 25px 0px;
+}
+
+/*主题头*/
+#topicTitle-span{
+	font-size: 25px;
+	font-weight:900;
+	font-family: 黑体;
+	display: block;
+	margin-bottom: 15px;
+	line-height: 40px;
+	width: 90%;
+	
+}
+#topic-right-top{
+	max-height: 180px;
+}
+#topic-right-top a{
+	color: #aaa;
+	margin-left: 25px;
+	font-size: 14px;
+	float: left;
+	display: block;
+}
+#topic-right-top #a-read{
+	margin-left: 0px;
+	padding-left:20px;
+	background: url("/myBlog/images/community/visit_17x17.png") no-repeat 0 -1px;
+}
+#a-reply{
+	padding-left:20px;
+	background: url("/myBlog/images/community/reply_16x16.png") no-repeat;
+}
+#a-zan{
+	padding-left:20px;
+	background: url("/myBlog/images/community/zan_17x17.png") no-repeat;
+}
+#topic-right-top #a-date{
+	margin-left: 45px;
+}
+
+/*主题内容*/
+#div-topicContent{
+	width: 75%;
+	margin: 0 50px;
+	font-family: 黑体;
+}
+#span-topicContent{
+	line-height: 30px;
+	font-weight: 600;
+}

@@ -22,8 +22,8 @@
 		 	<div id="cmt_top_left">
 		 		<ul>
 		 			<li><a href="${pageContext.request.contextPath}/TopicAction_findAll">最新主题</a></li>
-		 			<li><a href="${pageContext.request.contextPath}/TopicAction_findAllAsc"">最早发布</a></li>
-		 			<li><a href="#">热门查看</a></li>
+		 			<li><a href="${pageContext.request.contextPath}/TopicAction_findAllAsc">最早发布</a></li>
+		 			<li><a href="${pageContext.request.contextPath}/TopicAction_findAllByVisiteNum">热门查看</a></li>
 		 		</ul>
 		 	</div>
 		 	<div id="cmt_top_right">
@@ -34,129 +34,31 @@
 		 <%-- left --%>
 		 <div id="cmt_left">
 		 
-			<s:iterator value="%{topicList}" var="t" status="s">
+			<s:iterator value="topicList">
 				<div id="topic-list">
 					<div id="topic-headpic">
-						<img alt="${t.user.face}" src="${pageContext.request.contextPath}/images/user/${t.user.face}">
+						<img alt="${user.face}" src="${pageContext.request.contextPath}/images/user/${user.face}">
 					</div>
 					<div id="topic-content">
 						<div id="topic-title">
-							<a id="topic-title-a" href="#">${t.title }</a>
+							<s:a action="TopicAction_showTopic" id="topic-title-a" >
+								 <s:param name="tid" value="%{tid}"></s:param>${title }
+							</s:a>
 						</div>
 						<div id="clear"></div>
 						<div id="topic-detail">
 							<s:a action="User_goUserHome" id="topic-a-user">
-								<s:param name="uid" value="%{#t.user.uid}"></s:param>${t.user.username.length()>6 ? t.user.username.substring(0,6).concat("..."):t.user.username}
+								<s:param name="uid" value="%{user.uid}"></s:param>${user.username.length()>6 ? user.username.substring(0,6).concat("..."):user.username}
 							</s:a>
-							<a id="a-read">${t.visitNum }</a>
-							<a id="a-reply">${t.replySet.size() }</a>
-							<a id="a-zan">${t.zanNum }</a>
-							<a id="a-date"><s:date name="#t.createDate" format="yyyy-MM-dd HH:mm"/></a>
+							<a id="a-read">${visitNum }</a>
+							<a id="a-reply">${replySet.size() }</a>
+							<a id="a-zan">${zanNum }</a>
+							<a id="a-date"><s:date name="createDate" format="yyyy-MM-dd HH:mm"/></a>
 						</div>
 					</div>
 					<div id="clear"></div>
 				</div>
 			</s:iterator>
-			
-			
-			
-			
-			
-			
-			
-		 	<!-- 帖子1 -->
-			<div id="topic-list">
-				<div id="topic-headpic">
-					<img alt="head_1.png" src="${pageContext.request.contextPath}/images/user/head_1.png">
-				</div>
-				<div id="topic-content">
-					<div id="topic-title">
-						<a id="topic-title-a" href="#">WPS Office 是不是金山公司抄袭微软 Office 的？</a>
-					</div>
-					<div id="clear"></div>
-					<div id="topic-detail">
-						<a href="#" id="topic-a-user">宫新程</a>
-						<a id="a-read">1555</a>
-						<a id="a-reply">855</a>
-						<a id="a-zan">855</a>
-						<a id="a-date">2017-11-15 08:55</a>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			
-			<!-- 帖子2 -->
-			<div id="topic-list">
-				<div id="topic-headpic">
-					<img alt="head_04.jpg" src="${pageContext.request.contextPath}/images/user/head_04.jpg">
-				</div>
-				<div id="topic-content">
-					<div id="topic-title">
-						<a id="topic-title-a" href="#">为什么很多程序员喜欢linux系统？</a>
-					</div>
-					<div id="clear"></div>
-					<div id="topic-detail">
-						<a href="#" id="topic-a-user">薛令令</a>
-						<a id="a-read">125</a>
-						<a id="a-reply">8</a>
-						<a id="a-zan">54</a>
-						<a id="a-date">2017-11-15 08:55</a>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			
-			<!-- 帖子3 -->
-			<div id="topic-list">
-				<div id="topic-headpic">
-					<img alt="head_03.jpg" src="${pageContext.request.contextPath}/images/user/head_03.jpg">
-				</div>
-				<div id="topic-content">
-					<div id="topic-title">
-						<a id="topic-title-a" href="#">有哪些明明是 bug，却被说成是 feature 的例子？</a>
-					</div>
-					<div id="clear"></div>
-					<div id="topic-detail">
-						<a href="#" id="topic-a-user">王昱烜</a>
-						<a id="a-read">1555</a>
-						<a id="a-reply">855</a>
-						<a id="a-zan">855</a>
-						<a id="a-date">2017-11-15 08:55</a>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			
-			<!-- 帖子4 -->
-			<div id="topic-list">
-				<div id="topic-headpic">
-					<img alt="head_09jpg" src="${pageContext.request.contextPath}/images/user/head_09.jpg">
-				</div>
-				<div id="topic-content">
-					<div id="topic-title">
-						<a id="topic-title-a" href="#">Flow耳机官网有没有货，是不是放几条意思意思就把这个项目烂尾了？</a>
-					</div>
-					<div id="clear"></div>
-					<div id="topic-detail">
-						<a href="#" id="topic-a-user">杨昆</a>
-						<a id="a-read">1555</a>
-						<a id="a-reply">855</a>
-						<a id="a-zan">855</a>
-						<a id="a-date">2017-11-15 08:55</a>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			
 	     </div>
 		 

@@ -52,10 +52,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		int info = userService.editUser(user);
 		if(info>0){
 			//修改完之后，把session的user内容改掉
-			User sessioUser = userService.findUserById(user.getUid());
-			HttpSession session = ServletActionContext.getRequest().getSession();
-			session.removeAttribute("user");
-			session.setAttribute("user", sessioUser);
+			refreshSession(user.getUid());
 			try {
 				ServletActionContext.getResponse().sendRedirect("User_goUserDetail?uid="+user.getUid());
 			} catch (IOException e) {

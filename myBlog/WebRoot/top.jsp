@@ -25,7 +25,7 @@
 	});
 </script>
 </head>
-<body>
+<body id="bodyContent">
 	<div id="top">
 		<div id="top_content">
 			<div id="top_logo">

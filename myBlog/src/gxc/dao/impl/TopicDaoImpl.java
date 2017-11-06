@@ -19,12 +19,25 @@ public class TopicDaoImpl implements TopicDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<Topic> findAllTopic(String order) {
 		Session session = HibernateUtil.getCurrentSession();
 		Query query = session.createQuery("from Topic t order by t.createDate "+order);
 		List<Topic> list = (List<Topic>)query.list();
 		return list;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Topic> findAllByVisiteNum() {
+		Session session = HibernateUtil.getCurrentSession();
+		Query query = session.createQuery("from Topic t order by visitNum desc");
+		List<Topic> list = (List<Topic>)query.list();
+		return list;
+	}
+
+	public Topic findTopicById(Integer tid) {
+		Session session = HibernateUtil.getCurrentSession();
+		Topic topic = (Topic)session.get(Topic.class, tid);
+		return topic;
 	}
 
 }

@@ -13,4 +13,8 @@ public interface TopicService {
 
 	List<Topic> findAllTopicByAsc();
 
+	List<Topic> findAllByVisiteNum();
+
+	Topic findTopicById(Integer tid);
+
 }

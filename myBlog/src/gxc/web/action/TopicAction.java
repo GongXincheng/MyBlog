@@ -21,8 +21,7 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic> {
 		return topic ;
 	}
 	
-	private List<Topic> topicList;
-	
+
 	private UserService userService = new UserServiceImpl();
 	private TopicService topicService = new TopicServiceImpl();
 	//////////////////////////////////////////////////
@@ -41,17 +40,32 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic> {
 
 	//查询所有主题 Desc
 	public String findAll(){
-		topicList = topicService.findAllTopic();
+		List<Topic> topicList = topicService.findAllTopic();
+		ActionContext.getContext().getValueStack().set("topicList", topicList);
 		return "all";
 	}
 	public String findAllAsc(){
-		topicList = topicService.findAllTopicByAsc();
+		List<Topic> topicList = topicService.findAllTopicByAsc();
+		ActionContext.getContext().getValueStack().set("topicList", topicList);
 		return "all";
 	}
 	
+	//TODO
+	//根据查看数量查询
+	public String findAllByVisiteNum(){
+		List<Topic> topicList = topicService.findAllByVisiteNum();
+		ActionContext.getContext().getValueStack().set("topicList", topicList);
+		return "all";
+	}
 	
-	
-	
+	//查看帖子
+	public String showTopic(){
+		
+		Topic showTopic = topicService.findTopicById(topic.getTid());
+		ActionContext.getContext().getValueStack().push(showTopic);
+		
+		return "showTopic";
+	}
 	
 	/////////////////////////////////////////////////
 	public UserService getUserService() {
@@ -60,22 +74,11 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic> {
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
-	public Topic getTopic() {
-		return topic;
-	}
-	public void setTopic(Topic topic) {
-		this.topic = topic;
-	}
+	
 	public TopicService getTopicService() {
 		return topicService;
 	}
 	public void setTopicService(TopicService topicService) {
 		this.topicService = topicService;
-	}
-	public List<Topic> getTopicList() {
-		return topicList;
-	}
-	public void setTopicList(List<Topic> topicList) {
-		this.topicList = topicList;
 	}
 }

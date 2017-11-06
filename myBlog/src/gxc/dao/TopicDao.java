@@ -11,4 +11,8 @@ public interface TopicDao {
 
 	List<Topic> findAllTopic(String order);
 
+	List<Topic> findAllByVisiteNum();
+
+	Topic findTopicById(Integer tid);
+
 }

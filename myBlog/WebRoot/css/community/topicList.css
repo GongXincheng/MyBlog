@@ -103,6 +103,7 @@ h1{
 	font-weight: 600;
 	line-height: 24px;
 	color: #000;
+	font-family: 黑体;
 	/* word-spacing:2px; 
 	letter-spacing: 1px; */
 }
@@ -121,6 +122,7 @@ h1{
 	font-size: 12px;
 	float: left;
 	display: block;
+	font-family: 黑体;
 }
 #topic-detail #topic-a-user{
 	margin-left: 0px;
@@ -144,7 +146,6 @@ h1{
 #topic-detail #a-date{
 	margin-left: 35px;
 }
-
 
 
 /*
