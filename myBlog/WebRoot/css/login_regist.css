@@ -4,11 +4,12 @@
 	opacity:0.82;
 	filter:alpha(opacity=82.0);
 	width:100%;
-	position:absolute;
+	position:fixed;
 	left:0;
 	top:0;
 	z-index:1000;
 	display: none;
+	height: 10000000px;
 }
 a{
 	text-decoration: none;

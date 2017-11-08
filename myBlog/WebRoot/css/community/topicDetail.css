@@ -7,7 +7,8 @@
 	height:260px;
 	text-align:center;
 	/* background-color:pink; */
-	border-bottom:1px dashed #999;
+	border-top:1px dotted #999;
+	border-bottom:1px dotted #999;
 	float:left;
 }
 #left_userDetail{
@@ -49,13 +50,11 @@
 	font-size:14px;
 	color:#F60;
 }
-
-
 #topicDetail-right{
-	min-height:260px;
-	/* background-color:yellow; */
 	border-left:1px solid #ccc;
+	border-bottom:2px solid #ccc;
 	margin-left: 160px;
+	/* background: lime; */
 }
 #topic-right-content{
 	/* background: pink; */
@@ -72,11 +71,12 @@
 	display: block;
 	margin-bottom: 15px;
 	line-height: 40px;
-	width: 90%;
-	
+	width: 96%;
+	/* background-color: lime; */
 }
-#topic-right-top{
-	max-height: 180px;
+.right-top-reply{
+	height:30px;
+	border-bottom: 1px dotted #ccc;
 }
 #topic-right-top a{
 	color: #aaa;
@@ -84,6 +84,7 @@
 	font-size: 14px;
 	float: left;
 	display: block;
+/* 	background: lime; */
 }
 #topic-right-top #a-read{
 	margin-left: 0px;
@@ -98,17 +99,106 @@
 	padding-left:20px;
 	background: url("/myBlog/images/community/zan_17x17.png") no-repeat;
 }
+
 #topic-right-top #a-date{
 	margin-left: 45px;
+}
+#topic-right-top #floor-name{
+	background-color: rgb(245,179,52);
+	color: white;
+	width: 40px;
+	height: 22px;
+	margin-top: -5px;
+	line-height: 22px;
+	text-align: center;
+	float: right;
+}
+#topic-right-top #floor{
+	float: right;
+	margin-right: -10px;
+}
+#floor-name{
+	margin-right: 30px;
 }
 
 /*主题内容*/
 #div-topicContent{
 	width: 75%;
-	margin: 0 50px;
+	margin: 90px auto -20px;
 	font-family: 黑体;
+	font-size: 18px;
+	/* background-color: yellow; */
 }
 #span-topicContent{
 	line-height: 30px;
-	font-weight: 600;
+}
+
+
+/* 赞 */
+#topic-content-menu{
+	margin: 120px auto 20px;
+	width: 100%;
+}
+#topic-content-menu div{
+	margin: 0 auto;
+	width: 300px;
+}
+
+#topicZan-a{
+	height: 35px;
+	width: 50px;
+	background: url("/myBlog/images/like_red_28.png") no-repeat 0px 3px;
+	line-height:35px;
+	padding-left: 45px; 
+	font-family: 黑体;
+	font-size: 15px;
+	display: block;
+	float: left;
+	margin-top: -2px;
+}
+
+/* 回复按钮 */
+#a-sendReply{
+	background-color: #82c447;
+	width: 100px;
+	height: 35px;
+	float: left;
+	color: #fff;
+	border-radius: 2px;
+	font-size: 16px;
+	line-height: 35px;
+	text-align: center;
+	display: block;
+	margin-left: 50px;
+	margin-top: -4px;
+}
+#a-sendReply2{
+	background-color: #82c447;
+	width: 100px;
+	height: 35px;
+	color: #fff;
+	border-radius: 2px;
+	font-size: 16px;
+	line-height: 35px;
+	text-align: center;
+	display: block;
+	position: fixed;
+	bottom: 100px;
+	right:30px;
+}
+#a-sendReply:HOVER {
+	background-color: #75b83a;
+}
+#a-sendReply2:HOVER {
+	background-color: #75b83a;
+}
+
+
+
+.div-replyContent{
+	padding-bottom:85px; 
+	margin: 80px auto 0px;
+	width: 75%;
+	font-family: 黑体;
+	font-size: 18px;
 }

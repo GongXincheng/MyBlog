@@ -13,7 +13,7 @@
 		<property name="username"></property>
 		<property name="email"></property>
 		
-		<property name="title"></property>
+		<property name="msgTitle"></property>
 		<property name="message"></property>
 		<property name="createDate">
 			<column name="createDate" sql-type="datetime"></column>

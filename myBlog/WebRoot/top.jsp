@@ -203,7 +203,7 @@
 					<s:textfield name="email" value="%{#session.user.email}" id="boardEmail" placeholder="邮 箱  (可不填写)"></s:textfield>
 				</div>
 				<div id="board-content-title">
-					<s:textfield name="title" id="boardTitle" placeholder="标 题   (必填)"></s:textfield>
+					<s:textfield name="msgTitle" id="boardTitle" placeholder="标 题   (必填)"></s:textfield>
 				</div>
 				<div id="board-content-message">
 					<s:textarea name="message" id="boardMessage" placeholder="留言内容(必填)"></s:textarea>

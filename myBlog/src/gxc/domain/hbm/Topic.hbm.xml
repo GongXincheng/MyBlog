@@ -21,7 +21,7 @@
 		<property name="zanNum"></property>
 		
 		<many-to-one name="user" class="gxc.domain.User" column="uid"></many-to-one>
-		<set name="replySet">
+		<set name="replySet" order-by="tid">
 			<key column="tid"></key>
 			<one-to-many class="gxc.domain.Reply"/>
 		</set>

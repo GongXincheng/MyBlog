@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -71,191 +72,29 @@ $(function(){
 				<div id="content_menu_bottom"></div>
 			</div>
 			
-			<!-- List1 -->
-			<div class="userhome_content_list">
-				<!-- left -->
-				<div id="list_left">
-					<div id="list_topic">
-						<span>发布了主题</span>
-						<a href="javascript:void(0);">哪本书适合推荐给 Java 初学者？</a>
-					</div>
-				</div>
-				<!-- right -->
-				<div id="list_right">
-					<div id="list_detail">
-						<span>20</span> |<span>180</span>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
 			
+			<!-- List 遍历-->
+			<s:iterator value="user.topicSet">
+				<div class="userhome_content_list">
+					<!-- left -->
+					<div id="list_left">
+						<div id="list_topic">
+							<span>发布了主题</span>
+							<s:a action="TopicAction_showTopic">
+								<s:param name="tid" value="%{tid}"></s:param>${title }
+							</s:a>
+						</div>
+					</div>
+					<!-- right -->
+					<div id="list_right">
+						<div id="list_detail">
+							<span>${replySet.size() }</span> |<span>${visitNum }</span>
+						</div>
+					</div>
+					<div id="clear"></div>
+				</div>
+			</s:iterator>
 			
-			<!-- 可删除! -->
-			<!-- List2 -->
-			<div class="userhome_content_list">
-				<!-- left -->
-				<div id="list_left">
-					<div id="list_topic">
-						<span>发布了主题</span>
-						<a href="javascript:void(0);">Java新手如何学习Spring、Struts、Hibernate三大框架？</a>
-					</div>
-				</div>
-				<!-- right -->
-				<div id="list_right">
-					<div id="list_detail">
-						<span>20</span> |<span>180</span>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			<!-- List3 -->
-			<div class="userhome_content_list">
-				<!-- left -->
-				<div id="list_left">
-					<div id="list_topic">
-						<span>发布了主题</span>
-						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
-					</div>
-				</div>
-				<!-- right -->
-				<div id="list_right">
-					<div id="list_detail">
-						<span>20</span> |<span>180</span>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			<!-- List4 -->
-			<div class="userhome_content_list">
-				<!-- left -->
-				<div id="list_left">
-					<div id="list_topic">
-						<span>发布了主题</span>
-						<a href="javascript:void(0);">如何培养/训练自己的耐力、耐心？</a>
-					</div>
-				</div>
-				<!-- right -->
-				<div id="list_right">
-					<div id="list_detail">
-						<span>20</span> |<span>180</span>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			<!-- List5 -->
-			<div class="userhome_content_list">
-				<!-- left -->
-				<div id="list_left">
-					<div id="list_topic">
-						<span>发布了主题</span>
-						<a href="javascript:void(0);">如果外挂遇上外挂，结果会怎样？</a>
-					</div>
-				</div>
-				<!-- right -->
-				<div id="list_right">
-					<div id="list_detail">
-						<span>20</span> |<span>180</span>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			<div class="userhome_content_list">
-				<!-- left -->
-				<div id="list_left">
-					<div id="list_topic">
-						<span>发布了主题</span>
-						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
-					</div>
-				</div>
-				<!-- right -->
-				<div id="list_right">
-					<div id="list_detail">
-						<span>20</span> |<span>180</span>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			<div class="userhome_content_list">
-				<!-- left -->
-				<div id="list_left">
-					<div id="list_topic">
-						<span>发布了主题</span>
-						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
-					</div>
-				</div>
-				<!-- right -->
-				<div id="list_right">
-					<div id="list_detail">
-						<span>20</span> |<span>180</span>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			<div class="userhome_content_list">
-				<!-- left -->
-				<div id="list_left">
-					<div id="list_topic">
-						<span>发布了主题</span>
-						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
-					</div>
-				</div>
-				<!-- right -->
-				<div id="list_right">
-					<div id="list_detail">
-						<span>20</span> |<span>180</span>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			<div class="userhome_content_list">
-				<!-- left -->
-				<div id="list_left">
-					<div id="list_topic">
-						<span>发布了主题</span>
-						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
-					</div>
-				</div>
-				<!-- right -->
-				<div id="list_right">
-					<div id="list_detail">
-						<span>20</span> |<span>180</span>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			<div class="userhome_content_list">
-				<!-- left -->
-				<div id="list_left">
-					<div id="list_topic">
-						<span>发布了主题</span>
-						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
-					</div>
-				</div>
-				<!-- right -->
-				<div id="list_right">
-					<div id="list_detail">
-						<span>20</span> |<span>180</span>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-			<div class="userhome_content_list">
-				<!-- left -->
-				<div id="list_left">
-					<div id="list_topic">
-						<span>发布了主题</span>
-						<a href="javascript:void(0);">最良心的软件可以良心到什么程度？</a>
-					</div>
-				</div>
-				<!-- right -->
-				<div id="list_right">
-					<div id="list_detail">
-						<span>20</span> |<span>180</span>
-					</div>
-				</div>
-				<div id="clear"></div>
-			</div>
-
 			
 			<!-- 分页 -->
 			<div id="list_page_content">

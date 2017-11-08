@@ -60,9 +60,8 @@ td{
 		</s:else>
 		
 		
-		
 		<td>${b.email }</td>
-		<td>${b.title }</td>
+		<td>${b.msgTitle }</td>
 		<td>${b.message }</td>
 		<td>
 			<s:date name="#b.createDate" format="yyyy-MM-dd HH:mm"/>

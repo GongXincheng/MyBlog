@@ -39,7 +39,7 @@ $(function(){
 				uid : uid,
 				username : username,
 				email : email,
-				title : title,
+				msgTitle : title,
 				message : message
 			},
 			type : "POST",

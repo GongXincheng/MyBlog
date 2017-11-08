@@ -21,7 +21,6 @@ public class BoardAction extends ActionSupport implements ModelDriven<Board>{
 	
 	private BoardService boardService = new BoardServiceImpl();
 	
-	
 	/**
 	 * 保存留言
 	 * @return
@@ -30,12 +29,16 @@ public class BoardAction extends ActionSupport implements ModelDriven<Board>{
 		JSONObject json = new JSONObject();
 		
 		//判断留言格式
-		if(StringUtils.isBlank(board.getUsername()))
+		if(StringUtils.isBlank(board.getUsername())){
 			board.setUsername("匿名");
-		if(board.getTitle().length()>40)
-			board.setTitle(board.getTitle().substring(0, 20));
-		if(board.getMessage().length()>200)
+		}
+		if(board.getMsgTitle().length()>40){
+			board.setMsgTitle(board.getMsgTitle().substring(0, 20));
+		}
+		if(board.getMessage().length()>200){
 			board.setMessage(board.getMessage().substring(0, 100));
+		}
+			
 		
 		//添加
 		try {

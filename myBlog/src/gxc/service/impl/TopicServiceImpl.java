@@ -10,8 +10,9 @@ import gxc.domain.User;
 import gxc.service.TopicService;
 
 public class TopicServiceImpl implements TopicService{
-	TopicDao topicDao = new TopicDaoImpl();
+	private TopicDao topicDao = new TopicDaoImpl();
 	
+	@Override
 	public void addTopic(User user, Topic topic) {
 		//初始化
 		topic.setCreateDate(new Date());

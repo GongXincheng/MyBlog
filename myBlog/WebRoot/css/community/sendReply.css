@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-#sendTopic-wrap{
+#sendReply-wrap{
 	width:385px;
 	margin: 0 auto;
 	border-radius:7px; 
@@ -7,50 +7,26 @@
 	padding-bottom: 20px;
 	background: rgb(241,241,241);
 	position:fixed;
-	top:13%;
-	left:40%;
 	z-index:1002;
 	border: 2px solid #ccc;
 	display: none;
 }
-#sendTopic-top{
+#sendReply-top{
 	height:50px;
 	border-bottom: 2px solid #aaa;
 	line-height: 44px;
 	text-align: center;
+	font-size: 黑体;
+	letter-spacing: 5px;
+	font-size: 18px;
 }
-#sendTopic-content{
+#sendReply-content{
 	width:340px;
 	margin: 20px auto 0px;
 }
-#topic-title{
-	
-}
-#title{
-	font-size:14px;
-	width:284px;
-	height:35px;
-	line-height: 35px;
-	padding-left: 56px;
-	border: 1px solid #999;
-	background-color: white;
-	box-shadow: 0px -1px 2px #999;
-	border: none;
-	background-image: url("/myBlog/images/board/tilte_22x22.png");
-	background-repeat: no-repeat;
-	background-position: 12px 6px;
-}
-#title:FOCUS{
-	background-image: url("/myBlog/images/board/title_red_22.png");
-	background-repeat: no-repeat;
-	background-position: 12px 6px;
-}
 
 
-#topic-content{
-	
-}
-#topicContent{
+#replyContent{
 	width:310px;
 	height:120px;
 	border: 1px solid #ccc;
@@ -59,7 +35,7 @@
 	box-shadow: 0px -1px 2px #999;
 }
 
-#btn-send{
+#btn-send-reply{
 	text-align:center;
 	letter-spacing: 2px;
 	width: 342px;

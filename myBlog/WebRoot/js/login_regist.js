@@ -9,15 +9,13 @@ $(function(){
 	/*var screenWidth = $(window).width();*/
 	
 	//获取文档高度
-	var docHeight = $(document).height();  //676
+	var docHeight = $(window).height();  //676
 	var docWidth = $(document).width();	//1438
 
 	//获取$Content的高度宽度
 	/*var contentHeight = $content.height();*/
 	var contentWidth = $content.width();
 
-	//设置遮罩层的高度
-	$("#mask").css("height",docHeight);
 	
 	//--------------- img Click ---------------
 	$("#img_user").click(function(){

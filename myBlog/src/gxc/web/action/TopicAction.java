@@ -3,12 +3,8 @@ package gxc.web.action;
 import gxc.domain.Topic;
 import gxc.domain.User;
 import gxc.service.TopicService;
-import gxc.service.UserService;
 import gxc.service.impl.TopicServiceImpl;
-import gxc.service.impl.UserServiceImpl;
-
 import java.util.List;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -17,12 +13,12 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic> {
 	private static final long serialVersionUID = -2843415472682501116L;
 	
 	private Topic topic = new Topic();
+	
+	@Override
 	public Topic getModel() {
 		return topic ;
 	}
-	
 
-	private UserService userService = new UserServiceImpl();
 	private TopicService topicService = new TopicServiceImpl();
 	//////////////////////////////////////////////////
 	
@@ -62,18 +58,18 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic> {
 	public String showTopic(){
 		
 		Topic showTopic = topicService.findTopicById(topic.getTid());
+		showTopic.setVisitNum(showTopic.getVisitNum()+1);
 		ActionContext.getContext().getValueStack().push(showTopic);
-		
+		/*
+		List<Reply> replyList = replyService.findReplyByTid(topic.getTid(),"desc");
+		for (Reply reply : replyList) {
+			System.out.println(reply);
+		}
+		ActionContext.getContext().put("replyList", replyList);*/
 		return "showTopic";
 	}
 	
 	/////////////////////////////////////////////////
-	public UserService getUserService() {
-		return userService;
-	}
-	public void setUserService(UserService userService) {
-		this.userService = userService;
-	}
 	
 	public TopicService getTopicService() {
 		return topicService;

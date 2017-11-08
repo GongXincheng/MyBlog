@@ -30,6 +30,9 @@ $(function(){
 		$("#edit-head-content").hide();
 		//发帖
 		$("#sendTopic-wrap").slideUp(250);
+		//发帖
+		$("#sendReply-wrap").slideUp(250);
+		
 		
 		//清空登录，注册，留言内容
 		$("#form_login")[0].reset();

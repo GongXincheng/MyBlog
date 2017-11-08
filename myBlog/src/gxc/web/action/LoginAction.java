@@ -66,10 +66,12 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>{
 		//获取session中的loginUser
 		User dnUser = (User) ActionContext.getContext().getSession().get("user");
 		
-		if(dnUser!=null)
+		if(dnUser!=null){
 			json.put("msg", true);
-		else
+		}
+		else{
 			json.put("msg", false);
+		}
 		
 		result = json.toString();
 		return SUCCESS;

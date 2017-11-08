@@ -10,7 +10,7 @@ public class Board implements Serializable{
 	private String uid;
 	private String username;
 	private String email;
-	private String title;	//标题
+	private String msgTitle; //标题
 	private String message;	//内容
 	private Date createDate;//时间
 	
@@ -20,11 +20,11 @@ public class Board implements Serializable{
 	public void setBid(Integer bid) {
 		this.bid = bid;
 	}
-	public String getTitle() {
-		return title;
+	public String getMsgTitle() {
+		return msgTitle;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setMsgTitle(String msgTitle) {
+		this.msgTitle = msgTitle;
 	}
 	public String getMessage() {
 		return message;
@@ -59,7 +59,7 @@ public class Board implements Serializable{
 	@Override
 	public String toString() {
 		return "Board [bid=" + bid + ", uid=" + uid + ", username=" + username
-				+ ", email=" + email + ", title=" + title + ", message="
+				+ ", email=" + email + ", message="
 				+ message + ", createDate=" + createDate + "]";
 	}
 	

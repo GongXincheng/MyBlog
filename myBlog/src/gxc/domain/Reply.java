@@ -48,7 +48,12 @@ public class Reply implements Serializable{
 	public void setReplyDate(Date replyDate) {
 		this.replyDate = replyDate;
 	}
-	
+	@Override
+	public String toString() {
+		return "Reply [rid=" + rid + ", replyContent=" + replyContent
+				+ ", replyDate=" + replyDate + ", user=" + user + ", topic="
+				+ topic + "]";
+	}
 	
 	
 }

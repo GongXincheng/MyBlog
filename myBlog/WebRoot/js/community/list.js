@@ -63,7 +63,6 @@ $(function(){
 		}
 		//已登录
 		else{
-			
 			var windowWidth = $(window).width();
 			var sendTWidth = $("#sendTopic-wrap").width();
 			var leftSend = (windowWidth-sendTWidth)/2;
@@ -74,11 +73,40 @@ $(function(){
 		}
 	});
 	
-	//点击发表主题
+	//点击回复按钮
+	$("#a-sendReply,#a-sendReply2").click(function(){
+		//未登录?
+		var flag = $("#img_user").is(":visible");
+		if(flag){
+			$("#img_user").click();
+		}
+		//已登录
+		else{
+			var windowWidth = $(window).width();
+			var windowHeight = $(window).height();
+			var sendTWidth = $("#sendReply-wrap").width();
+			var sendTHeight = $("#sendReply-wrap").height();
+			var leftSend = (windowWidth-sendTWidth)/2;
+			var topSend = (windowHeight-sendTHeight)/2;
+			
+			$("#mask").show(0,function(){
+				$("#sendReply-wrap").css({
+					"left":leftSend+"px",
+					"top":topSend+"px"
+				}).slideDown(365);
+			});
+		}
+	});
+	
+	
+	
+	//点击发表
 	$("#btn-send").click(function(){
-		
 		$("#form_sendTopic")[0].submit();
-		
+	});
+	//点击回复
+	$("#btn-send-reply").click(function(){
+		$("#form_sendReply")[0].submit();
 	});
 	
 	

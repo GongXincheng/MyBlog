@@ -14,6 +14,7 @@ public class BoardDaoImpl implements BoardDao {
 	/**
 	 * 保存建议(留言)
 	 */
+	@Override
 	public void save(Board board) {
 		Session session = HibernateUtil.getCurrentSession();
 		session.save(board);

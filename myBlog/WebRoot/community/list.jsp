@@ -11,6 +11,7 @@
 </head>
 <body id="bodyContent">
 	 <jsp:include page="../top.jsp"></jsp:include>
+	 <jsp:include page="sendTopic.jsp"></jsp:include>
 	 
 	 <div id="content">
 		 <div id="div-h">
@@ -37,7 +38,10 @@
 			<s:iterator value="topicList">
 				<div id="topic-list">
 					<div id="topic-headpic">
-						<img alt="${user.face}" src="${pageContext.request.contextPath}/images/user/${user.face}">
+						<s:a action="User_goUserHome">
+	        				<s:param name="uid" value="%{user.uid}"></s:param>
+							<img alt="${user.face}" src="${pageContext.request.contextPath}/images/user/${user.face}">
+	        			</s:a>
 					</div>
 					<div id="topic-content">
 						<div id="topic-title">
@@ -103,12 +107,8 @@
 				</ul>
 			</div>
 			
-		 
 		 </div>
 		 
 	 </div>
-	 
-	 <jsp:include page="sendTopic.jsp"></jsp:include>
-	 
 </body>
 </html>

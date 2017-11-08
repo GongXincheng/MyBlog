@@ -67,13 +67,19 @@
 	</package>
 	
 	
-	<!-- 发帖 -->
+	<!-- 主题 -->
 	<package name="topic" extends="struts-default,json-default" >
 		<action name="TopicAction_*" class="gxc.web.action.TopicAction" method="{1}">
 			<result name="hasSend" type="redirectAction">TopicAction_findAll</result>
 			<result name="all">/community/list.jsp</result>
 			<result name="input">/community/list.jsp</result>
 			<result name="showTopic">/community/topicDetail.jsp</result>
+		</action>
+	</package>
+	<!-- 回复 -->
+	<package name="reply" extends="struts-default,json-default" >
+		<action name="ReplyAction_*" class="gxc.web.action.ReplyAction" method="{1}">
+			<result type="redirectAction">TopicAction_findAll</result>
 		</action>
 	</package>
 	

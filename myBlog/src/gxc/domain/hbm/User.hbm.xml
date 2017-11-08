@@ -31,7 +31,7 @@
 		<property name="loginNum"></property>
 		<property name="role" not-null="true"></property>
 		
-		<set name="topicSet">
+		<set name="topicSet" order-by="tid desc">
 			<key column="uid"></key>
 			<one-to-many class="gxc.domain.Topic"/>
 		</set>
