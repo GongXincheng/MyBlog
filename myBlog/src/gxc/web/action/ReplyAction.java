@@ -1,15 +1,11 @@
 package gxc.web.action;
 
-import java.io.IOException;
 import java.util.Date;
-
 import org.apache.struts2.ServletActionContext;
-
 import gxc.domain.Reply;
 import gxc.domain.User;
 import gxc.service.ReplyService;
 import gxc.service.impl.ReplyServiceImpl;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -47,21 +43,18 @@ public class ReplyAction extends ActionSupport implements ModelDriven<Reply> {
 	/**
 	 * 发帖
 	 * @return
+	 * @throws Exception 
 	 */
-	public void sendReply(){
+	public String sendReply() throws Exception{
 		//回复人
 		User loginUser = (User)ActionContext.getContext().getSession().get("user");
 		//在 tid 的主题回复
 		//回复内容为reply
 		reply.setReplyDate(new Date());
 		replyService.addReply(loginUser.getUid(),tid,reply);
+		ServletActionContext.getResponse().sendRedirect("TopicAction_showTopic?tid="+tid);
 		
-		try {
-			ServletActionContext.getResponse().sendRedirect("TopicAction_showTopic?tid="+tid);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		/*return "success";*/
+		return "none";
 	}
 	
 	

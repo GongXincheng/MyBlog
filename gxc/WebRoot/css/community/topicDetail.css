@@ -1,0 +1,204 @@
+#topicDetail-content{
+	background: white;
+}
+/* left */
+#topicDetail-left{	
+	width:160px;
+	height:260px;
+	text-align:center;
+	/* background-color:pink; */
+	border-top:1px dotted #999;
+	border-bottom:1px dotted #999;
+	float:left;
+}
+#left_userDetail{
+	margin: 20px auto;
+	/* background:green; */
+	height:85%;
+}
+#left_userDetail a{
+	font-size:16px;
+	font-weight:600;
+	text-decoration:none;
+	color:#39F;
+	margin-top:5px;
+	font-family: 黑体;
+	letter-spacing: 1px;
+}
+#userDetail-head{
+	height:110px;
+	width:110px;
+	margin:15px auto;
+	border:1px solid #ccc;
+}
+#left_userDetail img{
+	height:100%;
+	width:100%;
+}
+#top-rep-num{
+	/*background:pink;*/
+}
+#top-rep-num span{
+	font-size:13px;
+	display:block;
+	line-height:26px;
+	font-weight:500;
+	color:#666;
+}
+#top-rep-num span a{
+	display:inline;
+	font-size:14px;
+	color:#F60;
+}
+#topicDetail-right{
+	border-left:1px solid #ccc;
+	border-bottom:2px solid #ccc;
+	margin-left: 160px;
+	/* background: lime; */
+}
+#topic-right-content{
+	/* background: pink; */
+	margin-left: 45px;
+	margin-right: 45px;
+	padding: 25px 0px;
+}
+
+/*主题头*/
+#topicTitle-span{
+	font-size: 25px;
+	font-weight:900;
+	font-family: 黑体;
+	display: block;
+	margin-bottom: 15px;
+	line-height: 40px;
+	width: 96%;
+	/* background-color: lime; */
+}
+.right-top-reply{
+	height:30px;
+	border-bottom: 1px dotted #ccc;
+}
+#topic-right-top a{
+	color: #aaa;
+	margin-left: 25px;
+	font-size: 14px;
+	float: left;
+	display: block;
+/* 	background: lime; */
+}
+#topic-right-top #a-read{
+	margin-left: 0px;
+	padding-left:20px;
+	background: url("/myBlog/images/community/visit_17x17.png") no-repeat 0 -1px;
+}
+#a-reply{
+	padding-left:20px;
+	background: url("/myBlog/images/community/reply_16x16.png") no-repeat;
+}
+#a-zan{
+	padding-left:20px;
+	background: url("/myBlog/images/community/zan_17x17.png") no-repeat;
+}
+
+#topic-right-top #a-date{
+	margin-left: 45px;
+}
+#topic-right-top #floor-name{
+	background-color: rgb(245,179,52);
+	color: white;
+	width: 40px;
+	height: 22px;
+	margin-top: -5px;
+	line-height: 22px;
+	text-align: center;
+	float: right;
+}
+#topic-right-top #floor{
+	float: right;
+	margin-right: -10px;
+}
+#floor-name{
+	margin-right: 30px;
+}
+
+/*主题内容*/
+#div-topicContent{
+	width: 75%;
+	margin: 90px auto -20px;
+	font-family: 黑体;
+	font-size: 18px;
+	/* background-color: yellow; */
+}
+#span-topicContent{
+	line-height: 30px;
+}
+
+
+/* 赞 */
+#topic-content-menu{
+	margin: 120px auto 20px;
+	width: 100%;
+}
+#topic-content-menu div{
+	margin: 0 auto;
+	width: 300px;
+}
+
+#topicZan-a{
+	height: 35px;
+	width: 50px;
+	background: url("/myBlog/images/like_red_28.png") no-repeat 0px 3px;
+	line-height:35px;
+	padding-left: 45px; 
+	font-family: 黑体;
+	font-size: 15px;
+	display: block;
+	float: left;
+	margin-top: -2px;
+}
+
+/* 回复按钮 */
+#a-sendReply{
+	background-color: #82c447;
+	width: 100px;
+	height: 35px;
+	float: left;
+	color: #fff;
+	border-radius: 2px;
+	font-size: 16px;
+	line-height: 35px;
+	text-align: center;
+	display: block;
+	margin-left: 50px;
+	margin-top: -4px;
+}
+#a-sendReply2{
+	background-color: #82c447;
+	width: 100px;
+	height: 35px;
+	color: #fff;
+	border-radius: 2px;
+	font-size: 16px;
+	line-height: 35px;
+	text-align: center;
+	display: block;
+	position: fixed;
+	bottom: 100px;
+	right:30px;
+}
+#a-sendReply:HOVER {
+	background-color: #75b83a;
+}
+#a-sendReply2:HOVER {
+	background-color: #75b83a;
+}
+
+
+
+.div-replyContent{
+	padding-bottom:85px; 
+	margin: 80px auto 0px;
+	width: 75%;
+	font-family: 黑体;
+	font-size: 18px;
+}

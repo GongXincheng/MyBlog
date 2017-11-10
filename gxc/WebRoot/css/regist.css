@@ -1,0 +1,153 @@
+@CHARSET "UTF-8";
+#regist_content{
+	/*height: 400px;*/
+    width: 330px;
+    background-color: rgb(250,251,252);
+    position: relative;
+    left: 62%;
+    top: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px #018c8c;
+    padding-top: 20px;
+}
+#regist_top{
+    height:30px;
+    text-align: center;
+    padding-top: 10px;
+    
+}
+#regist_top #left{
+	width:50%;
+	float:left;
+	border-right: 1px solid #ccc;
+}
+#regist_top #right {
+	float:right;
+	width:49%;
+}
+#a_right{
+	font-size: 20px;
+	color: #32a5e7;
+	font-weight: 900;
+}
+#a_left{
+	font-size: 20px;
+	color: rgb(43, 49, 55);
+	font-weight: 900;
+}
+#regist_msg{
+	height: 6%;
+    text-align: center;
+    /* border: 1px solid #ccc; */
+    margin-top: 20px;
+}
+#msg_content{
+	width: 250px;
+	height: 25px;
+	line-height:25px;
+	background-color: #ffd1ca;
+	margin: 0 auto;
+	font-size:12px;
+	display: none;
+	/* border: 1px solid #ccc; */
+}
+#msg_content img{
+	margin:5px 15px;
+	float: left;
+}
+#msg_content span{
+	float: left;
+	color: #666;
+}
+#regist_form{
+	font-weight: 600;
+	font-size: 14px;
+	width: 255px;
+	margin: 0 auto;
+}
+input{
+	font-size: 14px;
+}
+#username,#password{
+	height: 44px;
+    width: 200px;
+    padding-left: 50px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+}
+#username{
+	background: url("../images/user-password.png") no-repeat 0px 0px;
+}
+#password{
+	background: url("../images/user-password.png") no-repeat 0px -44px;
+}
+#validate{
+	height: 35px;
+    width: 90px;
+    padding-left:20px;
+    border: 1px solid #ccc;
+    background-color: rgb(250,251,252);
+}
+#div_validate{
+	width: 250px;
+}
+#validate_left{
+	width:40%;
+	float: left;
+}
+#validate_right{
+	width:48%;
+	height: 35px;
+	line-height: 35px;
+	text-align:center;
+	float:right;
+	border: 1px solid #ccc;
+}
+input[type="checkbox"]{
+	height: 16px;
+    width: 16px;
+    display: block;
+    margin-top: 6px;
+    float: left;
+}
+#span_save{
+	color:#666;
+	display: block;
+	line-height:30px;
+	float: left;
+	margin-left: 5px;
+}
+#a_forget{
+	color: #32a5e7;
+	line-height:30px;
+	display: block;
+	float: right;
+	text-align: center;
+}
+#a_forget:HOVER{
+	color:rgb(52, 83, 145);
+}
+#btn_regist{
+	width: 250px;
+    display: block;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    background-color: #32a5e7;
+    color: #fff;
+    border-radius: 2px;
+    border: none;
+}
+tr{
+	height:60px;
+}
+
+#tr_save{
+	height:30px;
+}
+#regist_foot{
+	height:10px;
+}

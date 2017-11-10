@@ -46,7 +46,6 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic> {
 		return "all";
 	}
 	
-	//TODO
 	//根据查看数量查询
 	public String findAllByVisiteNum(){
 		List<Topic> topicList = topicService.findAllByVisiteNum();

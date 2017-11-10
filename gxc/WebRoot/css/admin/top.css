@@ -1,0 +1,130 @@
+@CHARSET "UTF-8";
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#top{
+	background-color: rgb(0,102,238);
+	height: 60px;
+    line-height: 60px;
+}
+#top_content{
+	width: 80%;
+    height: inherit;
+    margin: 0 auto;
+}
+#top_logo{
+    height: inherit;
+    width: 18%;
+    float: left;
+    color: white;
+}
+#top_logo:HOVER {
+	cursor: pointer;
+}
+#top_logo div{
+	height:60px;
+	text-align:center;
+}
+#top_logo div span{
+    font-size: 28px;
+    font-weight: 800;
+    display: none;
+}
+#top_menu{
+    /* background-color: #7e908a; */
+	width: 55%;
+    height: inherit;
+    float: left;
+    margin-left: 30px;
+}
+#top_menu ul{
+    list-style-type: none;
+    display: none;
+
+}
+#top_menu ul li{
+	float:left;
+    padding: 0 15px;   
+    display: block;
+}
+/*---------------------------*/
+#top_user{
+	float: right;
+    width: 130px;
+    height:60px;
+}
+#user_content{
+	width: 120px;
+	margin: 0 auto;
+}
+
+/*登录后*/
+#ul_user{
+	text-align: center;
+}
+#top_user_img_user{
+	display: block;
+	float:left;
+	margin-top: 18px;
+	margin-left: 20px;
+}
+.li{
+	float:none;
+	/* border: 1px solid #ccc;
+	background: pink; */
+	line-height: 30px;
+	display: none;
+	width: 80px;
+	background: #eee;
+	box-shadow: 0px 0px 7px #ccc;
+	margin-left: 38px;
+	color: black;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	position: relative;
+	z-index: 2000;
+}
+.li a{
+	color: black;
+	font-size: 12px;
+}
+#ul_user_fistli{
+	display:block;
+	line-height: 60px;
+	/* border: 1px solid #ccc;
+	background: pink; */
+	float:none;
+}
+#ul_user_lastli{
+	border-bottom: 1px solid #ccc;
+}
+#ul_user_twoli{
+	margin-top: 5px;	
+}
+/* .li:HOVER{
+	background: rgb(11,162,253);
+} */
+.li a:HOVER{
+	color:black;
+	text-decoration: underline;
+}
+/*-----------------------------------*/
+ul{
+    list-style-type: none;
+}
+li{
+	float:left;
+}
+ul li a{
+	font-weight: 600;
+	font-size: 14px;
+	color:  white;
+	text-decoration: none;
+}
+ul li a:HOVER {
+	color:  #999;
+}

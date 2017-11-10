@@ -1,0 +1,154 @@
+@CHARSET "UTF-8";
+#mask{
+	background-color: rgb(36, 41, 46);
+	opacity:0.82;
+	filter:alpha(opacity=82.0);
+	width:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:1000;
+	display: none;
+	height: 10000000px;
+}
+a{
+	text-decoration: none;
+}
+/*------------------------------------*/
+#login_regist_content{
+    width: 330px;
+    background-color: rgb(250,251,252);
+    position: absolute;
+    z-index:1001;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #018c8c;
+    padding-top: 20px;
+    display: none;
+}
+#login_regist_top{
+    height:30px;
+    text-align: center;
+    padding-top: 10px;
+    /* background: green; */
+}
+#login_regist_top #left{
+	width:50%;
+	height:25px;
+	float:left;
+	border-right: 1px solid #ccc;
+	/* background: pink; */
+}
+#login_regist_top #right {
+	float:right;
+	width:49%;
+	/* background: blue; */
+}
+#a_right,#a_left{
+	font-size: 20px;
+	color: #32a5e7;
+	font-weight: 900;
+	line-height: 25px;
+}
+#login_msg,#regist_msg{
+	height: 6%;
+    text-align: center;
+    /* border: 1px solid #ccc; */
+    margin-top: 20px;
+}
+#msg_login,#msg_regist{  
+	width: 250px;
+	height: 25px;
+	line-height:25px;
+	background-color: #ffd1ca;
+	border: 1px solid pink;
+	margin: 0 auto;
+	font-size:12px;
+	display: none;
+	/* border: 1px solid #ccc; */
+}
+/*image*/
+#login_error_img,#regist_error_img{
+	margin:5px 15px;
+	float: left;
+}
+/*span*/
+#regist_span_msg,#login_span_msg{
+	float: left;
+	color: #666;
+}
+
+/*-----------Login&regist Form ----------*/
+#login_content,#regist_content{
+	display: none;
+}
+#login_form,#regist_form{
+	font-weight: 600;
+	font-size: 14px;
+	width: 255px;
+	margin: 0 auto;
+}
+#login_form input, #regist_form input{
+	font-size: 14px;
+	height: 44px;
+    width: 200px;
+    padding-left: 50px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+}
+#username{
+	background: url("../images/user-password.png") no-repeat 0px 0px;
+}
+#password{
+	background: url("../images/user-password.png") no-repeat 0px -44px;
+}
+#rePassword{
+	background: url("../images/user-password.png") no-repeat 0px -44px;
+}
+#validate_left #validate{
+	height: 35px;
+    width: 90px;
+    padding-left:20px;
+    border: 1px solid #ccc;
+    background-color: rgb(250,251,252);
+    line-height: 35px;
+}
+#div_validate{
+	width: 250px;
+}
+#validate_left{
+	width:40%;
+	float: left;
+}
+#validate_right{
+	width:120px;
+	height: 35px;
+	line-height: 35px;
+	text-align:center;
+	float:right;
+	border: 1px solid #ccc;
+}
+#login_captcha{
+	width:120px;
+	height: 35px;
+}
+
+#btn_login,#btn_regist{
+	width: 250px;
+    display: block;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    background-color: #32a5e7;
+    color: #fff;
+    border-radius: 2px;
+    border: none;
+}
+tr{
+	height:60px;
+}
+#login_regist_foot{
+	height:12px;	
+}

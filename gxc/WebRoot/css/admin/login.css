@@ -1,0 +1,149 @@
+@CHARSET "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: rgb(36, 41, 46);
+}
+#content{
+	width:500px;
+	height:550px;
+	margin: 60px auto 0px;
+}
+#content_top{
+	margin: 5% auto 0px;
+}
+#content_top h1{
+	text-align: center;
+	font-size: 40px;
+	color: white;
+}
+#content_main{
+	display: none;
+}
+#login_regist_content{
+    width: 330px;
+    background-color: rgb(250,251,252);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #018c8c;
+    padding-top: 20px;
+    margin: 50px auto 0;
+}
+#login_regist_top{
+    height:30px;
+    text-align: center;
+    padding-top: 10px;
+    /* background: green; */
+}
+#login_regist_top #left{
+	width:50%;
+	height:25px;
+	float:left;
+	border-right: 1px solid #ccc;
+	/* background: pink; */
+}
+#login_regist_top #right {
+	float:right;
+	width:49%;
+	/* background: blue; */
+}
+#login_regist_top a{
+	font-size: 20px;
+	color: #32a5e7;
+	font-weight: 900;
+	line-height: 25px;
+	text-align: center;
+	text-decoration: none;
+	cursor: default;
+}
+#login_msg{
+	height: 6%;
+    text-align: center;
+    /* border: 1px solid #ccc; */
+    margin-top: 20px;
+}
+#msg_login{  
+	width: 250px;
+	height: 25px;
+	line-height:25px;
+	background-color: #ffd1ca;
+	border: 1px solid pink;
+	margin: 0 auto;
+	font-size:12px;
+	display: none;
+	/* border: 1px solid #ccc; */
+}
+/*image*/
+#login_error_img{
+	margin:5px 15px;
+	float: left;
+}
+/*span*/
+#login_span_msg{
+	float: left;
+	color: #666;
+}
+#login_form{
+	font-weight: 600;
+	font-size: 14px;
+	width: 255px;
+	margin: 0 auto;
+}
+#login_form input{
+	font-size: 14px;
+	height: 44px;
+    width: 200px;
+    padding-left: 50px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    margin-top: 17px;
+}
+#username{
+	background: url("../../images/user-password.png") no-repeat 0px 0px;
+}
+#password{
+	background: url("../../images/user-password.png") no-repeat 0px -44px;
+}
+#div_validate{
+	width: 250px;
+}
+#validate_left{
+	width:40%;
+	float: left;
+}
+#validate_left #validate{
+	height: 35px;
+    width: 90px;
+    padding-left:20px;
+    border: 1px solid #ccc;
+    background-color: rgb(250,251,252);
+    line-height: 35px;
+}
+#validate_right{
+	width:120px;
+	height: 35px;
+	line-height: 35px;
+	text-align:center;
+	float:right;
+	border: 1px solid #ccc;
+	margin-top: 17px;
+}
+#btn_login,#btn_regist{
+	width: 250px;
+    display: block;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    background-color: #32a5e7;
+    color: #fff;
+    border-radius: 2px;
+    border: none;
+    margin-top: 17px;
+}
+#login_regist_foot{
+	height:25px;	
+}

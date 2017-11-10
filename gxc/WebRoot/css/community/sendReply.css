@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+#sendReply-wrap{
+	width:385px;
+	margin: 0 auto;
+	border-radius:7px; 
+	padding-top: 7px;
+	padding-bottom: 20px;
+	background: rgb(241,241,241);
+	position:fixed;
+	z-index:1002;
+	border: 2px solid #ccc;
+	display: none;
+}
+#sendReply-top{
+	height:50px;
+	border-bottom: 2px solid #aaa;
+	line-height: 44px;
+	text-align: center;
+	font-size: 黑体;
+	letter-spacing: 5px;
+	font-size: 18px;
+}
+#sendReply-content{
+	width:340px;
+	margin: 20px auto 0px;
+}
+
+
+#replyContent{
+	width:310px;
+	height:120px;
+	border: 1px solid #ccc;
+	padding: 15px;
+	font-size: 15px;
+	box-shadow: 0px -1px 2px #999;
+}
+
+#btn-send-reply{
+	text-align:center;
+	letter-spacing: 2px;
+	width: 342px;
+	height:32px;
+	line-height: 32px;
+	font-size: 15px;
+	border: none;
+	color: #fff;
+    background-color: #28a745;
+    background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+	font-weight: 700;
+	margin-top: 14px;
+}
