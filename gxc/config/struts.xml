@@ -9,10 +9,19 @@
 	
 	<package name="common" extends="struts-default" namespace="/">
 	
+		<!-- 全局返回类型 -->
+		<result-types>
+			<result-type name="captcha" class="com.gxc.web.action.CaptchaAction"></result-type>
+		</result-types>
+		
+		
+	
 		<action name="UIAction_*_*">
 			<result>/WEB-INF/pages/{1}/{2}.jsp</result>
 		</action>
 	</package>
 	
 	<include file="struts/struts-user.xml"></include>
+	<include file="struts/struts-captcha.xml"></include>
+	<include file="struts/struts-admin.xml"></include>
 </struts>

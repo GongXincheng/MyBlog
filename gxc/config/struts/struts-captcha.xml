@@ -4,10 +4,12 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 	
 <struts>
-	<package name="user" namespace="/" extends="common">
-		<action name="userAction_*" class="com.gxc.user.web.action.UserAction" method="{1}">
-			<result>/WEB-INF/pages/index.jsp</result>
+	<package name="captcha" namespace="/" extends="common">
+		<action name="captchaAction">
+			<result type="captcha">
+				<param name="width">120</param>
+				<param name="height">35</param>
+			</result>
 		</action>
-	
 	</package>
 </struts>

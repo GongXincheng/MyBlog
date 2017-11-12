@@ -63,7 +63,7 @@ $(function(){
 		
 		//跳转到LoginAction验证
 		$.ajax({
-			url : '${pageContext.request.contextPath}/User_login_login',
+			url : '${pageContext.request.contextPath}/userAction_login',
 			data: {
 				username : username,
 				password : password,
@@ -81,13 +81,13 @@ $(function(){
 						"background-color":"rgb(238,255,245)",
 						"border" : "1px solid #26C267"
 					}).show(550);
-					$("#login_error_img").attr("src","/myBlog/images/yes-green.png");
+					$("#login_error_img").attr("src","/gxc/images/yes-green.png");
 					$("#login_span_msg").text("登录成功");
 					
 					//定时器
 					setTimeout(function() {
 						//刷新当前页面
-						location.href = "/myBlog/admin/main.jsp";
+						location.href = "/gxc/admin/main.jsp";
 					}, 1500)
 				}
 				else{
@@ -98,7 +98,7 @@ $(function(){
 						$("#login_span_msg").text("验证码错误");
 						$("#validate").val("");
 						//更新验证码
-						$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+						$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time="+new Date().getTime());
 						return false;
 					}
 				}
@@ -112,7 +112,7 @@ $(function(){
 	
 	//点击更换验证码
 	$("#login_captcha").click(function(){
-		$(this).attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+		$(this).attr("src","${pageContext.request.contextPath}/captchaAction?time="+new Date().getTime());
 	});
 	
 	//文本框边框颜色

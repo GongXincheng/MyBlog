@@ -41,8 +41,11 @@
 					<li><a href="javascript:void(0);">文 章</a></li>
 					<li><a href="UIAction_community_list">社 区</a></li>
 					<li><a href="javascript:void(0);" id="top_menu_board">留 言</a></li>
-					<s:if test="#session.user.role==1">
-						<li><a href="${pageContext.request.contextPath}/admin/main.jsp">后台管理</a></li>
+					<s:if test="#session.loginUser.role==1">
+						<li>
+							<%-- <s:a action="" namespace="admin">后台管理</s:a> --%>
+							<a href="${pageContext.request.contextPath}/admin/AdminUIAction_board_list">后台管理</a>
+						</li>
 					</s:if>
 				</ul>
 			</div>
@@ -53,19 +56,21 @@
 					<%-- 登陆后 --%>
 					<ul id="ul_user">
 						<li id="ul_user_fistli">
-							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/user/user.png">
+							<s:if test="#session.loginUser!=null">
+								<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath}/images/user/<s:property value="#session.loginUser.face"/>">
+							</s:if>
 							<a href="javascript:void(0);" id="top_user_a_user">
-								${session.user.username.length()>5 ? session.user.username.substring(0,4).concat("...") : session.user.username }
+								${session.loginUser.username.length()>5 ? session.loginUser.username.substring(0,4).concat("...") : session.loginUser.username }
 							</a>
 						</li>
 						<li class="li" id="ul_user_twoli">
 							<s:a action="User_goUserHome">
-								<s:param name="uid" value="#session.user.uid"></s:param>我的主页
+								<s:param name="uid" value="#session.loginUser.uid"></s:param>我的主页
 							</s:a>
 						</li>
 						<li class="li">
 							<s:a action="User_goUserDetail">
-								<s:param name="uid" value="#session.user.uid"></s:param>个人资料
+								<s:param name="uid" value="#session.loginUser.uid"></s:param>个人资料
 							</s:a>
 						</li>
 						<li class="li" id="ul_user_lastli"><a id="userLeave" href="javascript:void(0);">退出</a></li>

@@ -26,12 +26,12 @@ td{
 <jsp:include page="../top.jsp"></jsp:include>
 
 <div id="topsss" >
-	<s:a action="admin/Board_allBoardByDesc">
+	<%-- <s:a action="admin/Board_allBoardByDesc">
 		最近留言
 	</s:a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<s:a action="admin/Board_allBoardByAsc">
 		最早留言
-	</s:a>
+	</s:a> --%>
 </div>
 
 <table border="1">
@@ -44,7 +44,7 @@ td{
 		<td>内容</td>
 		<td>创建时间</td>
 	</tr>
-	<s:iterator value="%{boardList}" var="b">
+	<%-- <s:iterator value="%{boardList}" var="b">
 		<tr>
 		<td>${b.bid }</td>
 		<td>${b.uid }</td>
@@ -68,7 +68,7 @@ td{
 		</td>
 	</tr>
 	</s:iterator>
-	
+	 --%>
 </table>
 </body>
 </html>

@@ -39,6 +39,7 @@ $(function(){
 			"color":"#32a5e7",
 			"font-size":"21px"
 		});
+		
 		//将右边的变为黑色
 		$("#a_right").css({
 			"color":"rgb(37,42,48)",
@@ -57,7 +58,7 @@ $(function(){
 		}
 		
 		//重新刷新验证码
-		$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+		$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time="+new Date().getTime());
 		
 		//将被点击放大变色
 		$("#a_left").css({
@@ -82,7 +83,7 @@ $(function(){
 			$("#msg_login").hide();
 		}
 		//重新刷新验证码
-		$("#regist_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+		$("#regist_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time="+new Date().getTime());
 
 		//将被点击放大变色
 		$("#a_right").css({
@@ -94,7 +95,7 @@ $(function(){
 			"background-color":"#ffd1ca",
 			"border" : "1px solid pink"
 		});
-		$("#regist_error_img").attr("src","/myBlog/images/error_16x16.png");
+		$("#regist_error_img").attr("src","/gxc/images/error_16x16.png");
 		
 		$login.hide();
 		$regist.fadeIn(500);
@@ -109,10 +110,10 @@ $(function(){
 	
 	//点击更换验证码
 	$("#login_captcha").click(function(){
-		$(this).attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+		$(this).attr("src","${pageContext.request.contextPath}/captchaAction?time="+new Date().getTime());
 	});
 	$("#regist_captcha").click(function(){
-		$(this).attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+		$(this).attr("src","${pageContext.request.contextPath}/captchaAction?time="+new Date().getTime());
 	});
 	
 	//文本框边框颜色

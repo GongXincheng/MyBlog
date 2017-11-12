@@ -69,8 +69,11 @@ body{
 #top_user_img_user{
 	display: block;
 	float:left;
-	margin-top: 18px;
-	margin-left: 20px;
+	width:30px;
+	height:30px;
+	margin-top: 15px;
+	margin-left: 15px;
+	border-radius:50%;  
 }
 .li{
 	float:none;

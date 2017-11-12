@@ -37,6 +37,23 @@ public class User implements Serializable{
 	Set<Topic> topicSet = new HashSet<Topic>();
 	Set<Message> messageSet = new HashSet<Message>();
 	
+	
+	//暂时
+	private String validate;
+	private String rePassword;
+	
+	public String getRePassword() {
+		return rePassword;
+	}
+	public void setRePassword(String rePassword) {
+		this.rePassword = rePassword;
+	}
+	public String getValidate() {
+		return validate;
+	}
+	public void setValidate(String validate) {
+		this.validate = validate;
+	}
 	public String getUserId() {
 		return userId;
 	}

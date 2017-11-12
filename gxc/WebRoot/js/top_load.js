@@ -54,13 +54,12 @@ $(function(){
 		$("#ul_user li:not('#ul_user_fistli')").slideUp(300);
 	});
 	
-	/*
 	//登录之前判断session中是有user
 	$.ajax({
-		url : '${pageContext.request.contextPath}/User_login_hasLogin',
+		url : '${pageContext.request.contextPath}/userAction_hasLogin',
 		data : {},
 		type : 'POST',
-		dataType : 'json',
+		dataType : 'text',
 		success: function(data){
 			var hasLogind = eval("("+data+")");
 			if(hasLogind.msg){
@@ -76,19 +75,19 @@ $(function(){
 			//alert("服务器繁忙，请稍候重试..");
 		}
 	});
-*/
+
 
 	//用户注销
 	$("#userLeave").click(function(){
 		$.ajax({
-			url : '${pageContext.request.contextPath}/User_login_out',
+			url : '${pageContext.request.contextPath}/userAction_out',
 			data : {},
 			type : 'POST',
-			dataType : 'json',
+			dataType : 'text',
 			success: function(data){
 				var userLearve = eval("("+data+")");
 				if(userLearve.msg){
-					window.location.href = "/myBlog/index.jsp";
+					window.location.href = "/gxc/index.jsp";
 				}
 			},
 			error : function(){

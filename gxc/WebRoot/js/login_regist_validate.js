@@ -29,7 +29,6 @@ $(function(){
 		var username = $("#username").val();
 		var password = $("#password").val();
 		var validate = $("#validate").val();
-		
 		//用户名
 		if(username.length==0){
 			$("#msg_login").show(550);
@@ -52,28 +51,25 @@ $(function(){
 		}
 		
 		//跳转到LoginAction验证
-		
 		$.ajax({
-			url : '${pageContext.request.contextPath}/User_login_login',
+			url : '${pageContext.request.contextPath}/userAction_login',
 			data: {
-				/*username : encodeURI(username),*/
 				username : username,
 				password : password,
 				validate : validate
 			},
 			type: 'POST',
-			dataType: 'json',
+			dataType: 'text',
 			
 			success: function(data){
 				var login = eval("("+data+")");
-				
 				if(login.login_msg=="success"){
 					//修改成功后的图片和颜色
 					$("#msg_login").css({
 						"background-color":"rgb(238,255,245)",
 						"border" : "1px solid #26C267"
 					}).show(550);
-					$("#login_error_img").attr("src","/myBlog/images/yes-green.png");
+					$("#login_error_img").attr("src","/gxc/images/yes-green.png");
 					$("#login_span_msg").text("登录成功");
 					
 					//定时器
@@ -92,7 +88,7 @@ $(function(){
 					$("#login_span_msg").text(login.login_msg);
 					$("#validate").val("");
 					//更新验证码
-					$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+					$("#login_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time="+new Date().getTime());
 					return false;
 					
 				}
@@ -220,7 +216,7 @@ $(function(){
 		}
 		
 		$.ajax({
-			url : "${pageContext.request.contextPath}/User_regist_regist" ,
+			url : "${pageContext.request.contextPath}/userAction_regist" ,
 			data : {
 				username : username,
 				password : password,
@@ -228,7 +224,7 @@ $(function(){
 				validate : validate
 			},
 			type : "POST",
-			dataType : "json",
+			dataType : "text",
 			success : function(data){
 				var regist = eval("("+data+")");
 				
@@ -240,7 +236,7 @@ $(function(){
 						"border" : "1px solid #26C267"
 					}).show(550);
 					
-					$("#regist_error_img").attr("src","/myBlog/images/yes-green.png");
+					$("#regist_error_img").attr("src","/gxc/images/yes-green.png");
 					$("#regist_span_msg").text("注册成功,3秒后跳转登录...");
 					
 					//计时器
@@ -261,7 +257,7 @@ $(function(){
 					$("#regist_span_msg").text(regist.msg);
 					$("#form_regist #validate").val("");
 					//更新验证码
-					$("#regist_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time"+new Date().getTime());
+					$("#regist_captcha").attr("src","${pageContext.request.contextPath}/captchaAction?time="+new Date().getTime());
 					return false;
 				}
 			},

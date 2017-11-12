@@ -25,23 +25,31 @@
 					<li><a href="javascript:void(0);">最近登陆</a></li>
 					<li><a href="javascript:void(0);">用户信息</a></li>
 					<li><a href="javascript:void(0);">发帖</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/Board_allBoardByDesc">留言板</a></li>
+					<li><a href="javascript:void(0);">留言板</a></li>
 				</ul>
 			</div>
 			<div id="top_user">
 				<div id="user_content">
 					<%-- 登陆后 --%>
-					<ul id="ul_user">
-						<li id="ul_user_fistli">
-							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/head.png">
-							<a href="#" id="top_user_a_user">
-								<s:property value="#session.user.username"></s:property>
-							</a>
-						</li>
-						<li class="li" id="ul_user_twoli"><a href="${pageContext.request.contextPath }/user/userhome.jsp">我的主页</a></li>
-						<li class="li"><a href="#">个人资料</a></li>
-						<li class="li" id="ul_user_lastli"><a id="userLeave" href="javascript:void(0);">退出</a></li>
-					</ul>
+					<s:if test="#session.loginUser!=null">
+						<ul id="ul_user">
+							<li id="ul_user_fistli">
+								<img id="top_user_img_user" alt="head" src="/gxc/images/user/${session.loginUser.face}">
+								<a href="javascript:void(0);" id="top_user_a_user">
+									<s:property value="#session.loginUser.username"></s:property>
+								</a>
+							</li>
+							<li class="li" id="ul_user_twoli">
+								<a href="javascript:void(0);">我的主页</a>
+							</li>
+							<li class="li">
+								<a href="javascript:void(0);">个人资料</a>
+							</li>
+							<li class="li" id="ul_user_lastli">
+								<a id="userLeave" href="javascript:void(0);">退出</a>
+							</li>
+						</ul>
+					</s:if>
 				</div>
 			</div> 
 		</div>
