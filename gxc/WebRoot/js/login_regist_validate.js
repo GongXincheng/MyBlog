@@ -1,48 +1,5 @@
 $(function(){
 	
-	//登录之前判断session中是有user
-	$.ajax({
-		url : '${pageContext.request.contextPath}/User_login_hasLogin',
-		data : {},
-		type : 'POST',
-		dataType : 'json',
-		success: function(data){
-			var hasLogind = eval("("+data+")");
-			if(hasLogind.msg){
-				//如果已经登录
-				$("#img_user").hide();
-				$("#ul_user").show(500);
-			}
-			else{
-				$("#img_user").fadeIn(300);
-			}
-		},
-		error : function(){
-			/*alert("服务器繁忙，请稍候重试..");*/
-		}
-	});
-	
-	
-	//用户注销
-	$("#userLeave").click(function(){
-		$.ajax({
-			url : '${pageContext.request.contextPath}/User_login_out',
-			data : {},
-			type : 'POST',
-			dataType : 'json',
-			success: function(data){
-				var userLearve = eval("("+data+")");
-				if(userLearve.msg){
-					window.location.href = "/myBlog/index.jsp";
-				}
-			},
-			error : function(){
-				
-			}
-		});
-	});
-
-	
 	/*-----------------------登录的验证------------------------*/	
 	//用户名
 	$("#username").change(function(){

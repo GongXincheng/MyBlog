@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.gxc.user.domain.User" table="gxc_user">
+		<id name="userId">
+			<generator class="uuid"/>
+		</id>
+		<property name="username"></property>
+		<property name="password"></property>
+		<property name="realname"></property>
+		<property name="gender"></property>
+		<property name="sign"></property>
+		<property name="telephone"></property>
+		<property name="email"></property>
+		<property name="note"></property>
+		<property name="face"></property>
+		<property name="registDate" type="timestamp"></property>
+		<property name="lastLoginDate" type="timestamp"></property>
+		<property name="loginNum" type="integer"></property>
+		<property name="role" type="integer"></property>
+		
+		<!-- User-Topic 一对多 -->
+		<set name="topicSet">
+			<key column="userId"></key>
+			<one-to-many class="com.gxc.topic.domain.Topic"/>
+		</set>
+		<!-- User-Message 一对多 -->
+		<set name="messageSet">
+			<key column="userId"></key>
+			<one-to-many class="com.gxc.message.domain.Message"/>
+		</set>
+		
+		<!-- User-City  多对一 -->
+		<many-to-one name="city" class="com.gxc.city.domain.City" column="cityid"></many-to-one>
+		
+	</class>
+
+</hibernate-mapping>

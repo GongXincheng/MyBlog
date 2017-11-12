@@ -1,6 +1,11 @@
 package com.gxc.city.domain;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.gxc.province.domain.Province;
+import com.gxc.user.domain.User;
 
 public class City implements Serializable{
 	private static final long serialVersionUID = 3458337493867089207L;
@@ -13,7 +18,8 @@ public class City implements Serializable{
 	 * 		City -> User ：一对多
 	 * 		City -> Province : 多对一
 	 */
-	
+	Set<User> userSet = new HashSet<User>();
+	Province province;
 	
 	public String getCityId() {
 		return cityId;
@@ -27,6 +33,19 @@ public class City implements Serializable{
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
 	}
+	public Set<User> getUserSet() {
+		return userSet;
+	}
+	public void setUserSet(Set<User> userSet) {
+		this.userSet = userSet;
+	}
+	public Province getProvince() {
+		return province;
+	}
+	public void setProvince(Province province) {
+		this.province = province;
+	}
+	
 	
 	@Override
 	public String toString() {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+
+	<class name="com.gxc.message.domain.Message" table="gxc_message">
+		<id name="messageId">
+			<generator class="native"/>
+		</id>
+		
+		<property name="messageTitle"></property>
+		<property name="messageContent"></property>
+		<property name="sendMessageDate" type="timestamp"></property>
+		
+		<!-- Message-User : 多对一 -->
+		<many-to-one name="user" class="com.gxc.user.domain.User" column="userId"></many-to-one>
+		
+	</class>
+
+</hibernate-mapping>

@@ -39,7 +39,7 @@
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/index.jsp">首 页</a></li>
 					<li><a href="javascript:void(0);">文 章</a></li>
-					<li><a href="${pageContext.request.contextPath}/TopicAction_findAll">社 区</a></li>
+					<li><a href="UIAction_community_list">社 区</a></li>
 					<li><a href="javascript:void(0);" id="top_menu_board">留 言</a></li>
 					<s:if test="#session.user.role==1">
 						<li><a href="${pageContext.request.contextPath}/admin/main.jsp">后台管理</a></li>
@@ -53,7 +53,7 @@
 					<%-- 登陆后 --%>
 					<ul id="ul_user">
 						<li id="ul_user_fistli">
-							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/user/${session.user.face}">
+							<img id="top_user_img_user" alt="head" src="${pageContext.request.contextPath }/images/user/user.png">
 							<a href="javascript:void(0);" id="top_user_a_user">
 								${session.user.username.length()>5 ? session.user.username.substring(0,4).concat("...") : session.user.username }
 							</a>
@@ -62,13 +62,11 @@
 							<s:a action="User_goUserHome">
 								<s:param name="uid" value="#session.user.uid"></s:param>我的主页
 							</s:a>
-							<%-- <a href="${pageContext.request.contextPath }/user/userhome.jsp">我的主页</a> --%>
 						</li>
 						<li class="li">
 							<s:a action="User_goUserDetail">
 								<s:param name="uid" value="#session.user.uid"></s:param>个人资料
 							</s:a>
-							<%-- <a href="${pageContext.request.contextPath }/user/userdetail.jsp">个人资料</a> --%>
 						</li>
 						<li class="li" id="ul_user_lastli"><a id="userLeave" href="javascript:void(0);">退出</a></li>
 					</ul>

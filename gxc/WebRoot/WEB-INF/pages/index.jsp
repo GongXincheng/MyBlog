@@ -15,7 +15,7 @@
 </script>
 </head>
 <body id="index-body">
-	<jsp:include page="top.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/pages/top.jsp"></jsp:include>
 	
 	<div id="content_msg">
 		<div>

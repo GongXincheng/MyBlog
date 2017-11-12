@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+
+	<class name="com.gxc.province.domain.Province" table="provinces">
+		<id name="provinceId">
+			<generator class="assigned"/>
+		</id>
+		
+		<property name="provinceName"></property>
+		
+		<!-- Province-City ： 一对多 -->	
+		<set name="citySet">
+			<key column="provinceId"></key>
+			<one-to-many class="com.gxc.city.domain.City"/>
+		</set>
+				
+	</class>
+
+</hibernate-mapping>

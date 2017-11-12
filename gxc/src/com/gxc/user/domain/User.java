@@ -2,6 +2,12 @@ package com.gxc.user.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.gxc.city.domain.City;
+import com.gxc.message.domain.Message;
+import com.gxc.topic.domain.Topic;
 
 public class User implements Serializable{
 	private static final long serialVersionUID = 4683360266603963974L;
@@ -11,28 +17,25 @@ public class User implements Serializable{
 	private String password;
 	private String realname;
 	private String gender;	
-	private String sign;	//签名
+	private String sign;
 	private String telephone; 
 	private String email;
-	private String province;
-	private String city;
-	private String note;	//简介
-	private String face;	//头像
-	private Date registDate;	//注册时间
-	private Date lastLoginDate;	//最后登陆时间
-	private Integer loginNum;	//登录次数
+	private String note;
+	private String face;
+	private Date registDate;
+	private Date lastLoginDate;
+	private Integer loginNum;
 	private Integer role;
 	
 	/*
 	 * 关系:
-	 * 		User -> City  多对一
 	 * 		User -> Topic 一对多
 	 * 		User -> Message 一对多
+	 *  	User -> City  多对一
 	 */
-	
-	
-	
-	
+	City city;
+	Set<Topic> topicSet = new HashSet<Topic>();
+	Set<Message> messageSet = new HashSet<Message>();
 	
 	public String getUserId() {
 		return userId;
@@ -82,18 +85,6 @@ public class User implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getProvince() {
-		return province;
-	}
-	public void setProvince(String province) {
-		this.province = province;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
 	public String getNote() {
 		return note;
 	}
@@ -130,16 +121,35 @@ public class User implements Serializable{
 	public void setRole(Integer role) {
 		this.role = role;
 	}
+	public Set<Topic> getTopicSet() {
+		return topicSet;
+	}
+	public void setTopicSet(Set<Topic> topicSet) {
+		this.topicSet = topicSet;
+	}
+	public Set<Message> getMessageSet() {
+		return messageSet;
+	}
+	public void setMessageSet(Set<Message> messageSet) {
+		this.messageSet = messageSet;
+	}
+	public void setCity(City city) {
+		this.city = city;
+	}
 	
+	public City getCity() {
+		return city;
+	}
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", username=" + username
 				+ ", password=" + password + ", realname=" + realname
 				+ ", gender=" + gender + ", sign=" + sign + ", telephone="
-				+ telephone + ", email=" + email + ", province=" + province
-				+ ", city=" + city + ", note=" + note + ", face=" + face
-				+ ", registDate=" + registDate + ", lastLoginDate="
+				+ telephone + ", email=" + email + ", note=" + note + ", face="
+				+ face + ", registDate=" + registDate + ", lastLoginDate="
 				+ lastLoginDate + ", loginNum=" + loginNum + ", role=" + role
 				+ "]";
 	}
+	
+	
 }
