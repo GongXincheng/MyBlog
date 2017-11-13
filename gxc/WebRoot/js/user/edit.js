@@ -8,54 +8,27 @@ $(function(){
 	$("#btn_edit").click(function(){
 		var editLeft = (winWidth-editWidth)/2;
 		$("#mask").show();
-		$edit.css("left",editLeft+"px").slideDown(330,function(){
-			$.ajax({
-				url : "${pageContext.request.contextPath}/User_getAllProvince",
-				data : {},
-				type : "POST",
-				dataType : "json",
-				success : function(info){
-					var data = eval("("+info+")");
-					//获取用户原本的province
-					var proCode = $("#province").attr("class");
-					//清空省市
-					$("#province").empty();
-					//添加省份项
-					$.each(data,function(index, pro){
-						if(proCode==pro.provinceid)
-							$("#province").append("<option value='"+pro.provinceid+"' selected='selected'>"+pro.province+"</option>");
-						else
-							$("#province").append("<option value='"+pro.provinceid+"'>"+pro.province+"</option>");
-					})
-				},
-				error : function(){}
-			});
-		});
+		$edit.css("left",editLeft+"px").slideDown(330);
 	});
 	
 	$("#province").change(function(){
-		//清空城市选项
-		$("#city").empty();
-		var proCode = $(this).val();
+		var provinceId = $(this).val();
+		$("#city").html("<option value=''>--- 请选择 ---</option>");
 		$.ajax({
-			url : "${pageContext.request.contextPath}/User_getCity",
-			data : {
-				proCode : proCode
-			},
+			url : "${pageContext.request.contextPath}/cityAction_findAllCitiesByProvince?province.provinceId="+provinceId,
+			data : {},
 			type : "POST",
-			dataType : "json",
+			dataType : "text",
 			success : function(info){
 				var data = eval("("+info+")");
-				var cityCode = $("#city").attr("class");
-				$.each(data, function(index, cit){
-					if(cit.city == cityCode)
-						$("#city").append("<option value='"+cit.cityid+"' selected='selected'>"+cit.city+"</option>")
-					else
-						$("#city").append("<option value='"+cit.cityid+"'>"+cit.city+"</option>")
+				
+				$.each(data,function(index, obj){
+					$("#city").append("<option value='"+obj.cityId+"'>"+obj.cityName+"</option>");
 				});
 			},
 			error:function(){}
 		});
+		
 	});
 	
 	

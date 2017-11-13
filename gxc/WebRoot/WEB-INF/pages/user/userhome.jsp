@@ -65,7 +65,7 @@ $(function(){
 					</ul>
 				</div>
 				<div id="menu_detail">
-					<span id="menu_detail_span">回复/查看</span>
+					<span id="menu_detail_span">回复 / 查看</span>
 				</div>
 				<div id="clear"></div>
 				<div id="content_menu_bottom"></div>

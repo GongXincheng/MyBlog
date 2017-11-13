@@ -18,7 +18,8 @@ $(function(){
 	});
 	//修改信息
 	$("#edit_submit").click(function(){
-		$("#form_edit")[0].submit();
+		/* $("#form_edit")[0].submit(); */
+		alert($("#province").val()+":"+$("#city").val());
 	});
 });
 </script>
@@ -79,7 +80,7 @@ $(function(){
 				<!-- address -->
 				<div id="div-address" class="div-column">
 					<span class="span-left">居住地</span>
-					<span class="span-right">修改</span>
+					<span class="span-right">${empty city.province ? '未填写' : city.province.provinceName }&nbsp;&nbsp;&nbsp;${empty city ? '未填写' : city.cityName }</span>
 <%-- 				<span class="span-right">${empty pro.province ? '未填写': pro.province }&nbsp;&nbsp;&nbsp;${cit.city}</span> --%>
 				</div>
 				
@@ -135,9 +136,7 @@ $(function(){
 					<tr>
 						<td class="td-column">性别</td>
 						<td>
-							<s:radio list="{'男','女'}" name="gender"></s:radio>
-							<%-- <input type="radio" value="1" name="gender" ${user.gender==1 ? "checked='checked'" :''}>&nbsp;男&nbsp;&nbsp;&nbsp;
-							<input type="radio" value="0" name="gender" ${user.gender==0 ? "checked='checked'" :''}>&nbsp;女 --%>
+							<s:radio list="{'男','女'}" name="gender" id="gender"></s:radio>
 						</td>
 					</tr>
 					<tr>
@@ -146,15 +145,18 @@ $(function(){
 							<s:textfield id="sign" name="sign"></s:textfield>
 						</td>
 					</tr>
-					<%-- <tr>
+					<tr>
 						<td class="td-column">居住地</td>
 						<td class="td-city">
-							<select name="province" id="province" class="${user.province }"></select>&nbsp;&nbsp;
-							<select name="city" id="city" class="${user.city }">
-								<option value="${user.city }">${cit.city }</option>
-							</select>
+							<s:select list="allProvince" name="city.province.provinceId" id="province"
+							listKey="provinceId" listValue="provinceName"
+							headerKey="" headerValue="--- 请选择 ---"></s:select>&nbsp;&nbsp;&nbsp;
+							
+							<s:select list="city!=null ? city.province.citySet : {}" name="city.cityId" id="city"
+							listKey="cityId" listValue="cityName"
+							headerKey="" headerValue="--- 请选择 ---"></s:select>
 						</td>
-					</tr> --%>
+					</tr>
 					<tr>
 						<td class="td-column">邮箱</td>
 						<td>
@@ -175,7 +177,7 @@ $(function(){
 					</tr>
 				</table>
 				<div id="edit_btn">
-					<button id="edit_submit" class="edit_btn">确定</button>
+					<button id="edit_submit" type="button" class="edit_btn">确定</button>
 					<button id="edit_close" type="button" class="edit_btn" >取消</button>
 				</div>
 			</form>

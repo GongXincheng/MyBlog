@@ -2,6 +2,7 @@ package com.gxc.user.web.action;
 
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +10,8 @@ import net.sf.json.JSONObject;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.gxc.province.domain.Province;
+import com.gxc.province.service.ProvinceService;
 import com.gxc.user.domain.User;
 import com.gxc.user.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
@@ -28,6 +31,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	private UserService userService;
 	public void setUserService(UserService userService) {
 		this.userService = userService;
+	}
+	
+	private ProvinceService provinceService;
+	public void setProvinceService(ProvinceService provinceService) {
+		this.provinceService = provinceService;
 	}
 	/******************************************/
 	
@@ -185,6 +193,10 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		//通过userId获取User，压入值栈栈顶
 		User dbUser = this.userService.findUserById(user.getUserId());
 		ActionContext.getContext().getValueStack().push(dbUser);
+		
+		//查找所有的省,放入值栈
+		List<Province> allProvince = provinceService.findAllProvince();
+		ActionContext.getContext().getValueStack().set("allProvince", allProvince);
 		
 		return "userDetail";
 	}

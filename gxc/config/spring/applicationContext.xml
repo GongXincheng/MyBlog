@@ -60,5 +60,7 @@
 	
 	<!-- 4 import -->
 	<import resource="applicationContext-user.xml"/>
+	<import resource="applicationContext-province.xml"/>
+	<import resource="applicationContext-city.xml"/>
 
 </beans>

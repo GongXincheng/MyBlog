@@ -136,3 +136,10 @@
 	font-weight:600;
 	letter-spacing: 2px;
 }
+
+#gender男{
+	margin-left: -20px;
+}
+#gender女{
+	margin-left: 20px;
+}
