@@ -52,6 +52,14 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 	public void regist(User user) {
 		this.getHibernateTemplate().save(user);
 	}
+
+	/**
+	 * 更新用户信息
+	 */
+	@Override
+	public void update(User dbUser) {
+		this.getHibernateTemplate().update(dbUser);
+	}
 	
 	
 }

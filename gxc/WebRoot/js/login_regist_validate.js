@@ -63,6 +63,7 @@ $(function(){
 			
 			success: function(data){
 				var login = eval("("+data+")");
+				/*alert(login.login_msg);*/
 				if(login.login_msg=="success"){
 					//修改成功后的图片和颜色
 					$("#msg_login").css({
@@ -121,12 +122,12 @@ $(function(){
 		}
 		
 		$.ajax({
-			url : "${pageContext.request.contextPath}/User_regist_hasUser",
+			url : "${pageContext.request.contextPath}/userAction_hasUser",
 			data : {
-					username : encodeURI(username)
+					username : username
 			   	},
 			type : "POST",
-			dataType : "json",
+			dataType : "text",
 			success : function(data){
 				var info = eval("("+data+")");
 				

@@ -1,6 +1,8 @@
 package com.gxc.user.web.action;
 
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpSession;
 
 import net.sf.json.JSONObject;
@@ -58,6 +60,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	 * @throws Exception 
 	 */
 	public String login() throws Exception{
+		//设置编码，创建session，json对象
 		ServletActionContext.getResponse().setContentType("text/html;charset=UTF-8");
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		JSONObject json = new JSONObject();
@@ -139,6 +142,25 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		ServletActionContext.getResponse().getWriter().print(json.toString());
 		return "none";
 	}
+	
+	
+	public String hasUser() throws IOException{
+		ServletActionContext.getResponse().setContentType("text/html;charset=UTF-8");
+		JSONObject json = new JSONObject();
+		
+		User findUser = this.userService.findUserByUsername(user.getUsername());
+		if(findUser==null){
+			//用户名不存在
+			json.put("msg", "success");
+		}
+		else{
+			json.put("msg", "用户名已存在");
+		}
+		ServletActionContext.getResponse().getWriter().print(json.toString());
+		return "none";
+	}
+	
+	
 	
 	
 	/**

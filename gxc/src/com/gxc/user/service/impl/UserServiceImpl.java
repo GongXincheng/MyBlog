@@ -18,14 +18,22 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	public User login(User user) {
-		User dbUser = userDao.findUserByUsernamePwd(user.getUsername(),user.getPassword());
+		User loginUser = userDao.findUserByUsernamePwd(user.getUsername(),user.getPassword());
 		
-		if(dbUser!=null){
-			dbUser.setLoginNum(dbUser.getLoginNum()+1);
-			dbUser.setLastLoginDate(new Date());
+		//判断用户是否存在
+		if(loginUser!=null){
+			//更新登录次数，和登陆时间
+			loginUser.setLoginNum(loginUser.getLoginNum()+1);
+			loginUser.setLastLoginDate(new Date());
+			userDao.update(loginUser);
+			
+			User dbUser = userDao.findUserById(loginUser.getUserId());
+			return dbUser;
+		}
+		else{
+			return null;
 		}
 		
-		return dbUser;
 	}
 
 	/**

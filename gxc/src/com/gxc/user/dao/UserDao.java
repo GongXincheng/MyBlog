@@ -32,4 +32,10 @@ public interface UserDao{
 	 */
 	void regist(User user);
 
+	/**
+	 * 更新用户信息
+	 * @param dbUser
+	 */
+	void update(User dbUser);
+
 }
