@@ -12,11 +12,11 @@
 <script type="text/javascript">
 $(function(){
 	$("#main_detail_a a").click(function(){
-		location.href = "${pageContext.request.contextPath}/User_goUserDetail?uid=${user.uid}";
+		location.href = "${pageContext.request.contextPath}/userAction_userDetail?userId=${userId}";
 	});
 	
 	$("#btn_detail").click(function(){
-		location.href = "${pageContext.request.contextPath}/User_goUserDetail?uid=${user.uid}";
+		location.href = "${pageContext.request.contextPath}/userAction_userDetail?userId=${userId}";
 	});
 	
 })
@@ -32,12 +32,12 @@ $(function(){
 		
 		<div id="userhome_main">
 			<div id="userhome_main_head">
-				<img alt="head" src="${pageContext.request.contextPath}/images/user/${user.face}">
+				<img alt="head" src="${pageContext.request.contextPath}/images/user/${face}">
 			</div>
 			<div id="userhome_main_middle">
 				<div id="main_info">
-					<span id="mian_span_username"><B>${empty user.username?'null':user.username }</B></span>
-					<span id="mian_span_sign"><B>${empty user.sign?'这个人比较懒,还没有签名':user.sign}</B></span><br/>				
+					<span id="mian_span_username"><B>${empty username ? 'null' : username }</B></span>
+					<span id="mian_span_sign"><B>${empty sign ? '这个人比较懒,还没有签名' : sign}</B></span><br/>				
 				</div>
 				<div id="main_detail_a">
 					<a href="javascript:void(0);" >查看详细信息</a>
@@ -45,8 +45,7 @@ $(function(){
 			</div>
 			<div id="userhome_main_button">
 				<div id="gender">
-					<img alt="male" src="${pageContext.request.contextPath}/images/${user.gender==1?'male.png':'female.png'}">
-					<!-- <img alt="female" src="${pageContext.request.contextPath}/images/female.png"> -->
+					<img alt="male" src="${pageContext.request.contextPath}/images/${gender=='男' ? 'male.png' : 'female.png'}">
 				</div>
 				<button id="btn_detail" type="button">个人资料</button>
 			</div>
@@ -72,9 +71,9 @@ $(function(){
 				<div id="content_menu_bottom"></div>
 			</div>
 			
-			
+			<%-- 
 			<!-- List 遍历-->
-			<s:iterator value="user.topicSet">
+			<s:iterator value="topicSet">
 				<div class="userhome_content_list">
 					<!-- left -->
 					<div id="list_left">
@@ -93,7 +92,7 @@ $(function(){
 					</div>
 					<div id="clear"></div>
 				</div>
-			</s:iterator>
+			</s:iterator> --%>
 			
 			
 			<!-- 分页 -->

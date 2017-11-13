@@ -143,7 +143,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		return "none";
 	}
 	
-	
+	/**
+	 * 注册时判断用户是否已经存在
+	 * @return
+	 * @throws IOException
+	 */
 	public String hasUser() throws IOException{
 		ServletActionContext.getResponse().setContentType("text/html;charset=UTF-8");
 		JSONObject json = new JSONObject();
@@ -159,6 +163,35 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		ServletActionContext.getResponse().getWriter().print(json.toString());
 		return "none";
 	}
+	
+	
+	/**
+	 * 用户主页
+	 * @return
+	 */
+	public String userHome(){
+		//通过userId获取User，压入值栈栈顶
+		User dbUser = this.userService.findUserById(user.getUserId());
+		ActionContext.getContext().getValueStack().push(dbUser);
+		
+		return "userHome";
+	}
+	
+	/**
+	 * 用户信息页
+	 * @return
+	 */
+	public String userDetail(){
+		//通过userId获取User，压入值栈栈顶
+		User dbUser = this.userService.findUserById(user.getUserId());
+		ActionContext.getContext().getValueStack().push(dbUser);
+		
+		return "userDetail";
+	}
+	
+	
+	
+	
 	
 	
 	

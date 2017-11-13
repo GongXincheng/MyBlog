@@ -16,14 +16,16 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist_validate.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/board.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/backTop.js"></script>
+
 <script type="text/javascript">
 //跳回首页
 	$(function(){
 		$("#top_logo div").click(function(){
 			location.href = "${pageContext.request.contextPath}/index.jsp";
-		})
+		});
 	});
 </script>
+
 </head>
 <body id="bodyContent">
 	<div id="top">
@@ -64,13 +66,13 @@
 							</a>
 						</li>
 						<li class="li" id="ul_user_twoli">
-							<s:a action="User_goUserHome">
-								<s:param name="uid" value="#session.loginUser.uid"></s:param>我的主页
+							<s:a action="userAction_userHome" namespace="/">
+								<s:param name="userId" value="#session.loginUser.userId"></s:param>我的主页
 							</s:a>
 						</li>
 						<li class="li">
-							<s:a action="User_goUserDetail">
-								<s:param name="uid" value="#session.loginUser.uid"></s:param>个人资料
+							<s:a action="userAction_userDetail">
+								<s:param name="userId" value="#session.loginUser.userId"></s:param>个人资料
 							</s:a>
 						</li>
 						<li class="li" id="ul_user_lastli"><a id="userLeave" href="javascript:void(0);">退出</a></li>

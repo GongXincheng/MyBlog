@@ -7,6 +7,12 @@
 	<package name="user" namespace="/" extends="common">
 		<action name="userAction_*" class="com.gxc.user.web.action.UserAction" method="{1}">
 			<result>/WEB-INF/pages/index.jsp</result>
+			
+			<!-- 返回用户主页 -->
+			<result name="userHome">/WEB-INF/pages/user/userhome.jsp</result>
+			
+			<!-- 返回详细信息页 -->
+			<result name="userDetail">/WEB-INF/pages/user/userdetail.jsp</result>
 		</action>
 	
 	</package>
