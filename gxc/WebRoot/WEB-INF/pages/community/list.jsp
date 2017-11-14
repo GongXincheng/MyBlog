@@ -22,9 +22,9 @@
 		 <div id="cmt_top">
 		 	<div id="cmt_top_left">
 		 		<ul>
-		 			<li><a href="${pageContext.request.contextPath}/TopicAction_findAll">最新主题</a></li>
-		 			<li><a href="${pageContext.request.contextPath}/TopicAction_findAllAsc">最早发布</a></li>
-		 			<li><a href="${pageContext.request.contextPath}/TopicAction_findAllByVisiteNum">热门查看</a></li>
+		 			<li><a href="${pageContext.request.contextPath}/topicAction_AllTopic">最新主题</a></li>
+		 			<li><a href="${pageContext.request.contextPath}/topicAction_AllTopicByAsc">最早发布</a></li>
+		 			<li><a href="${pageContext.request.contextPath}/topicAction_findAllByVisiteNum">热门查看</a></li>
 		 		</ul>
 		 	</div>
 		 	<div id="cmt_top_right">
@@ -35,29 +35,29 @@
 		 <%-- left --%>
 		 <div id="cmt_left">
 		 
-			<s:iterator value="topicList">
+			<s:iterator value="allTopic">
 				<div id="topic-list">
 					<div id="topic-headpic">
-						<s:a action="User_goUserHome">
-	        				<s:param name="uid" value="%{user.uid}"></s:param>
+						<s:a action="userAction_userHome" namespace="/">
+	        				<s:param name="userId" value="%{user.userId}"></s:param>
 							<img alt="${user.face}" src="${pageContext.request.contextPath}/images/user/${user.face}">
 	        			</s:a>
 					</div>
 					<div id="topic-content">
 						<div id="topic-title">
-							<s:a action="TopicAction_showTopic" id="topic-title-a" >
-								 <s:param name="tid" value="%{tid}"></s:param>${title }
+							<s:a action="topicAction_showTopic" id="topic-title-a" >
+								 <s:param name="topicId" value="%{topicId}"></s:param>${toicTitle }
 							</s:a>
 						</div>
 						<div id="clear"></div>
 						<div id="topic-detail">
-							<s:a action="User_goUserHome" id="topic-a-user">
-								<s:param name="uid" value="%{user.uid}"></s:param>${user.username.length()>6 ? user.username.substring(0,6).concat("..."):user.username}
+							<s:a action="userAction_userHome" id="topic-a-user">
+								<s:param name="userId" value="%{user.userId}"></s:param>${user.username.length()>6 ? user.username.substring(0,6).concat("..."):user.username}
 							</s:a>
 							<a id="a-read">${visitNum }</a>
 							<a id="a-reply">${replySet.size() }</a>
 							<a id="a-zan">${zanNum }</a>
-							<a id="a-date"><s:date name="createDate" format="yyyy-MM-dd HH:mm"/></a>
+							<a id="a-date"><s:date name="sendTopicDate" format="yyyy-MM-dd HH:mm"/></a>
 						</div>
 					</div>
 					<div id="clear"></div>

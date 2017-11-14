@@ -17,19 +17,19 @@
 	    	<!-- 用户信息 -->
 	        <div id="topicDetail-left">
 	        	<div id="left_userDetail">
-	        		<s:a action="User_goUserHome">
-	        			<s:param name="uid" value="%{user.uid}"></s:param>${user.username}
+	        		<s:a action="userAction_userHome" namespace="/">
+	        			<s:param name="userId" value="%{user.userId}"></s:param>${user.username}
 	        		</s:a>
 	                <div id="userDetail-head">
-	                	<s:a action="User_goUserHome">
-	        				<s:param name="uid" value="%{user.uid}"></s:param>
+	                	<s:a action="userAction_userHome" namespace="/">
+	        				<s:param name="userId" value="%{user.userId}"></s:param>
 	               			<img alt="${user.face}" src="${pageContext.request.contextPath}/images/user/${user.face}"/>
 	        			</s:a>
 	                </div>
 	                
 	                <div id="top-rep-num">
 	                	<span>主题 &nbsp; <a href="#">${user.topicSet.size()}</a></span>
-	                	<span>回复 &nbsp; <a href="#">${user.replySet.size()}</a></span>
+	                	<%-- <span>回复 &nbsp; <a href="#">${user.replySet.size()}</a></span> --%>
 	                </div>
 	            </div>
 	        </div>
@@ -39,11 +39,11 @@
 	        	<div id="topic-right-content">
 	        		<!-- 主题头 -->
 	        		<div id="topic-right-top">
-		        		<span id="topicTitle-span">${title}</span>
+		        		<span id="topicTitle-span">${toicTitle}</span>
 		        		<a id="a-read">${visitNum}</a>
 						<a id="a-reply">${replySet.size()}</a>
 						<a id="a-zan">${zanNum }</a>
-						<a id="a-date">${createDate }</a>
+						<a id="a-date">${sendTopicDate }</a>
 						<a id="floor-name">楼主</a>		
 						<a id="floor">#1</a>
 					</div>
@@ -75,18 +75,18 @@
 	        <s:iterator value="replySet" status="vs">
 		        <div id="topicDetail-left">
 		        	<div id="left_userDetail">
-		            	<s:a action="User_goUserHome">
-	        				<s:param name="uid" value="%{user.uid}"></s:param>${user.username}
+		            	<s:a action="userAction_userHome">
+	        				<s:param name="userId" value="%{user.userId}"></s:param>${user.username}
 	        			</s:a>
 		                <div id="userDetail-head">
-		                	<s:a action="User_goUserHome">
-	        					<s:param name="uid" value="%{user.uid}"></s:param>
+		                	<s:a action="userAction_userHome">
+	        					<s:param name="userId" value="%{user.userId}"></s:param>
 		               			<img alt="${user.face}" src="${pageContext.request.contextPath}/images/user/${user.face}"/>
 	        				</s:a>
 		                </div>
 		                <div id="top-rep-num">
 		                	<span>主题 &nbsp; <a href="#">${user.topicSet.size()}</a></span>
-		                	<span>回复 &nbsp; <a href="#">${user.replySet.size()}</a></span>
+		                	<%-- <span>回复 &nbsp; <a href="#">${user.replySet.size()}</a></span> --%>
 		                </div>
 		            </div>
 		        </div>
@@ -116,8 +116,6 @@
 		        	</div>
 		        </div><!-- right -->
 	       </s:iterator>
-	        
-	        
 	        
 	        
 		</div><!-- topicDetail-content -->

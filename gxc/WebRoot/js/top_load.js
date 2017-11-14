@@ -56,7 +56,7 @@ $(function(){
 	
 	//登录之前判断session中是有user
 	$.ajax({
-		url : '${pageContext.request.contextPath}/userAction_hasLogin',
+		url : 'userAction_hasLogin',
 		data : {},
 		type : 'POST',
 		dataType : 'text',

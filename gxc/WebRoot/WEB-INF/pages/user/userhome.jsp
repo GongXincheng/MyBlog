@@ -71,7 +71,6 @@ $(function(){
 				<div id="content_menu_bottom"></div>
 			</div>
 			
-			<%-- 
 			<!-- List 遍历-->
 			<s:iterator value="topicSet">
 				<div class="userhome_content_list">
@@ -80,7 +79,7 @@ $(function(){
 						<div id="list_topic">
 							<span>发布了主题</span>
 							<s:a action="TopicAction_showTopic">
-								<s:param name="tid" value="%{tid}"></s:param>${title }
+								<s:param name="topicId" value="%{topicId}"></s:param>${toicTitle }
 							</s:a>
 						</div>
 					</div>
@@ -92,7 +91,7 @@ $(function(){
 					</div>
 					<div id="clear"></div>
 				</div>
-			</s:iterator> --%>
+			</s:iterator>
 			
 			
 			<!-- 分页 -->

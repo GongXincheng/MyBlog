@@ -26,49 +26,41 @@ td{
 <jsp:include page="../top.jsp"></jsp:include>
 
 <div id="topsss" >
-	<%-- <s:a action="admin/Board_allBoardByDesc">
+	<s:a action="AdminAction_message_allMessageByDesc" namespace="/admin">
 		最近留言
 	</s:a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<s:a action="admin/Board_allBoardByAsc">
+	<s:a action="AdminAction_message_allMessageByAsc" namespace="/admin">
 		最早留言
-	</s:a> --%>
+	</s:a>
 </div>
 
 <table border="1">
 	<tr>
-		<td>ID</td>
-		<td>用户ID</td>
+		<td>Message ID</td>
 		<td>用户名</td>
 		<td>邮箱</td>
 		<td>标题</td>
 		<td>内容</td>
 		<td>创建时间</td>
 	</tr>
-	<%-- <s:iterator value="%{boardList}" var="b">
+	<s:iterator value="allMessage">
 		<tr>
-		<td>${b.bid }</td>
-		<td>${b.uid }</td>
-		<s:if test="#b.uid!=''">
+			<td>${messageId}</td>
 			<td>
-				<s:a action="User_goUserHome">
-					<s:param name="uid" value="%{#b.uid}"></s:param>${b.username}
+				<s:a action="userAction_userHome" namespace="/">
+					<s:param name="userId" value="user.userId"></s:param>${user.username}
 				</s:a>
 			</td>
-		</s:if>
-		<s:else>
-			<td>${b.username}</td>
-		</s:else>
-		
-		
-		<td>${b.email }</td>
-		<td>${b.msgTitle }</td>
-		<td>${b.message }</td>
-		<td>
-			<s:date name="#b.createDate" format="yyyy-MM-dd HH:mm"/>
-		</td>
-	</tr>
+			
+			<td>${user.email}</td>
+			<td>${messageTitle }</td>
+			<td>${messageContent }</td>
+			<td>
+				<s:date name="sendMessageDate" format="yyyy-MM-dd HH:mm"/>
+			</td>
+		</tr>
 	</s:iterator>
-	 --%>
+	
 </table>
 </body>
 </html>

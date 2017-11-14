@@ -4,14 +4,9 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 	
 <struts>
-	<package name="admin" namespace="/admin" extends="common">
-		
-		<action name="AdminAction_message_*" class="com.gxc.web.action.MessageAdminAction" method="{1}">
+	<package name="message" namespace="/" extends="common">
+		<action name="messageAction_*" class="com.gxc.message.web.action.MessageAction" method="{1}">
 			<result name="messageList">/WEB-INF/pages/admin/board/list.jsp</result>
-		</action>
-		
-		<action name="AdminUIAction_*_*">
-			<result>/WEB-INF/pages/admin/{1}/{2}.jsp</result>
 		</action>
 	</package>
 </struts>

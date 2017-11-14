@@ -37,19 +37,20 @@ $(function(){
 	
 	//头像被选中
 	$("#edit-head-list img").click(function(){
+		//获取图片名称
 		var picName = $(this).attr("alt");
+		//获取用户id
 		var uid = $("#user-id").val();
 		$.ajax({
-			url : "${pageContext.request.contextPath}/User_editHead",
+			url : "userAction_editHead",
 			data : {
 				face : picName,
-				uid : uid
+				userId : uid
 			},
 			type : "POST",
-			dataType : "json",
+			dataType : "text",
 			success : function(data){
-				var id = $("#user-id").val();
-				location.href = "${pageContext.request.contextPath}/User_goUserDetail?uid="+id;
+				location.href = "userAction_userDetail?userId="+uid;
 			},
 			error:function(){}
 		});

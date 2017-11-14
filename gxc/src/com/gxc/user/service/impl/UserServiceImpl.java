@@ -66,6 +66,30 @@ public class UserServiceImpl implements UserService {
 		user.setFace("head_00.jpg");
 		userDao.regist(user);
 	}
+
+	/**
+	 * 更新用户信息
+	 */
+	@Override
+	public void updateUser(User user) {
+		User dbUser = userDao.findUserById(user.getUserId());
+		dbUser.setRealname(user.getRealname());
+		dbUser.setGender(user.getGender());
+		dbUser.setSign(user.getSign());
+		dbUser.setTelephone(user.getTelephone());
+		dbUser.setEmail(user.getEmail());
+		dbUser.setNote(user.getNote());
+		dbUser.setCity(user.getCity());
+	}
+
+	/**
+	 * 修改头像
+	 */
+	@Override
+	public void updateHead(User user) {
+		User dbUser = userDao.findUserById(user.getUserId());
+		dbUser.setFace(user.getFace());
+	}
 	
 	
 }

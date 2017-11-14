@@ -18,7 +18,7 @@
 		<property name="zanNum" type="integer"></property>
 		
 		<!-- Topic-Reply: 一对多 -->
-		<set name="replySet">
+		<set name="replySet" order-by="replyId desc">
 			<key column="topicId"></key>
 			<one-to-many class="com.gxc.reply.domain.Reply"/>
 		</set>

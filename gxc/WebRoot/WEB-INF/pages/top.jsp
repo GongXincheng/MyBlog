@@ -41,12 +41,11 @@
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/index.jsp">首 页</a></li>
 					<li><a href="javascript:void(0);">文 章</a></li>
-					<li><a href="UIAction_community_list">社 区</a></li>
+					<li><a href="${pageContext.request.contextPath}/topicAction_AllTopic">社 区</a></li>
 					<li><a href="javascript:void(0);" id="top_menu_board">留 言</a></li>
 					<s:if test="#session.loginUser.role==1">
 						<li>
-							<%-- <s:a action="" namespace="admin">后台管理</s:a> --%>
-							<a href="${pageContext.request.contextPath}/admin/AdminUIAction_board_list">后台管理</a>
+							<s:a action="AdminAction_message_allMessageByDesc" namespace="/admin">后台管理</s:a>
 						</li>
 					</s:if>
 				</ul>
@@ -71,7 +70,7 @@
 							</s:a>
 						</li>
 						<li class="li">
-							<s:a action="userAction_userDetail">
+							<s:a action="userAction_userDetail" namespace="/">
 								<s:param name="userId" value="#session.loginUser.userId"></s:param>个人资料
 							</s:a>
 						</li>
@@ -200,13 +199,13 @@
 		
 		<div id="board-content">
 			<form action="#" id="form_board">
-				<input type="hidden" value="${session.user.uid }" />
-				<div id="board-content-username">
+				<input type="hidden" value="${session.loginUser.userId}" />
+				<%-- <div id="board-content-username">
 					<s:textfield name="username" value="%{#session.user.username}" id="boardUsername" placeholder="用户名  (可不填写)" ></s:textfield>
 				</div>
 				<div id="board-content-email">
 					<s:textfield name="email" value="%{#session.user.email}" id="boardEmail" placeholder="邮 箱  (可不填写)"></s:textfield>
-				</div>
+				</div> --%>
 				<div id="board-content-title">
 					<s:textfield name="msgTitle" id="boardTitle" placeholder="标 题   (必填)"></s:textfield>
 				</div>

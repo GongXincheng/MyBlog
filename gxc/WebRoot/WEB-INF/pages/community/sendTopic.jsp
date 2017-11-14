@@ -8,10 +8,10 @@
 		<span>发表主题</span>
 	</div>
 	<div id="sendTopic-content">
-		<form action="${pageContext.request.contextPath}/TopicAction_sendTopic" id="form_sendTopic" method="post">
-			<%-- <s:hidden name="uid" value="%{#session.user.uid}"></s:hidden> --%>
+		<form action="${pageContext.request.contextPath}/topicAction_sendTopic" id="form_sendTopic" method="post">
+			<s:hidden name="user.userId" value="%{#session.loginUser.userId}"></s:hidden>
 			<div id="sendTopic-title">
-				<s:textfield name="title" id="title" placeholder="标题内容"></s:textfield>
+				<s:textfield name="toicTitle" id="title" placeholder="标题内容"></s:textfield>
 			</div>
 			<div id="sendTopic-content">
 				<s:textarea name="topicContent" placeholder="主题内容"></s:textarea>

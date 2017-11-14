@@ -90,8 +90,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 			}
 			//登录成功
 			else{
-				//TODO 更新登录次数和上次登陆时间
-				
 				//将user放入session中
 				session.setAttribute("loginUser", dbUser);
 				json.put("login_msg", "success");
@@ -201,10 +199,28 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		return "userDetail";
 	}
 	
+	/**
+	 * 修改用户信息
+	 * @return
+	 * @throws Exception 
+	 */
+	public String edit() throws Exception{
+		//更新用户信息
+		userService.updateUser(user);
+		ServletActionContext.getResponse().sendRedirect("userAction_userDetail?userId="+user.getUserId());
+		return "none";
+	}
 	
-	
-	
-	
+	/**
+	 * 修改头像
+	 */
+	public String editHead(){
+		userService.updateHead(user);
+		
+		//更改session中的信息
+		ServletActionContext.getRequest().getSession().setAttribute("loginUser", userService.findUserById(user.getUserId()));
+		return "none";
+	}
 	
 	
 	

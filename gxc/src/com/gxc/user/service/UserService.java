@@ -31,4 +31,17 @@ public interface UserService {
 	 */
 	void regist(User user);
 
+	/**
+	 * 更新用户信息
+	 * @param user 
+	 */
+	void updateUser(User user);
+
+	/**
+	 * 修改头像
+	 * @param user
+	 */
+	void updateHead(User user);
+
+
 }

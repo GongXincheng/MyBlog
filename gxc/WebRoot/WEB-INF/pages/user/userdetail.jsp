@@ -18,8 +18,8 @@ $(function(){
 	});
 	//修改信息
 	$("#edit_submit").click(function(){
-		/* $("#form_edit")[0].submit(); */
-		alert($("#province").val()+":"+$("#city").val());
+		$("#form_edit")[0].submit();
+		/* alert($("#province").val()+":"+$("#city").val()); */
 	});
 });
 </script>
@@ -81,7 +81,6 @@ $(function(){
 				<div id="div-address" class="div-column">
 					<span class="span-left">居住地</span>
 					<span class="span-right">${empty city.province ? '未填写' : city.province.provinceName }&nbsp;&nbsp;&nbsp;${empty city ? '未填写' : city.cityName }</span>
-<%-- 				<span class="span-right">${empty pro.province ? '未填写': pro.province }&nbsp;&nbsp;&nbsp;${cit.city}</span> --%>
 				</div>
 				
 				<!-- email -->
@@ -124,7 +123,7 @@ $(function(){
 		</div>
 		
 		<div id="edit-content">
-			<form action="userAction_edit" id="form_edit" method="post">
+			<s:form action="userAction_edit" id="form_edit" namespace="/">
 				<input type="hidden" name="userId" value="${userId}">
 				<table border="0" cellpadding="0" cellspacing="0">
 					<tr>
@@ -180,7 +179,7 @@ $(function(){
 					<button id="edit_submit" type="button" class="edit_btn">确定</button>
 					<button id="edit_close" type="button" class="edit_btn" >取消</button>
 				</div>
-			</form>
+			</s:form>
 		</div>
 		
 	</div>

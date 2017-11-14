@@ -23,12 +23,12 @@
 		<property name="role" type="integer"></property>
 		
 		<!-- User-Topic 一对多 -->
-		<set name="topicSet">
+		<set name="topicSet" order-by="topicId desc">
 			<key column="userId"></key>
 			<one-to-many class="com.gxc.topic.domain.Topic"/>
 		</set>
 		<!-- User-Message 一对多 -->
-		<set name="messageSet">
+		<set name="messageSet" order-by="messageId desc">
 			<key column="userId"></key>
 			<one-to-many class="com.gxc.message.domain.Message"/>
 		</set>
