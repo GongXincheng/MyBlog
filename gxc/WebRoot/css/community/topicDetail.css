@@ -52,7 +52,7 @@
 }
 #topicDetail-right{
 	border-left:1px solid #ccc;
-	border-bottom:2px solid #ccc;
+	border-bottom:1px solid #ccc;
 	margin-left: 160px;
 	/* background: lime; */
 }
@@ -73,6 +73,7 @@
 	line-height: 40px;
 	width: 96%;
 	/* background-color: lime; */
+	word-wrap:break-word;
 }
 .right-top-reply{
 	height:30px;
@@ -89,15 +90,15 @@
 #topic-right-top #a-read{
 	margin-left: 0px;
 	padding-left:20px;
-	background: url("/myBlog/images/community/visit_17x17.png") no-repeat 0 -1px;
+	background: url("/gxc/images/community/visit_17x17.png") no-repeat 0 -1px;
 }
 #a-reply{
 	padding-left:20px;
-	background: url("/myBlog/images/community/reply_16x16.png") no-repeat;
+	background: url("/gxc/images/community/reply_16x16.png") no-repeat;
 }
 #a-zan{
 	padding-left:20px;
-	background: url("/myBlog/images/community/zan_17x17.png") no-repeat;
+	background: url("/gxc/images/community/zan_17x17.png") no-repeat;
 }
 
 #topic-right-top #a-date{
@@ -128,6 +129,7 @@
 	font-family: 黑体;
 	font-size: 18px;
 	/* background-color: yellow; */
+	text-align: center;
 }
 #span-topicContent{
 	line-height: 30px;
@@ -147,14 +149,14 @@
 #topicZan-a{
 	height: 35px;
 	width: 50px;
-	background: url("/myBlog/images/like_red_28.png") no-repeat 0px 3px;
+	background: url("/gxc/images/like_red_28.png") no-repeat 0px 3px;
 	line-height:35px;
 	padding-left: 45px; 
 	font-family: 黑体;
 	font-size: 15px;
 	display: block;
-	float: left;
-	margin-top: -2px;
+	/* margin-top: -2px; */
+	margin: 0 auto;
 }
 
 /* 回复按钮 */
@@ -194,11 +196,13 @@
 }
 
 
-
 .div-replyContent{
 	padding-bottom:85px; 
 	margin: 80px auto 0px;
 	width: 75%;
 	font-family: 黑体;
 	font-size: 18px;
+}
+a{
+	word-wrap:break-word;
 }

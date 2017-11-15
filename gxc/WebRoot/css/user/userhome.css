@@ -97,16 +97,6 @@
 	width: 78%;
 	float: left;	
 }
-#menu_detail{
-	width: 20%;
-	float: right;
-	height: 40px;
-	line-height: 40px;
-}
-#menu_detail_span{
-	font-size: 13px;
-	line-height: 43px;
-}
 #content_menu_ul ul li{
 	margin-left: 30px;
 	/* background-color: pink; */
@@ -126,15 +116,20 @@
 }
 
 /* List  */
+#userhome-topic-list{
+	display: none;
+}
+#userhome-reply-list{
+	display: none;
+}
+#userhome-message-list{
+	display: none;
+}
 .userhome_content_list{
 	font-size: 18px;
     font-weight: 700;
     margin-top: 12px;
-    display: none;
     border-bottom: 1px solid #ccc;
-}
-#userhome_content_reply{
-	display: block;
 }
 #list_left{
 	width: 70%;
@@ -168,6 +163,10 @@
 }
 #list_topic a:HOVER{
 	color: #175199;
+}
+
+#userhome-reply-list{
+	display: none;
 }
 
 /* 分页  */
@@ -247,4 +246,19 @@
 }
 #right_notice_content ul li a:HOVER{
 	color: #175199;
+}
+
+#no-dynamic{
+	background: white;
+	height:200px;
+	line-height: 200px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 800;
+}
+a{
+	word-wrap:break-word;
+}
+span{
+	word-wrap:break-word;
 }

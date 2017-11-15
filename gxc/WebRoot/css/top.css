@@ -11,10 +11,8 @@ body{
 }
 #content{
 	width: 75%;
-	height: 800px;
 	margin: 10px auto;
 	background-color: rgb(243,243,243);
-	
 }
 #clear{
 	clear: both;
@@ -164,3 +162,6 @@ ul li a:HOVER {
 	color: #ddd;
 }
 
+a{
+	word-wrap:break-word;
+}

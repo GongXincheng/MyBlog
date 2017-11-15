@@ -5,7 +5,7 @@
 	
 <struts>
 	<package name="topic" namespace="/" extends="common">
-		<action name="topicAction_*" class="com.gxc.topic.dao.web.action.TopicAction" method="{1}">
+		<action name="topicAction_*" class="com.gxc.topic.web.action.TopicAction" method="{1}">
 			
 			<!-- 获取所有Topic -->
 			<result name="allTopic" type="redirectAction">topicAction_AllTopic</result>

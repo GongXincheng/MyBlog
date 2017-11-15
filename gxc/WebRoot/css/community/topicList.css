@@ -133,15 +133,15 @@ h1{
 }
 #a-read{
 	padding-left:20px;
-	background: url("/myBlog/images/community/visit_17x17.png") no-repeat 0 -1px;
+	background: url("/gxc/images/community/visit_17x17.png") no-repeat 0 -1px;
 }
 #a-reply{
 	padding-left:20px;
-	background: url("/myBlog/images/community/reply_16x16.png") no-repeat;
+	background: url("/gxc/images/community/reply_16x16.png") no-repeat;
 }
 #a-zan{
 	padding-left:20px;
-	background: url("/myBlog/images/community/zan_17x17.png") no-repeat;
+	background: url("/gxc/images/community/zan_17x17.png") no-repeat;
 }
 #topic-detail #a-date{
 	margin-left: 35px;
@@ -213,7 +213,7 @@ h1{
     letter-spacing: 5px;
     color: white;
     font-weight: 600;
-    background-image: url("/myBlog/images/signIn_20x20.png");
+    background-image: url("/gxc/images/signIn_20x20.png");
     background-repeat: no-repeat;
     background-position: 20% 48%;
     text-align: center;
@@ -258,7 +258,7 @@ h1{
 	width:75%;
     padding-left: 45px;
     border: 1px solid #ccc;
-    background-image: url("/myBlog/images/search_35x35.png");
+    background-image: url("/gxc/images/search_35x35.png");
     background-repeat:no-repeat;
     background-position : 0-3px;
 	margin-top: 20px;
@@ -298,4 +298,7 @@ h1{
 }
 #right_notice_content ul li a:HOVER{
 	color: #175199;
+}
+a{
+	word-wrap:break-word;
 }

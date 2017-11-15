@@ -87,3 +87,6 @@
     background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
 	margin-left: 25px;
 }
+a{
+	word-wrap:break-word;
+}

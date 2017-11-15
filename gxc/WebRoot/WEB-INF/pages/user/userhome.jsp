@@ -59,69 +59,80 @@ $(function(){
 			<div id="userhome_content_menu">
 				<div id="content_menu_ul">
 					<ul>
-						<li><a id="li_a_1" href="javascript:void(0);">动态</a></li>
+						<li><a id="li_a_1" href="javascript:void(0);">主题</a></li>
 						<li><a id="li_a_2" href="javascript:void(0);">回复</a></li>
 						<li><a id="li_a_3" href="javascript:void(0);">留言</a></li>
 					</ul>
-				</div>
-				<div id="menu_detail">
-					<span id="menu_detail_span">回复 / 查看</span>
 				</div>
 				<div id="clear"></div>
 				<div id="content_menu_bottom"></div>
 			</div>
 			
 			<!-- 主题 遍历-->
-			<s:iterator value="topicSet">
-				<div class="userhome_content_list">
-					<!-- left -->
-					<div id="list_left">
-						<div id="list_topic">
-							<span>发布了主题</span>
-							<s:a action="topicAction_showTopic">
-								<s:param name="topicId" value="%{topicId}"></s:param>${toicTitle }
-							</s:a>
+			<div id="userhome-topic-list">
+				<s:iterator value="topicSet">
+					<div class="userhome_content_list">
+						<!-- left -->
+						<div id="list_left">
+							<div id="list_topic">
+								<span>发布了主题</span>
+								<s:a action="topicAction_showTopic">
+									<s:param name="topicId" value="%{topicId}"></s:param>${toicTitle }
+								</s:a>
+							</div>
 						</div>
-					</div>
-					<!-- right -->
-					<div id="list_right">
-						<div id="list_detail">
-							<span>${replySet.size() }</span> |<span>${visitNum }</span>
+						<!-- right -->
+						<div id="list_right">
+							<div id="list_detail">
+								<span>${replySet.size() }</span> |<span>${visitNum }</span>
+							</div>
 						</div>
+						<div id="clear"></div>
 					</div>
-					<div id="clear"></div>
-				</div>
-			</s:iterator>
-			
+				</s:iterator>
+				<s:if test="topicSet.size==0">
+					<div id="no-dynamic">暂无动态</div>
+				</s:if>
+			</div>
 			
 			<!-- 回复 遍历-->
-			<s:iterator value="replySet">
-				<div class="userhome_content_list" id="userhome_content_reply">
-					<!-- left -->
-					<div id="list_left">
-						<div id="list_topic">
-							<span>${topic.toicTitle }</span>
-							<s:a action="topicAction_showTopic">
-								<s:param name="topicId" value="%{topic.topicId}"></s:param>${replyContent}
-							</s:a>
+			<div id="userhome-reply-list">
+				<s:iterator value="replySet">
+					<div class="userhome_content_list">
+						<div id="list_left">
+							<div id="list_topic">
+								<span>主题：${topic.toicTitle }</span>
+								<s:a action="topicAction_showTopic">
+									<s:param name="topicId" value="%{topic.topicId}"></s:param>${replyContent}
+								</s:a>
+							</div>
 						</div>
+						<div id="clear"></div>
 					</div>
-					<!-- right -->
-					<div id="list_right">
-						<div id="list_detail">
-							<span>${replySet.size() }</span> |<span>${visitNum }</span>
+				</s:iterator>
+				
+				<s:if test="replySet.size==0">
+					<div id="no-dynamic">暂无动态</div>
+				</s:if>
+			</div>
+			
+			<!-- 留言 遍历-->
+			<div id="userhome-message-list">
+				<s:iterator value="messageSet">
+					<div class="userhome_content_list">
+						<div id="list_left">
+							<div id="list_topic">
+								<span>标题：${messageTitle}</span>
+								<span style="color:black">${messageContent}</span>
+							</div>
 						</div>
+						<div id="clear"></div>
 					</div>
-					<div id="clear"></div>
-				</div>
-			</s:iterator>
-			
-			
-			
-			
-			
-			
-			
+				</s:iterator>
+				<s:if test="messageSet.size==0">
+					<div id="no-dynamic">暂无动态</div>
+				</s:if>
+			</div>
 			
 			
 			<!-- 分页 -->

@@ -18,7 +18,8 @@ a{
 #login_regist_content{
     width: 330px;
     background-color: rgb(250,251,252);
-    position: absolute;
+    position: fixed;
+    top:22%;
     z-index:1001;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #018c8c;
@@ -96,13 +97,13 @@ a{
     border: 1px solid #ccc;
 }
 #username{
-	background: url("../images/user-password.png") no-repeat 0px 0px;
+	background: url("/gxc/images/user-password.png") no-repeat 0px 0px;
 }
 #password{
-	background: url("../images/user-password.png") no-repeat 0px -44px;
+	background: url("/gxc/images/user-password.png") no-repeat 0px -44px;
 }
 #rePassword{
-	background: url("../images/user-password.png") no-repeat 0px -44px;
+	background: url("/gxc/images/user-password.png") no-repeat 0px -44px;
 }
 #validate_left #validate{
 	height: 35px;

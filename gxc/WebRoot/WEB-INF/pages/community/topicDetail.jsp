@@ -43,7 +43,9 @@
 		        		<a id="a-read">${visitNum}</a>
 						<a id="a-reply">${replySet.size()}</a>
 						<a id="a-zan">${zanNum }</a>
-						<a id="a-date">${sendTopicDate }</a>
+						<a id="a-date">
+							<s:date name="sendTopicDate" format="yyyy-MM-dd HH:mm:ss"/>
+						</a>
 						<a id="floor-name">楼主</a>		
 						<a id="floor">#1</a>
 					</div>
@@ -59,7 +61,6 @@
 					<div id="topic-content-menu">
 						<div>
 							<a id="topicZan-a">520</a>
-							<a href="javascript:void(0);" id="a-sendReply" >回复</a>
 						</div>
 						<div id="clear"></div>
 					</div>

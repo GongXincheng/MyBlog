@@ -29,7 +29,7 @@
 		</set>
 		
 		<!-- User-Reply 一对多 -->
-		<set name="replySet">
+		<set name="replySet" order-by="replyId desc">
 			<key column="userId"></key>
 			<one-to-many class="com.gxc.reply.domain.Reply"/>
 		</set>

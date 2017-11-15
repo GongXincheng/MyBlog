@@ -14,10 +14,12 @@
 			<result-type name="captcha" class="com.gxc.web.action.CaptchaAction"></result-type>
 		</result-types>
 		
-		
 	
 		<action name="UIAction_*_*">
 			<result>/WEB-INF/pages/{1}/{2}.jsp</result>
+		</action>
+		<action name="RootUIAction_*">
+			<result>/WEB-INF/pages/{1}.jsp</result>
 		</action>
 	</package>
 	

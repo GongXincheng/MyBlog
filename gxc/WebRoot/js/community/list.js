@@ -91,28 +91,71 @@ $(function(){
 			
 			$("#mask").show(0,function(){
 				$("#sendReply-wrap").css({
-					"left":leftSend+"px",
-					"top":topSend+"px"
+					"left":leftSend+"px"
 				}).slideDown(365);
 			});
 		}
 	});
 	
 	
-	
 	//点击发表
 	$("#btn-send").click(function(){
+		var title = $("#title").val();
+		var content = $("#topicContent").val();
+		
+		if(title.length==0){
+			if(confirm(" 标题不能为空 ")){
+				$("#title").focus();
+				return false;
+			}
+		}
+		if(title.length>80){
+			if(confirm(" 标题长度不能超过80 ")){
+				$("#title").focus();
+				return false;
+			}
+		}
+		if(content.length==0){
+			if(confirm(" 内容不能为空 ")){
+				$("#topicContent").focus();
+				return false;
+			}
+		}
+		if(content.length>250){
+			if(confirm(" 内容长度不能超过250 ")){
+				$("#topicContent").focus();
+				return false;
+			}
+		}
+		
 		$("#form_sendTopic")[0].submit();
 	});
 	//点击回复
 	$("#btn-send-reply").click(function(){
+		
+		var content = $("#replyContent").val();
+		
+		if(content.length==0){
+			if(confirm(" 内容不能为空 ")){
+				$("#topicContent").focus();
+				return false;
+			}
+		}
+		if(content.length>250){
+			if(confirm(" 内容长度不能超过250 ")){
+				$("#topicContent").focus();
+				return false;
+			}
+		}
+		
+		
 		$("#form_sendReply")[0].submit();
 	});
 	
 	
 	//点击签到
 	$("#div-btn-signIn").click(function(){
-		alert("签到");
+		alert("功能暂未完成,敬请期待!");
 	});
 	
 	
@@ -121,7 +164,7 @@ $(function(){
 	$('#topicSearch').keypress(function(event){  
 	    var keycode = (event.keyCode ? event.keyCode : event.which);  
 	    if(keycode == '13'){  
-	        alert('按下了回车');    
+	        alert('功能暂未完成,敬请期待!');    
 	    }  
 	}); 
 	

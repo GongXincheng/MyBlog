@@ -39,8 +39,8 @@
 			</div>
 			<div id="top_menu">
 				<ul>
-					<li><a href="${pageContext.request.contextPath}/index.jsp">首 页</a></li>
-					<li><a href="javascript:void(0);">文 章</a></li>
+					<li><a href="${pageContext.request.contextPath}/RootUIAction_index">首 页</a></li>
+					<!-- <li><a href="javascript:void(0);">文 章</a></li> -->
 					<li><a href="${pageContext.request.contextPath}/topicAction_AllTopic">社 区</a></li>
 					<li><a href="javascript:void(0);" id="top_menu_board">留 言</a></li>
 					<s:if test="#session.loginUser.role==1">
@@ -153,7 +153,7 @@
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 							<td>
-								<s:textfield name="username" id="username" placeholder="用户名" theme="simple"></s:textfield>
+								<s:textfield name="username" id="username" placeholder="用户名 (中文/字母/数字)" theme="simple"></s:textfield>
 							</td>
 						</tr>
 						<tr>

@@ -143,3 +143,6 @@
 #gender女{
 	margin-left: 20px;
 }
+a{
+	word-wrap:break-word;
+}

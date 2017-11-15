@@ -4,34 +4,26 @@ $(function(){
 	var $login = $("#login_content");
 	var $regist = $("#regist_content");
 	
-	//获取屏幕高度和宽度
-	var screenHeight = $(window).height();
-	/*var screenWidth = $(window).width();*/
-	
 	//获取文档高度
-	var docHeight = $(window).height();  //676
 	var docWidth = $(document).width();	//1438
-
+	
 	//获取$Content的高度宽度
-	/*var contentHeight = $content.height();*/
 	var contentWidth = $content.width();
 
-	
 	//--------------- img Click ---------------
 	$("#img_user").click(function(){
+		//隐藏注册
+		$regist.hide();
+		
 		//显示遮罩层		
 		$("#mask").show();	
-		//显示content
-		$content.slideDown(100);
 		
 		//设置位置
-		/*var top = $("");*/
 		var contentLeft = (docWidth-contentWidth)/2 +"px";
-		/*var contentTop = (docWidth*0.15)+"px";*/
-		$content.css({
-			'top':'13%',
-			'left':contentLeft
-		});
+		$content.css('left',contentLeft);
+		
+		//显示content
+		$content.slideDown(100);
 		
 		//显示登录界面
 		$login.slideDown(430);

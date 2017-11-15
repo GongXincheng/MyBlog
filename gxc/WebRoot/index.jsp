@@ -4,8 +4,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>index.jsp</title>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+$(function(){
+	window.location.href = "${pageContext.request.contextPath}/topicAction_AllTopic";
+})
+</script>
 </head>
 <body>
-	<jsp:forward page="/WEB-INF/pages/index.jsp"></jsp:forward>
+	<%-- <jsp:forward page="/WEB-INF/pages/index.jsp"></jsp:forward> --%>
 </body>
 </html>

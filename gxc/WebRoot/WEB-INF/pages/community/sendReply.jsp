@@ -12,7 +12,7 @@
 			<s:hidden name="user.userId" value="%{#session.loginUser.userId}"></s:hidden>
 			<s:hidden name="topic.topicId" value="%{topicId}"></s:hidden>
 			<div id="sendReply-content">
-				<s:textarea name="replyContent" placeholder="回复内容"></s:textarea>
+				<s:textarea name="replyContent" id="replyContent" placeholder="回复内容"></s:textarea>
 			</div>
 			<input type="button" id="btn-send-reply" value="回复">
 		</form>

@@ -29,15 +29,26 @@ $(function(){
 		var userId = $("#form_board input[type='hidden']").val();
 		var messageTitle = $("#boardTitle").val().trim();
 		var messageContent = $("#boardMessage").val().trim();
-		
 		if(messageTitle.length==0){
 			if(confirm(" 标题不能为空 ")){
 				$("#boardTitle").focus();
 				return false;
 			}
 		}
+		if(messageTitle.length>40){
+			if(confirm(" 标题长度不能超过40 ")){
+				$("#boardTitle").focus();
+				return false;
+			}
+		}
 		if(messageContent.length==0){
 			if(confirm(" 内容不能为空 ")){
+				$("#boardMessage").focus();
+				return false;
+			}
+		}
+		if(messageContent.length>250){
+			if(confirm(" 内容长度不能超过250 ")){
 				$("#boardMessage").focus();
 				return false;
 			}

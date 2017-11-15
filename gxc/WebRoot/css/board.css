@@ -6,8 +6,8 @@
 	padding-top: 7px;
 	padding-bottom: 20px;
 	background: rgb(241,241,241);
-	position:absolute;
-	top:13%;
+	position:fixed;
+	top:22%;
 	left:40%;
 	z-index:1002;
 	display: none;
@@ -44,7 +44,7 @@
 	background-color: white;
 	box-shadow: 0px -1px 2px #999;
 }
-#boardUsername{
+/* #boardUsername{
 	background: url("../images/board/user_22x22.png") no-repeat 12px 6px;
 }
 #boardUsername:FOCUS{
@@ -55,12 +55,12 @@
 }
 #boardEmail:FOCUS{
 	background: url("../images/board/email_red_22.png") no-repeat 12px 6px;
-}
+} */
 #boardTitle{
-	background: url("../images/board/tilte_22x22.png") no-repeat 12px 6px;
+	background: url("/gxc/images/board/tilte_22x22.png") no-repeat 12px 6px;
 }
 #boardTitle:FOCUS{
-	background: url("../images/board/title_red_22.png") no-repeat 12px 6px;
+	background: url("/gxc/images/board/title_red_22.png") no-repeat 12px 6px;
 }
 #boardMessage{
 	width:310px;

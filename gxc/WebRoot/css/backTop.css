@@ -7,8 +7,8 @@
 	bottom:30px;
 	margin-left:600px;
 	display:none;
-	background:url(../images/return_top.png) no-repeat left top;
+	background:url(/gxc/images/return_top.png) no-repeat left top;
 }
 #back_top:hover{
-	background:url(../images/return_top.png) no-repeat left -30px;
+	background:url(/gxc/images/return_top.png) no-repeat left -30px;
 }

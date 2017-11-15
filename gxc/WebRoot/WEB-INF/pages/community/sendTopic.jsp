@@ -14,7 +14,7 @@
 				<s:textfield name="toicTitle" id="title" placeholder="标题内容"></s:textfield>
 			</div>
 			<div id="sendTopic-content">
-				<s:textarea name="topicContent" placeholder="主题内容"></s:textarea>
+				<s:textarea name="topicContent" id="topicContent" placeholder="主题内容"></s:textarea>
 			</div>
 			<input type="button" id="btn-send" value="发表帖子">
 		</form>
