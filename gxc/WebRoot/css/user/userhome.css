@@ -133,6 +133,9 @@
     display: none;
     border-bottom: 1px solid #ccc;
 }
+#userhome_content_reply{
+	display: block;
+}
 #list_left{
 	width: 70%;
 	float: left;

@@ -52,6 +52,14 @@ public class TopicServiceImpl implements TopicService {
 		Topic topic = topicDao.findTopicById(topicId);
 		return topic;
 	}
-	
+
+	/**
+	 * 更新帖子查看人数
+	 */
+	@Override
+	public void updateVisitNum(Topic dbTopic) {
+		Topic topic = topicDao.findTopicById(dbTopic.getTopicId());
+		topic.setVisitNum(dbTopic.getVisitNum()+1);
+	}
 	
 }

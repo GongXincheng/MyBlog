@@ -71,14 +71,14 @@ $(function(){
 				<div id="content_menu_bottom"></div>
 			</div>
 			
-			<!-- List 遍历-->
+			<!-- 主题 遍历-->
 			<s:iterator value="topicSet">
 				<div class="userhome_content_list">
 					<!-- left -->
 					<div id="list_left">
 						<div id="list_topic">
 							<span>发布了主题</span>
-							<s:a action="TopicAction_showTopic">
+							<s:a action="topicAction_showTopic">
 								<s:param name="topicId" value="%{topicId}"></s:param>${toicTitle }
 							</s:a>
 						</div>
@@ -94,6 +94,36 @@ $(function(){
 			</s:iterator>
 			
 			
+			<!-- 回复 遍历-->
+			<s:iterator value="replySet">
+				<div class="userhome_content_list" id="userhome_content_reply">
+					<!-- left -->
+					<div id="list_left">
+						<div id="list_topic">
+							<span>${topic.toicTitle }</span>
+							<s:a action="topicAction_showTopic">
+								<s:param name="topicId" value="%{topic.topicId}"></s:param>${replyContent}
+							</s:a>
+						</div>
+					</div>
+					<!-- right -->
+					<div id="list_right">
+						<div id="list_detail">
+							<span>${replySet.size() }</span> |<span>${visitNum }</span>
+						</div>
+					</div>
+					<div id="clear"></div>
+				</div>
+			</s:iterator>
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			<!-- 分页 -->
 			<div id="list_page_content">
 				<div id="page_code">
@@ -104,6 +134,7 @@ $(function(){
 					<a href="javascript:void(0);" id="nextPage">下一页</a>
 				</div>
 			</div>
+			
 		</div>
 		
 		<div id="userhome_content_right">

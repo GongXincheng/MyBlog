@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import com.gxc.topic.domain.Topic;
+import com.gxc.user.domain.User;
 
 public class Reply implements Serializable {
 	private static final long serialVersionUID = -2676596825815613687L;
@@ -15,9 +16,17 @@ public class Reply implements Serializable {
 	/*
 	 * 关系：
 	 * 		Reply -> Topic : 多对一
+	 * 		Reply -> User : 多对一
 	 */
 	Topic topic;
+	User user;
 	 
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public Integer getReplyId() {
 		return replyId;
 	}

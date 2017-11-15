@@ -8,8 +8,9 @@
 		<span>回复</span>
 	</div>
 	<div id="sendReply-content">
-		<form action="${pageContext.request.contextPath}/ReplyAction_sendReply" id="form_sendReply" method="post">
-			<s:hidden name="tid" value="%{tid}"></s:hidden>
+		<form action="${pageContext.request.contextPath}/replyAction_sendReply" id="form_sendReply" method="post">
+			<s:hidden name="user.userId" value="%{#session.loginUser.userId}"></s:hidden>
+			<s:hidden name="topic.topicId" value="%{topicId}"></s:hidden>
 			<div id="sendReply-content">
 				<s:textarea name="replyContent" placeholder="回复内容"></s:textarea>
 			</div>

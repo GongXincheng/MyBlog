@@ -7,6 +7,7 @@ import java.util.Set;
 
 import com.gxc.city.domain.City;
 import com.gxc.message.domain.Message;
+import com.gxc.reply.domain.Reply;
 import com.gxc.topic.domain.Topic;
 
 public class User implements Serializable{
@@ -32,11 +33,12 @@ public class User implements Serializable{
 	 * 		User -> Topic 一对多
 	 * 		User -> Message 一对多
 	 *  	User -> City  多对一
+	 *  	User -> Reply 一对多
 	 */
 	City city;
 	Set<Topic> topicSet = new HashSet<Topic>();
+	Set<Reply> replySet = new HashSet<Reply>();
 	Set<Message> messageSet = new HashSet<Message>();
-	
 	
 	//暂时
 	private String validate;
@@ -156,6 +158,12 @@ public class User implements Serializable{
 	
 	public City getCity() {
 		return city;
+	}
+	public Set<Reply> getReplySet() {
+		return replySet;
+	}
+	public void setReplySet(Set<Reply> replySet) {
+		this.replySet = replySet;
 	}
 	@Override
 	public String toString() {

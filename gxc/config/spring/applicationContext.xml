@@ -64,5 +64,6 @@
 	<import resource="applicationContext-city.xml"/>
 	<import resource="applicationContext-message.xml"/>
 	<import resource="applicationContext-topic.xml"/>
+	<import resource="applicationContext-reply.xml"/>
 
 </beans>

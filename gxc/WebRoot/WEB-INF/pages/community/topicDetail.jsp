@@ -29,7 +29,7 @@
 	                
 	                <div id="top-rep-num">
 	                	<span>主题 &nbsp; <a href="#">${user.topicSet.size()}</a></span>
-	                	<%-- <span>回复 &nbsp; <a href="#">${user.replySet.size()}</a></span> --%>
+	                	<span>回复 &nbsp; <a href="#">${user.replySet.size()}</a></span>
 	                </div>
 	            </div>
 	        </div>
@@ -86,7 +86,7 @@
 		                </div>
 		                <div id="top-rep-num">
 		                	<span>主题 &nbsp; <a href="#">${user.topicSet.size()}</a></span>
-		                	<%-- <span>回复 &nbsp; <a href="#">${user.replySet.size()}</a></span> --%>
+		                	<span>回复 &nbsp; <a href="#">${user.replySet.size()}</a></span>
 		                </div>
 		            </div>
 		        </div>

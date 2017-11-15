@@ -32,4 +32,10 @@ public interface TopicService {
 	 */
 	Topic findTopicById(Integer topicId);
 
+	/**
+	 * 更新帖子查看人数
+	 * @param dbTopic
+	 */
+	void updateVisitNum(Topic dbTopic);
+
 }

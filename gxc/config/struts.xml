@@ -27,4 +27,5 @@
 	<include file="struts/struts-city.xml"></include>
 	<include file="struts/struts-message.xml"></include>
 	<include file="struts/struts-topic.xml"></include>
+	<include file="struts/struts-reply.xml"></include>
 </struts>

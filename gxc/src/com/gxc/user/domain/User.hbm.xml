@@ -27,6 +27,13 @@
 			<key column="userId"></key>
 			<one-to-many class="com.gxc.topic.domain.Topic"/>
 		</set>
+		
+		<!-- User-Reply 一对多 -->
+		<set name="replySet">
+			<key column="userId"></key>
+			<one-to-many class="com.gxc.reply.domain.Reply"/>
+		</set>
+		
 		<!-- User-Message 一对多 -->
 		<set name="messageSet" order-by="messageId desc">
 			<key column="userId"></key>

@@ -14,7 +14,7 @@
 		<property name="replyDate" type="timestamp"></property>
 		
 		<many-to-one name="topic" class="com.gxc.topic.domain.Topic" column="topicId"></many-to-one>
-		
+		<many-to-one name="user" class="com.gxc.user.domain.User" column="userId"></many-to-one>
 	</class>
 
 </hibernate-mapping>

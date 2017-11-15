@@ -69,6 +69,7 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
 	 */
 	public String showTopic(){
 		Topic dbTopic = topicService.findTopicById(topic.getTopicId());
+		topicService.updateVisitNum(dbTopic);
 		ActionContext.getContext().getValueStack().push(dbTopic);
 		return "TopicDetail";
 	}
