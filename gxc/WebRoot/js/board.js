@@ -34,24 +34,32 @@ $(function(){
 				$("#boardTitle").focus();
 				return false;
 			}
+			$("#boardTitle").focus();
+			return false;
 		}
 		if(messageTitle.length>40){
 			if(confirm(" 标题长度不能超过40 ")){
 				$("#boardTitle").focus();
 				return false;
 			}
+			$("#boardTitle").focus();
+			return false;
 		}
 		if(messageContent.length==0){
 			if(confirm(" 内容不能为空 ")){
 				$("#boardMessage").focus();
 				return false;
 			}
+			$("#boardMessage").focus();
+			return false;
 		}
 		if(messageContent.length>250){
 			if(confirm(" 内容长度不能超过250 ")){
 				$("#boardMessage").focus();
 				return false;
 			}
+			$("#boardMessage").focus();
+			return false;
 		}
 		
 		$.ajax({

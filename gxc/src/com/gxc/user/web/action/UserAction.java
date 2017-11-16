@@ -1,6 +1,5 @@
 package com.gxc.user.web.action;
 
-
 import java.io.IOException;
 import java.util.List;
 
@@ -8,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import net.sf.json.JSONObject;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
 
 import com.gxc.province.domain.Province;
@@ -125,8 +125,14 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 			json.put("msg", "用户名已存在");
 		}
 		else{
+			//注册成功
 			userService.regist(user);
+			//获取注册的用户
+			User registUser = userService.findUserByUsername(user.getUsername());
+			//将该用户放入session中
+			ServletActionContext.getRequest().getSession().setAttribute("loginUser", registUser);
 			json.put("msg", "success");
+			json.put("userId", registUser.getUserId());
 		}
 		
 		ServletActionContext.getResponse().getWriter().print(json.toString());
@@ -205,6 +211,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	 * @throws Exception 
 	 */
 	public String edit() throws Exception{
+		//如果用户没有选择城市
+		if(StringUtils.isBlank(user.getCity().getCityId())){
+			ServletActionContext.getResponse().sendRedirect("userAction_userDetail?userId="+user.getUserId());
+			return "none";
+		}
 		//更新用户信息
 		userService.updateUser(user);
 		ServletActionContext.getResponse().sendRedirect("userAction_userDetail?userId="+user.getUserId());

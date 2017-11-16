@@ -11,11 +11,11 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/board.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/backTop.css">
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/backTop.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/top_load.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/login_regist_validate.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/board.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/backTop.js"></script>
 
 <script type="text/javascript">
 //跳回首页
@@ -43,6 +43,11 @@
 					<!-- <li><a href="javascript:void(0);">文 章</a></li> -->
 					<li><a href="${pageContext.request.contextPath}/topicAction_AllTopic">社 区</a></li>
 					<li><a href="javascript:void(0);" id="top_menu_board">留 言</a></li>
+					<li>
+						<s:a action="userAction_userHome" namespace="/">
+							<s:param name="userId" value="#session.loginUser.userId"></s:param>个人主页
+						</s:a>
+					</li>
 					<s:if test="#session.loginUser.role==1">
 						<li>
 							<s:a action="AdminAction_message_allMessageByDesc" namespace="/admin">后台管理</s:a>
@@ -200,12 +205,6 @@
 		<div id="board-content">
 			<form action="#" id="form_board">
 				<input type="hidden" value="${session.loginUser.userId}" />
-				<%-- <div id="board-content-username">
-					<s:textfield name="username" value="%{#session.user.username}" id="boardUsername" placeholder="用户名  (可不填写)" ></s:textfield>
-				</div>
-				<div id="board-content-email">
-					<s:textfield name="email" value="%{#session.user.email}" id="boardEmail" placeholder="邮 箱  (可不填写)"></s:textfield>
-				</div> --%>
 				<div id="board-content-title">
 					<s:textfield name="msgTitle" id="boardTitle" placeholder="标 题   (必填)"></s:textfield>
 				</div>

@@ -238,16 +238,18 @@ $(function(){
 					}).show(550);
 					
 					$("#regist_error_img").attr("src","/gxc/images/yes-green.png");
-					$("#regist_span_msg").text("注册成功,3秒后跳转登录...");
+					$("#regist_span_msg").text("注册成功,3秒后跳转完善个人信息...");
 					
 					//计时器
 					var num = 2;
 					var regist_time = setInterval(function() {
 						if(num>=1){
-							$("#regist_span_msg").text("注册成功,"+num--+"秒后跳转登录...");
+							$("#regist_span_msg").text("注册成功,"+num--+"秒后跳转完善个人信息...");
 						}else{
 							clearInterval(regist_time);
-							$("#a_left").click();
+							/*$("#a_left").click();*/
+							//注册成功后，跳转到个人信息页面完善个人信息
+							location.href = "${pageContext.request.contextPath}/userAction_userDetail?userId="+regist.userId;
 						}
 					}, 1000);
 				}

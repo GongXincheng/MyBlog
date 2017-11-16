@@ -61,7 +61,9 @@ $(function(){
 					<ul>
 						<li><a id="li_a_1" href="javascript:void(0);">主题</a></li>
 						<li><a id="li_a_2" href="javascript:void(0);">回复</a></li>
-						<li><a id="li_a_3" href="javascript:void(0);">留言</a></li>
+						<s:if test="userId==#session.loginUser.userId">
+							<li><a id="li_a_3" href="javascript:void(0);">留言</a></li>
+						</s:if>
 					</ul>
 				</div>
 				<div id="clear"></div>

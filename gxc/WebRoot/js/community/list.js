@@ -108,24 +108,32 @@ $(function(){
 				$("#title").focus();
 				return false;
 			}
+			$("#title").focus();
+			return false;
 		}
 		if(title.length>80){
 			if(confirm(" 标题长度不能超过80 ")){
 				$("#title").focus();
 				return false;
 			}
+			$("#title").focus();
+			return false;
 		}
 		if(content.length==0){
 			if(confirm(" 内容不能为空 ")){
 				$("#topicContent").focus();
 				return false;
 			}
+			$("#topicContent").focus();
+			return false;
 		}
 		if(content.length>250){
 			if(confirm(" 内容长度不能超过250 ")){
 				$("#topicContent").focus();
 				return false;
 			}
+			$("#topicContent").focus();
+			return false;
 		}
 		
 		$("#form_sendTopic")[0].submit();
@@ -140,12 +148,16 @@ $(function(){
 				$("#topicContent").focus();
 				return false;
 			}
+			$("#topicContent").focus();
+			return false;
 		}
 		if(content.length>250){
 			if(confirm(" 内容长度不能超过250 ")){
 				$("#topicContent").focus();
 				return false;
 			}
+			$("#topicContent").focus();
+			return false;
 		}
 		
 		
